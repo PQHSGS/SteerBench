@@ -1,0 +1,44 @@
+{
+  "name": "qwen_mbpp",
+  "description": "SAEFREE deception steering evaluated on mbpp",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "inverse": true,
+    "method": "SAE-FREE",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "saefree_component_idx": -1,
+    "saefree_center_diffs": false,
+    "saefree_cov_normalize": false,
+    "saefree_align_sign": true
+  },
+  "steer": {
+    "method": "SAE-FREE",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "saefree_norm_eps": 1e-08
+  },
+  "n_train": 500,
+  "test_dataset": "mbpp",
+  "n_test": 100,
+  "output": "./Results/saefree",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "load_vector": "Vector/SAEFREE/Qwen/deception"
+}

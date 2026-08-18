@@ -1,0 +1,31 @@
+{
+  "name": "llama_xstest",
+  "description": "SRPS steering trained on refusal_caa, evaluated on xstest (over-refusal benchmark)",
+  "model": {
+    "name": "meta-llama/Llama-3.1-8B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SRPS",
+    "layer": 17,
+    "batch_size": 4,
+    "top_k": 15,
+    "act_threshold": 0.3,
+    "beta": 5,
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "SRPS",
+    "layer": 17,
+    "coeff": 1.0,
+    "apply_chat_template": true
+  },
+  "load_vector": "Vector/SRPS/Llama/ai_risk_refusal",
+  "n_test": null,
+  "test_dataset": "xstest",
+  "output": "./Results/srps",
+  "include_baseline": true,
+  "compute_perplexity": true
+}

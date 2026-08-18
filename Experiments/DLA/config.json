@@ -1,0 +1,22 @@
+{
+    "description": "DLA head ablation experiment — identify and ablate suppressing heads",
+    "model": "google/gemma-2-2b-it",
+    "inject_layer": 14,
+    "search_layers": [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
+    "coeff": 2.0,
+    "n_prompts": 50,
+    "n_tokens_dla": 10,
+    "max_tokens": 128,
+    "ablating_k_values": [5, 10, 15, 20, 25, 30],
+    "methods": ["CAA", "CHARS", "LinearAcT", "REPS", "MANIFOLD", "SRPS", "WEIGHTSTEER"],
+    "method_config_map": {
+        "CAA":       {"cfg_dir": "Configs/Eval/CAA/Gemma"},
+        "CHARS":     {"cfg_dir": "Configs/Eval/CHARS/Gemma"},
+        "LinearAcT": {"cfg_dir": "Configs/Eval/LinearAcT/Gemma"},
+        "REPS":      {"cfg_dir": "Configs/Eval/REFT"},
+        "MANIFOLD":  {"cfg_dir": "Configs/Eval/MANIFOLD/Gemma"},
+        "SRPS":      {"cfg_dir": "Configs/Eval/SRPS/Gemma"},
+        "WEIGHTSTEER": {"cfg_dir": "Configs/Eval/WEIGHTSTEER"}
+    },
+    "tasks": ["toxic", "evil", "deception"]
+}

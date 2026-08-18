@@ -1,0 +1,43 @@
+{
+  "name": "qwen_refusal_open",
+  "description": "SPHERICAL steering for refusal_open",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "SPHERICAL",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre"
+  },
+  "steer": {
+    "method": "SPHERICAL",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "spherical_kappa": 20.0,
+    "spherical_alpha": 0.7,
+    "spherical_beta": -0.15,
+    "spherical_use_vmf_gate": true
+  },
+  "train_dataset": "refusal_caa",
+  "test_dataset": "refusal_open",
+  "n_train": null,
+  "n_test": null,
+  "seed": 42,
+  "output": "./Results/spherical",
+  "compute_perplexity": true,
+  "save_vector": "Vector/SPHERICAL/Qwen/ai_risk_refusal",
+  "include_baseline": false
+}

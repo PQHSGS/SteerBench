@@ -1,0 +1,39 @@
+{
+  "name": "qwen_sorrybench_refusal_response",
+  "description": "CAST steering for sorrybench_refusal_response",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST",
+    "layer": [
+      18
+    ],
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_pca": false
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "apply_to_all_tokens": true
+  },
+  "load_vector": "Vector/CAST/Qwen/refusal_response",
+  "n_test": null,
+  "test_dataset": "sorrybench",
+  "output": "./Results/cast",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "train_dataset": "sorrybench_refusal_response"
+}

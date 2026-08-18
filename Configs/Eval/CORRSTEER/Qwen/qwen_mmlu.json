@@ -1,0 +1,26 @@
+{
+  "name": "qwen_mmlu",
+  "description": "CORRSTEER steering evaluated on MMLU",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CORRSTEER",
+    "layer": 18,
+    "batch_size": 4,
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CORRSTEER",
+    "layer": 18,
+    "coeff": 1.0
+  },
+  "load_vector": "Vector/CORRSTEER/Qwen/refusal_response",
+  "test_dataset": "mmlu",
+  "output": "./Results/corrsteer",
+  "include_baseline": false,
+  "seed": 42
+}

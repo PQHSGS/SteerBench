@@ -1,0 +1,40 @@
+{
+  "name": "qwen25_spherical_truthfulqa",
+  "description": "Spherical Steering paper-default Qwen setup (layer=19, kappa=20, alpha=0.6, beta=0.4).",
+  "model": {
+    "name": "Qwen/Qwen2.5-7B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SPHERICAL",
+    "layer": [
+      19
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "SPHERICAL",
+    "layer": [
+      19
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "spherical_kappa": 20.0,
+    "spherical_alpha": 0.6,
+    "spherical_beta": 0.4,
+    "spherical_use_vmf_gate": true,
+    "apply_chat_template": true
+  },
+  "train_dataset": "hallucination",
+  "n_train": 200,
+  "test_dataset": "truthfulqa",
+  "output": "./Results/spherical",
+  "include_baseline": false,
+  "seed": 42
+}

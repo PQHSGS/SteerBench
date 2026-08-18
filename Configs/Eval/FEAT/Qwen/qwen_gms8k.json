@@ -1,0 +1,45 @@
+{
+  "name": "qwen_gms8k",
+  "description": "FEAT steering for gms8k",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 150
+  },
+  "extractor": {
+    "method": "SAEIO",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "act_threshold": 10000,
+    "inverse": true
+  },
+  "steer": {
+    "method": "FEAT",
+    "layer": [
+      18
+    ],
+    "coeff": 1,
+    "feature_list": [
+      1056
+    ],
+    "overwrite_with_max_act": true,
+    "max_act": 20.0,
+    "use_reconstruction_error": true,
+    "hook_point": "pre",
+    "steer_once": false
+  },
+  "test_dataset": "gms8k",
+  "train_dataset": "refusal_cast_responses",
+  "n_train": 1,
+  "n_test": 30,
+  "output": "./Results/feat",
+  "include_baseline": true,
+  "compute_perplexity": true,
+  "seed": 42,
+  "load_vector": "Vector/SAEIO/Qwen/refusal_response"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "gemma_refusal_open",
+  "description": "Angular Steering for refusal (AdvBench vs Alpaca) matching AngularSteering implementation",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ANGULAR",
+    "layer": 2,
+    "batch_size": 8,
+    "position": -2,
+    "strategy": "max_sim",
+    "hook_point": [
+      "mid",
+      "post"
+    ]
+  },
+  "steer": {
+    "method": "ANGULAR",
+    "layer": 22,
+    "adaptive": true,
+    "target_angle": 180,
+    "coeff": 1,
+    "apply_all_layers": true,
+    "n_test": null
+  },
+  "test_dataset": "refusal_open",
+  "output": "./Results/angular",
+  "load_vector": "Vector/Angular/Gemma/ai_risk_refusal",
+  "train_dataset": "refusal_caa",
+  "n_train": 512,
+  "n_test": null,
+  "include_baseline": false,
+  "compute_perplexity": true
+}

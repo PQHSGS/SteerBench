@@ -1,0 +1,79 @@
+{
+  "name": "gemma_toxic_prefix_pos",
+  "description": "REPS toxic prefix_pos prefix split",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "REPS",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "change_pad_token": false,
+    "inverse": false,
+    "reft_type": "Loreft",
+    "low_rank_dimension": 8,
+    "dropout": 0.1,
+    "act_fn": "linear",
+    "add_bias": true,
+    "preference_pairs": [
+      "orig_add",
+      "orig_sub"
+    ],
+    "substraction_type": "zero",
+    "steering_factors": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0
+    ],
+    "gradient_accumulation_steps": 8,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "epochs": 20,
+    "reft_seed": 42,
+    "reft_steer_once": true,
+    "ot_steer": true
+  },
+  "steer": {
+    "method": "REPS",
+    "layer": [
+      14
+    ],
+    "coeff": {
+      "14": 2
+    },
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "norm": false,
+    "apply_all_layers": false,
+    "steer_once": false,
+    "reft_type": "Loreft",
+    "low_rank_dimension": 1,
+    "dropout": 0.0,
+    "act_fn": "linear",
+    "add_bias": true,
+    "substraction_type": "zero",
+    "ot_steer": false
+  },
+  "train_dataset": "toxic_jigsaw_prefix_pos",
+  "n_train": 287,
+  "test_dataset": "toxic",
+  "n_test": 100,
+  "output": "./Results/reps",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42,
+  "save_vector": "Vector/PREFIX_SPLIT/REPS/toxic_prefix_pos"
+}

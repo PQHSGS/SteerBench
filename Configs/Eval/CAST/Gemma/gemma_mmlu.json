@@ -1,0 +1,37 @@
+{
+  "name": "gemma_mmlu",
+  "description": "CAST steering evaluated on MMLU",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_pca": true
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "apply_to_all_tokens": false
+  },
+  "load_vector": "Vector/CAST/Gemma/refusal_response",
+  "test_dataset": "mmlu",
+  "output": "./Results/cast",
+  "include_baseline": false,
+  "seed": 42
+}

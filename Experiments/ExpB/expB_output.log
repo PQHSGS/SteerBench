@@ -1,0 +1,63 @@
+/data/caotue/anaconda3/envs/sae_circuit/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[1782186203] Loading model...
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.43it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.23it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  2.04it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:01<00:00,  1.77it/s]
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+Loaded pretrained model google/gemma-2-2b into HookedTransformer
+[1782186225] Model loaded (22.0s)
+Extracting toxic steering vector...
+  toxic=100 nontoxic=100
+  extracted 50/100
+  extracted 100/100
+  extracted 50/100
+  extracted 100/100
+  v_toxic norm=1.0000
+Extracting deception steering vector...
+  extracted 50/100
+  extracted 100/100
+  extracted 50/100
+  extracted 100/100
+  v_deception norm=1.0000
+  cos(v_toxic, v_decep)=-0.0277
+  cos(v_toxic, v_rand)=0.0105
+Done extracting (61.1s)
+Running toxic vector perturbation...
+  10/30 prompts done
+  20/30 prompts done
+  30/30 prompts done
+Running deception vector perturbation...
+  10/30 prompts done
+  20/30 prompts done
+  30/30 prompts done
+Running random vector perturbation...
+  10/30 prompts done
+  20/30 prompts done
+  30/30 prompts done
+
+Layer	Toxic		Deception	Random
+L9	2.0987		2.1216		1.8849
+L10	2.2044		2.2328		1.8862
+L11	2.2995		2.2917		1.8875
+L12	2.3401		2.3299		1.9167
+L13	2.3622		2.3521		1.9128
+L14	2.5036		2.5117		2.0307
+L15	2.6081		2.6495		2.1526
+L16	2.6453		2.7203		2.1969
+L17	2.8745		3.0031		2.4122
+L18	2.9469		3.0750		2.5141
+L19	3.2182		3.3771		2.7992
+L20	3.5443		3.7521		3.0904
+L21	3.9516		4.2224		3.5333
+L22	4.4688		4.9875		4.1073
+L23	5.0995		5.7135		4.7786
+L24	5.7604		6.2818		5.5172
+L25	6.4604		7.1406		6.3370
+
+Decay ratios (9->25):
+  Toxic: 3.0783 (2.0987 -> 6.4604)
+  Deception: 3.3657 (2.1216 -> 7.1406)
+  Random: 3.3620 (1.8849 -> 6.3370)
+Saved to Experiments/expB_results.json (78s)

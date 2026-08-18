@@ -1,0 +1,35 @@
+{
+  "name": "qwen_toxic_sys",
+  "description": "ACT toxic with system prompt",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ACT",
+    "layer": 18,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "ACT",
+    "layer": 18,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 5,
+    "batch_size": 4
+  },
+  "load_vector": "Vector/LinearAcT/Qwen/toxic",
+  "train_dataset": null,
+  "test_dataset": "toxic_with_sys",
+  "n_test": 20,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/linearact_sys",
+  "seed": 42
+}

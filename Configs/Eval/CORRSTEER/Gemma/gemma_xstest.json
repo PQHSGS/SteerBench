@@ -1,0 +1,29 @@
+{
+  "name": "gemma_xstest",
+  "description": "CORRSTEER steering trained on refusal_caa, evaluated on xstest (over-refusal benchmark)",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CORRSTEER",
+    "layer": 14,
+    "batch_size": 4,
+    "top_k": 15,
+    "act_frac": 0.2,
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CORRSTEER",
+    "layer": 14,
+    "coeff": 1.0
+  },
+  "load_vector": "Vector/CORRSTEER/Gemma/ai_risk_refusal",
+  "n_test": null,
+  "test_dataset": "xstest",
+  "output": "./Results/corrsteer",
+  "include_baseline": false,
+  "compute_perplexity": true
+}

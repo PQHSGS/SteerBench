@@ -1,0 +1,31 @@
+{
+  "name": "qwen_hallucination",
+  "description": "CAA steering trained on hallucination, evaluated on hallucination_ab",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 18,
+    "batch_size": 4,
+    "position": -2,
+    "hook_point": "pre",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 18,
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "hook_point": "pre"
+  },
+  "n_test": 500,
+  "save_vector": "Vector/CAA/Qwen/ai_risk_hallucination",
+  "train_dataset": "hallucination",
+  "test_dataset": "hallucination_ab",
+  "output": "./Results/caa",
+  "seed": 42
+}

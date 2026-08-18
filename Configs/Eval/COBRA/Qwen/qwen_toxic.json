@@ -1,0 +1,40 @@
+{
+  "name": "qwen_toxic",
+  "description": "COBRA toxic steering evaluated on toxic",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "COBRA",
+    "layer": 18,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "inverse": false,
+    "cobra_k": 6,
+    "cobra_lambda": 0.1,
+    "cobra_dim": 8
+  },
+  "steer": {
+    "method": "COBRA",
+    "layer": 18,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 3.0,
+    "steer_once": false
+  },
+  "train_dataset": "toxic_jigsaw",
+  "test_dataset": "toxic",
+  "save_vector": "Vector/COBRA/Qwen/toxic",
+  "n_test": 100,
+  "n_train": 500,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/cobra",
+  "seed": 42
+}

@@ -1,0 +1,124 @@
+{
+  "exp1_act_effrank": {
+    "evil": {
+      "eff_rank": 5.15,
+      "centroid_norm_max": 206.78,
+      "centroid_norm_min": 188.01,
+      "centroid_norm_spread_ratio": 1.1,
+      "act_best_clean_acc": 0.5
+    },
+    "deception": {
+      "eff_rank": 2.08,
+      "centroid_norm_max": 193.71,
+      "centroid_norm_min": 187.9,
+      "centroid_norm_spread_ratio": 1.03,
+      "act_best_clean_acc": 0.9
+    },
+    "toxic": {
+      "eff_rank": 1.8,
+      "centroid_norm_max": 511.49,
+      "centroid_norm_min": 235.46,
+      "centroid_norm_spread_ratio": 2.17,
+      "act_best_clean_acc": 0.21
+    },
+    "refusal_response": {
+      "eff_rank": 20.67,
+      "centroid_norm_max": 237.85,
+      "centroid_norm_min": 148.65,
+      "centroid_norm_spread_ratio": 1.6,
+      "act_best_clean_acc": null
+    }
+  },
+  "exp2_chars_cancellation": {
+    "evil": {
+      "n_active_direction_pairs": 400,
+      "mean_pairwise_cos": 0.4529,
+      "fraction_opposing_pairs": 0.0,
+      "weighted_cancellation_score": -1e-06,
+      "net_transport_norm": 34.4485,
+      "avg_individual_dir_norm": 49.7147,
+      "cancellation_ratio": 0.3071,
+      "chars_best_clean_acc": 0.87
+    },
+    "deception": {
+      "n_active_direction_pairs": 8,
+      "mean_pairwise_cos": 0.1667,
+      "fraction_opposing_pairs": 0.1071,
+      "weighted_cancellation_score": -0.002388,
+      "net_transport_norm": 17.9787,
+      "avg_individual_dir_norm": 81.27,
+      "cancellation_ratio": 0.7788,
+      "chars_best_clean_acc": 0.85
+    },
+    "toxic": {
+      "n_active_direction_pairs": 98,
+      "mean_pairwise_cos": 0.104,
+      "fraction_opposing_pairs": 0.3882,
+      "weighted_cancellation_score": -0.149078,
+      "net_transport_norm": 22.0368,
+      "avg_individual_dir_norm": 100.7059,
+      "cancellation_ratio": 0.7812,
+      "chars_best_clean_acc": 0.02
+    },
+    "refusal_response": {
+      "n_active_direction_pairs": 900,
+      "mean_pairwise_cos": 0.2934,
+      "fraction_opposing_pairs": 0.0001,
+      "weighted_cancellation_score": -0.000518,
+      "net_transport_norm": 97.1506,
+      "avg_individual_dir_norm": 176.9265,
+      "cancellation_ratio": 0.4509,
+      "chars_best_clean_acc": null
+    }
+  },
+  "exp3_chars_covariance_violation": {
+    "evil": {
+      "K_stored": 20,
+      "eff_K": 17.98,
+      "source_norm_min": 188.01,
+      "source_norm_max": 206.78,
+      "source_norm_spread_ratio": 1.1,
+      "source_norm_cv": 0.0281,
+      "target_norm_spread_ratio": 1.05,
+      "target_norm_cv": 0.0162,
+      "inter_centroid_dist_cv": 0.2083,
+      "chars_best_clean_acc": 0.87
+    },
+    "deception": {
+      "K_stored": 3,
+      "eff_K": 2.84,
+      "source_norm_min": 187.9,
+      "source_norm_max": 193.71,
+      "source_norm_spread_ratio": 1.03,
+      "source_norm_cv": 0.0162,
+      "target_norm_spread_ratio": 1.03,
+      "target_norm_cv": 0.0171,
+      "inter_centroid_dist_cv": 0.3984,
+      "chars_best_clean_acc": 0.85
+    },
+    "toxic": {
+      "K_stored": 10,
+      "eff_K": 7.65,
+      "source_norm_min": 235.46,
+      "source_norm_max": 511.49,
+      "source_norm_spread_ratio": 2.17,
+      "source_norm_cv": 0.2611,
+      "target_norm_spread_ratio": 2.0,
+      "target_norm_cv": 0.229,
+      "inter_centroid_dist_cv": 0.6602,
+      "chars_best_clean_acc": 0.02
+    },
+    "refusal_response": {
+      "K_stored": 30,
+      "eff_K": 24.25,
+      "source_norm_min": 148.65,
+      "source_norm_max": 237.85,
+      "source_norm_spread_ratio": 1.6,
+      "source_norm_cv": 0.1321,
+      "target_norm_spread_ratio": 1.42,
+      "target_norm_cv": 0.0942,
+      "inter_centroid_dist_cv": 0.1745,
+      "chars_best_clean_acc": null
+    }
+  }
+}

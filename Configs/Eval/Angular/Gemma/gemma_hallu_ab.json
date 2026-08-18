@@ -1,0 +1,39 @@
+{
+  "name": "gemma_hallu_ab",
+  "description": "ANGULAR steering for hallu_ab",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ANGULAR",
+    "layer": 2,
+    "batch_size": 8,
+    "position": -2,
+    "strategy": "max_sim",
+    "hook_point": [
+      "mid",
+      "post"
+    ]
+  },
+  "steer": {
+    "method": "ANGULAR",
+    "layer": 22,
+    "adaptive": true,
+    "target_angle": 0,
+    "coeff": 1,
+    "apply_all_layers": true,
+    "n_test": null,
+    "position": "last"
+  },
+  "train_dataset": "hallucination",
+  "test_dataset": "hallucination_ab",
+  "n_test": 50,
+  "save_vector": "Vector/Angular/Gemma/ai_risk_hallucination",
+  "output": "./Results/angular",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

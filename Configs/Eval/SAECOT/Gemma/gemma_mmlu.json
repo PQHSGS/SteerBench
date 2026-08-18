@@ -1,0 +1,29 @@
+{
+  "name": "gemma_mmlu",
+  "description": "SAECOT steering evaluated on MMLU",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SAE-COT",
+    "layer": [14],
+    "batch_size": 4,
+    "position": "last",
+    "saecot_value_mode": "target_mean",
+    "top_k": 15
+  },
+  "steer": {
+    "method": "SAE-COT",
+    "layer": [14],
+    "coeff": 1.0,
+    "top_k": 5
+  },
+  "load_vector": "Vector/SAECOT/Gemma/refusal_response",
+  "test_dataset": "mmlu",
+  "output": "./Results/saecot",
+  "include_baseline": false,
+  "seed": 42
+}

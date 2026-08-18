@@ -1,0 +1,37 @@
+{
+  "name": "gemma_evil",
+  "description": "SRPS evil steering evaluated on evil",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SRPS",
+    "layer": 14,
+    "batch_size": 4,
+    "top_k": 15,
+    "act_threshold": 3,
+    "beta": 5,
+    "apply_chat_template": true,
+    "inverse": false,
+    "position": "mask"
+  },
+  "steer": {
+    "method": "SRPS",
+    "layer": 14,
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "top_k": 5
+  },
+  "save_vector": "Vector/SRPS/Gemma/evil",
+  "train_dataset": "evil",
+  "n_train": 500,
+  "n_test": 100,
+  "test_dataset": "evil",
+  "output": "./Results/srps",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

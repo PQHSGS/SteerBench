@@ -1,0 +1,36 @@
+{
+  "name": "qwen_csqa",
+  "description": "SRPS (Semantic-Robust Prompt Steering) - uses beta for activation/active-dimension balance",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "sae_id": "65",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SRPS",
+    "layer": [
+      29
+    ],
+    "batch_size": 4,
+    "top_k": 10,
+    "act_threshold": 0.2,
+    "beta": 5,
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "SRPS",
+    "layer": [
+      29
+    ],
+    "coeff": 1.0,
+    "apply_chat_template": true
+  },
+  "save_vector": "Vector/SRPS/csqa_65",
+  "test_dataset": "csqa",
+  "output": "./Results/srps",
+  "train_dataset": "srps_roleplay_csqa",
+  "n_train": 1000,
+  "n_test": null
+}

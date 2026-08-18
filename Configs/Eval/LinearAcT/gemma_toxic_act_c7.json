@@ -1,0 +1,38 @@
+{
+  "name": "gemma_toxic_act_c7",
+  "description": "LinearAcT toxic steering evaluated on toxic at coeff=7.0 with compute_lsp=true",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:5",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ACT",
+    "layer": [14],
+    "batch_size": 4,
+    "position": "mask",
+    "apply_chat_template": true,
+    "hook_point": ["pre"],
+    "act_mode": "linear"
+  },
+  "steer": {
+    "method": "ACT",
+    "layer": [14],
+    "coeff": {"14": 7.0},
+    "apply_chat_template": false,
+    "hook_point": ["pre"],
+    "position": "last",
+    "batch_size": 4
+  },
+  "train_dataset": "toxic_jigsaw",
+  "test_dataset": "toxic",
+  "n_train": 500,
+  "n_test": 100,
+  "output": "/tmp/results_act_c7",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "compute_lsp": true,
+  "seed": 42,
+  "load_vector": "Vector/LinearAcT/Gemma/toxic"
+}

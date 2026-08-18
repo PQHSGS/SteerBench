@@ -1,0 +1,45 @@
+{
+  "name": "qwen_evil",
+  "description": "COLD evil steering evaluated on evil",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "COLD",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": false,
+    "cold_variant": "fd",
+    "cold_eta": 1.0,
+    "cold_epsilon": 1e-06,
+    "cold_pair_margin": 0.0,
+    "inverse": false
+  },
+  "steer": {
+    "method": "COLD",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": false
+  },
+  "train_dataset": "evil",
+  "test_dataset": "evil",
+  "n_train": 500,
+  "n_test": 100,
+  "seed": 42,
+  "output": "./Results/cold",
+  "compute_perplexity": true,
+  "save_vector": "Vector/COLD/Qwen/evil",
+  "include_baseline": false
+}

@@ -1,0 +1,32 @@
+{
+  "name": "llama_coordinate_ab",
+  "description": "CAA steering trained on coordinate, evaluated on coordinate_ab",
+  "model": {
+    "name": "meta-llama/Llama-3.1-8B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 17,
+    "batch_size": 4,
+    "position": -2,
+    "hook_point": "pre",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 17,
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "n_test": 500
+  },
+  "train_dataset": "ai_risk_coordinate",
+  "n_train": 360,
+  "save_vector": "Vector/CAA/Llama/ai_risk_coordinate",
+  "test_dataset": "coordinate_ab",
+  "output": "./Results/caa",
+  "seed": 42
+}

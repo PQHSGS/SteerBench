@@ -1,0 +1,38 @@
+{
+  "name": "qwen_evil",
+  "description": "CHARS evil steering evaluated on evil",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CHARS",
+    "layer": 18,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "position": "mask",
+    "inverse": false,
+    "chars_k": 20,
+    "chars_lambda": 0.1
+  },
+  "steer": {
+    "method": "CHARS",
+    "layer": 18,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 3.0,
+    "steer_once": false
+  },
+  "test_dataset": "evil",
+  "n_test": 100,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/chars",
+  "seed": 42,
+  "save_vector": "Vector/CHARS/Qwen/evil",
+  "train_dataset": "evil",
+  "n_train": 500
+}

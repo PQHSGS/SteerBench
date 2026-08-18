@@ -1,0 +1,45 @@
+{
+  "name": "gemma_mmlu",
+  "description": "FLOW steering evaluated on MMLU",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "FLOW",
+    "layer": [14],
+    "batch_size": 16,
+    "position": "last",
+    "hook_point": "pre",
+    "flow_hidden_dim": 128,
+    "flow_layers": 2,
+    "flow_lr": 0.001,
+    "flow_epochs": 400,
+    "flow_batch_size": 64,
+    "flow_subspace_dim": 128,
+    "flow_norm_mode": "gaussian",
+    "flow_loss_mode": "mse",
+    "flow_weighted": true,
+    "flow_max_weight": 10,
+    "flow_train_space": "pca_diff",
+    "flow_target_type": "concept"
+  },
+  "steer": {
+    "method": "FLOW",
+    "layer": [14],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "flow_steps": 20,
+    "flow_guidance_strength": 1.0,
+    "flow_guidance_mode": "off",
+    "flow_denoise_mode": "proj"
+  },
+  "load_vector": "Vector/Flow/gemma_refusal_response_r1",
+  "test_dataset": "mmlu",
+  "output": "./Results/flow",
+  "include_baseline": false,
+  "seed": 42
+}

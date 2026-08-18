@@ -1,0 +1,36 @@
+{
+  "name": "qwen_hallu_ab",
+  "description": "SRPS steering for hallu_ab",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SRPS",
+    "layer": 18,
+    "batch_size": 4,
+    "top_k": 15,
+    "act_threshold": 0.3,
+    "position": -2,
+    "beta": 5,
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "SRPS",
+    "layer": 18,
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "top_k": 5,
+    "position": "last"
+  },
+  "save_vector": "Vector/SRPS/Qwen/ai_risk_hallucination",
+  "train_dataset": "hallucination",
+  "n_train": 1000,
+  "n_test": 500,
+  "test_dataset": "hallucination_ab",
+  "output": "./Results/srps",
+  "include_baseline": false,
+  "seed": 42
+}

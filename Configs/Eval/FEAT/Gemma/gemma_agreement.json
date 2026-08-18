@@ -1,0 +1,45 @@
+{
+  "name": "gemma_agreement",
+  "description": "FEAT steering for agreement",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SAEIO",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "act_threshold": 10000,
+    "inverse": true
+  },
+  "steer": {
+    "method": "FEAT",
+    "layer": [
+      14
+    ],
+    "coeff": 1,
+    "feature_list": [
+      11069
+    ],
+    "overwrite_with_max_act": true,
+    "max_act": 80.0,
+    "use_reconstruction_error": true,
+    "hook_point": "pre",
+    "steer_once": true
+  },
+  "n_test": null,
+  "test_dataset": "refusal_open",
+  "train_dataset": "refusal_cast_responses",
+  "n_train": 1,
+  "output": "./Results/feat",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "save_vector": "Vector/FEAT/Gemma/agreement"
+}

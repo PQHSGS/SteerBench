@@ -1,0 +1,41 @@
+{
+  "name": "gemma_gms8k",
+  "description": "MANIFOLD steering trained on srps_roleplay_gms8k, evaluated on gms8k",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 300
+  },
+  "extractor": {
+    "method": "MANIFOLD",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": "mask",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "manifold_dim": 10
+  },
+  "steer": {
+    "method": "MANIFOLD",
+    "layer": [
+      14
+    ],
+    "coeff": 0.3,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "apply_all_layers": true
+  },
+  "save_vector": "Vector/MANIFOLD/Gemma/gms8k",
+  "train_dataset": "srps_roleplay_gms8k",
+  "n_train": 1000,
+  "n_test": 100,
+  "test_dataset": "gms8k",
+  "output": "./Results/manifold",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

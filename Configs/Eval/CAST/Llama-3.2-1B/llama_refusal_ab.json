@@ -1,0 +1,40 @@
+{
+  "name": "llama_refusal_ab",
+  "description": "CAST steering trained on refusal_caa, evaluated on refusal_ab",
+  "model": {
+    "name": "meta-llama/Llama-3.2-1B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST",
+    "layer": [
+      7
+    ],
+    "batch_size": 4,
+    "position": -2,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_pca": true
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      7
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "apply_to_all_tokens": false
+  },
+  "save_vector": "Vector/CAST/Llama/ai_risk_refusal",
+  "train_dataset": "refusal_caa",
+  "n_train": 1000,
+  "n_test": null,
+  "test_dataset": "refusal_ab",
+  "output": "./Results/cast",
+  "include_baseline": false,
+  "seed": 42
+}

@@ -1,0 +1,36 @@
+{
+  "name": "gemma_truthfulqa",
+  "description": "SAEIO steering for truthfulqa",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SAEIO",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "top_k": 20,
+    "apply_chat_template": true,
+    "act_threshold": 20,
+    "amp_factor": 10,
+    "position": "last"
+  },
+  "steer": {
+    "method": "SAEIO",
+    "layer": [
+      14
+    ],
+    "coeff": 5
+  },
+  "load_vector": "Vector/SAEIO/Gemma/ai_risk_hallucination",
+  "test_dataset": "truthfulqa",
+  "output": "./Results/saeio",
+  "include_baseline": false,
+  "seed": 42,
+  "train_dataset": "hallucination",
+  "n_test": null
+}

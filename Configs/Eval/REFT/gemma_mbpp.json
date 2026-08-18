@@ -1,0 +1,72 @@
+{
+  "name": "reft_mbpp",
+  "description": "REFT deception steering evaluated on mbpp",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:5",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "inverse": true,
+    "method": "REPS",
+    "layer": [
+      14
+    ],
+    "batch_size": 8,
+    "position": "last",
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "change_pad_token": false,
+    "reft_type": "Loreft",
+    "low_rank_dimension": 8,
+    "dropout": 0.1,
+    "act_fn": "linear",
+    "add_bias": true,
+    "preference_pairs": [
+      "orig_add",
+      "orig_sub"
+    ],
+    "substraction_type": "normal",
+    "steering_factors": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0
+    ],
+    "reft_seed": 42,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "epochs": 10,
+    "reft_steer_once": true
+  },
+  "steer": {
+    "method": "REPS",
+    "layer": [
+      14
+    ],
+    "coeff": 3,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "norm": false,
+    "apply_all_layers": false,
+    "reft_type": "Loreft",
+    "add_bias": true,
+    "substraction_type": "normal",
+    "steer_once": true
+  },
+  "n_train": 30,
+  "test_dataset": "mbpp",
+  "n_test": 100,
+  "output": "./Results/reps",
+  "load_vector": "Vector/REPS/Gemma/deception",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "post_process": {},
+  "save_samples": false
+}

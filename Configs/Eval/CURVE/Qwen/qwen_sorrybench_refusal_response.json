@@ -1,0 +1,42 @@
+{
+  "name": "qwen_sorrybench_refusal_response",
+  "description": "CURVE steering for sorrybench_refusal_response",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "CURVEBALL",
+    "layer": [
+      18
+    ],
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "curveball_dim": 8,
+    "curveball_degree": 2,
+    "curveball_coef0": 1.0
+  },
+  "steer": {
+    "method": "CURVEBALL",
+    "layer": [
+      18
+    ],
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 1.0,
+    "batch_size": 4
+  },
+  "train_dataset": "sorrybench_refusal_response",
+  "test_dataset": "sorrybench",
+  "n_train": null,
+  "n_test": null,
+  "output": "./Results/curve",
+  "load_vector": "Vector/CURVE/Qwen/refusal_response",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42
+}

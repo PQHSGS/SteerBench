@@ -1,0 +1,40 @@
+{
+  "name": "gemma_evil",
+  "description": "COBRA evil steering evaluated on evil",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "COBRA",
+    "layer": 14,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "mask",
+    "apply_chat_template": true,
+    "inverse": false,
+    "cobra_k": 2,
+    "cobra_lambda": 0.1,
+    "cobra_dim": 8
+  },
+  "steer": {
+    "method": "COBRA",
+    "layer": 14,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 3.0,
+    "steer_once": false
+  },
+  "train_dataset": "evil",
+  "n_train": 500,
+  "test_dataset": "evil",
+  "save_vector": "Vector/COBRA/Gemma/evil",
+  "n_test": 10,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/cobra",
+  "seed": 42
+}

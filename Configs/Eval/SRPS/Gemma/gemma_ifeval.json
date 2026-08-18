@@ -1,0 +1,35 @@
+{
+  "name": "gemma_ifeval",
+  "description": "SRPS steering for ifeval",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SRPS",
+    "layer": 14,
+    "batch_size": 4,
+    "top_k": 15,
+    "act_threshold": 5,
+    "beta": 5,
+    "apply_chat_template": false
+  },
+  "steer": {
+    "method": "SRPS",
+    "layer": 14,
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "top_k": 5
+  },
+  "save_vector": "Vector/SRPS/Gemma/ifeval",
+  "train_dataset": "ifeval",
+  "n_train": 1000,
+  "n_test": 100,
+  "test_dataset": "ifeval",
+  "output": "./Results/srps",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

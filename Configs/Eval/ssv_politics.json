@@ -1,0 +1,33 @@
+{
+  "name": "ssv_politics_twinviews",
+  "description": "SSV (SAE Semantic Vector) steering for political viewpoint classification based on SAE-SSV paper",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SSV",
+    "layer": 13,
+    "hook_point": "post",
+    "batch_size": 32,
+    "ssv_lambda_dist": 1.0,
+    "ssv_lambda_l1": 0.01,
+    "ssv_opt_lr": 0.01,
+    "ssv_opt_steps": 1,
+    "ssv_feature_refinement_k": 30
+  },
+  "steer": {
+    "method": "SSV",
+    "layer": 13,
+    "coeff": 5.0,
+    "use_important_dims": true
+  },
+  "save_vector": "Vector/SSV/politics_13",
+  "train_dataset": "politics_twinviews",
+  "n_train": 9000,
+  "n_test": 1000,
+  "test_dataset": "twinviews_test",
+  "output": "./Results/ssv_politics"
+}

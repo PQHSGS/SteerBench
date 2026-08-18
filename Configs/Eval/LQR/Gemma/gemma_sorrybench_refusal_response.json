@@ -1,0 +1,36 @@
+{
+  "name": "gemma_sorrybench_refusal_response",
+  "description": "LQR response-refusal eval on sorrybench (gemma-2-2b-it)",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "LQR",
+    "layer": [14],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "lqr_Q": 1.0,
+    "lqr_R": 1.0,
+    "lqr_Qf": 1.0,
+    "lqr_jac_chunk_size": 64,
+    "lqr_store_jacobians": false
+  },
+  "steer": {
+    "method": "LQR",
+    "layer": [14],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 1.0
+  },
+  "load_vector": "Vector/LQR/Gemma/refusal_response",
+  "test_dataset": "sorrybench",
+  "n_test": null,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "output": "./Results/lqr"
+}

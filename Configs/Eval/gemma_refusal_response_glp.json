@@ -1,0 +1,50 @@
+{
+  "name": "gemma_refusal_response",
+  "description": "CAA steering trained on refusal_response, evaluated on refusal_open",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 14,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 14,
+    "coeff": 2,
+    "apply_chat_template": true,
+    "hook_point": "pre"
+  },
+  "post_process": {
+    "enabled": true,
+    "source": "PQPQPQHUST/glp-gemma",
+    "checkpoint": "1B_weighted/400M",
+    "hook_point": "post",
+    "num_timesteps": 20,
+    "noise_rate": 0.5,
+    "layer": 14,
+    "use_classifier": false,
+    "classifier_source": "./GLP/classifier-refusal-response-gemma2-2b-it-l14-post/final",
+    "classifier_checkpoint": "final",
+    "scale": 1.0,
+    "negative": false,
+    "classifier_guidance_start_step": 0,
+    "classifier_guidance_end_step": null,
+    "classifier_grad_clip": 5.0,
+    "classifier_normalize_grad": true
+  },
+  "save_vector": "Vector/CAA/Gemma/refusal_response",
+  "train_dataset": "refusal_cast_responses",
+  "test_dataset": "refusal_open",
+  "n_test": 5,
+  "output": "./Results/caa",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42
+}

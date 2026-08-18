@@ -1,0 +1,49 @@
+{
+  "name": "gemma_bipo_refusal_response",
+  "description": "BIPO pipeline config for Gemma 2B on refusal_cast_responses.",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "BIPO",
+    "layer": [
+      14
+    ],
+    "batch_size": 8,
+    "position": "last",
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "bipo_lr": 0.0005,
+    "bipo_beta": 0.1,
+    "bipo_epochs": 50,
+    "bipo_vector_path": null
+  },
+  "steer": {
+    "method": "BIPO",
+    "layer": [
+      14
+    ],
+    "coeff": 3,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "norm": false,
+    "apply_all_layers": false
+  },
+  "post_process": {},
+  "train_dataset": "refusal_cast_responses",
+  "n_train": null,
+  "test_dataset": "refusal_open",
+  "n_test": null,
+  "output": "Results/BIPO",
+  "save_samples": false,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "save_vector": "Vector/BIPO/gemma_refusal_response"
+}

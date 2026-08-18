@@ -1,0 +1,32 @@
+{
+  "evil": {
+    "vector_cos": 0.07080078125,
+    "cos_h_base_mean": -0.04063004031777382,
+    "cos_h_base_std": 0.2063557951302518,
+    "cos_h_steered_mean": 0.03646224252879619,
+    "cos_h_steered_std": 0.1354228874970139,
+    "delta_cos": 0.07709228284657002,
+    "coeff": 10,
+    "n": 50
+  },
+  "toxic": {
+    "vector_cos": 0.41796875,
+    "cos_h_base_mean": -0.023587293401360513,
+    "cos_h_base_std": 0.20486775662211215,
+    "cos_h_steered_mean": 0.31431915014982226,
+    "cos_h_steered_std": 0.0831789158259635,
+    "delta_cos": 0.33790644355118277,
+    "coeff": 10,
+    "n": 50
+  },
+  "deception": {
+    "vector_cos": 0.031982421875,
+    "cos_h_base_mean": -0.045758085921406746,
+    "cos_h_base_std": 0.21695876220319868,
+    "cos_h_steered_mean": -0.04386219553649426,
+    "cos_h_steered_std": 0.21710607232048715,
+    "delta_cos": 0.001895890384912488,
+    "coeff": 10,
+    "n": 50
+  }
+}

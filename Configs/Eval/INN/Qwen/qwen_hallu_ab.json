@@ -1,0 +1,37 @@
+{
+  "name": "qwen_hallu_ab",
+  "description": "INN steering on hallu_ab",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "INNSTEER",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": -2,
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "INNSTEER",
+    "layer": [
+      18
+    ],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 1.0
+  },
+  "train_dataset": "hallucination",
+  "n_train": 1000,
+  "test_dataset": "hallucination_ab",
+  "n_test": 500,
+  "save_vector": "Vector/INN/Qwen/ai_risk_hallucination",
+  "output": "./Results/inn",
+  "seed": 42
+}

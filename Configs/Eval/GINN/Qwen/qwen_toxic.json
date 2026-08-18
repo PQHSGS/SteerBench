@@ -1,0 +1,44 @@
+{
+  "name": "qwen_toxic",
+  "description": "GINN steering on toxic task",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "GINN",
+    "layer": 18,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "ginn_n_coupling": 2,
+    "ginn_hidden_dim": 128,
+    "ginn_lr": 0.001,
+    "ginn_weight_decay": 0.0001,
+    "ginn_epochs": 200,
+    "ginn_batch_size": 64,
+    "ginn_lambda_sep": 2.0,
+    "ginn_grad_clip": 1.0
+  },
+  "steer": {
+    "method": "GINN",
+    "layer": 18,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "coeff": 5.0,
+    "steer_once": false
+  },
+  "train_dataset": "toxic_jigsaw",
+  "n_train": 500,
+  "test_dataset": "toxic",
+  "n_test": 100,
+  "output": "./Results/ginn",
+  "save_vector": "Vector/GINN/Qwen/toxic",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

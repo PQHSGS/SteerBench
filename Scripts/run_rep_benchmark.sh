@@ -1,0 +1,62 @@
+#!/bin/bash
+# export CUDA_VISIBLE_DEVICES=X
+set -euo pipefail
+
+# Make sure we use the correct Conda environment python
+export PATH="/data/caotue/anaconda3/envs/sae_circuit/bin:$PATH"
+# GPU assigned via env, default 
+COEFFS=(2 3)
+CONFIG_DIR="Configs/Eval/REFT"
+CONFIGS=(
+  # "gemma_toxic.json"
+  "gemma_evil.json"
+)
+
+run_coeff_sweep() {
+  local config_path="$1"
+  local idx=0
+
+  for coeff in "${COEFFS[@]}"; do
+    local tmp_config
+    tmp_config="$(mktemp /tmp/reft_cfg_XXXXXX.json)"
+
+    python - "$config_path" "$coeff" "$idx" > "$tmp_config" <<'PY'
+import json
+import pathlib
+import sys
+
+base_path = pathlib.Path(sys.argv[1])
+coeff = float(sys.argv[2])
+idx = int(sys.argv[3])
+
+with base_path.open("r", encoding="utf-8") as f:
+    cfg = json.load(f)
+
+cfg.setdefault("steer", {})["coeff"] = coeff
+cfg["include_baseline"] = False
+
+if "model" in cfg:
+    cfg["model"]["device"] = "cuda"
+
+if idx > 0 and "save_vector" in cfg:
+    cfg["load_vector"] = cfg.pop("save_vector")
+
+print(json.dumps(cfg, indent=2))
+PY
+
+    echo ""
+    echo "--- Running $(basename "$config_path") | coeff=$coeff ---"
+    python -m Steering.cli --task eval --config "$tmp_config"
+
+    rm -f "$tmp_config"
+    idx=$((idx + 1))
+    sleep 5
+  done
+}
+
+TARGET="${1:-}"
+for cfg in "${CONFIGS[@]}"; do
+  if [ -z "$TARGET" ] || [ "$cfg" = "$TARGET" ]; then
+    run_coeff_sweep "$CONFIG_DIR/$cfg"
+  fi
+done

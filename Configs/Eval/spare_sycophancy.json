@@ -1,0 +1,28 @@
+{
+  "name": "spare_sycophancy_csqa",
+  "description": "SPARE (SAE-based) steering for sycophancy reduction",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "sae_width": "65k",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SPARE",
+    "layer": 14,
+    "batch_size": 4,
+    "top_k_proportion": 0.01,
+    "train_dataset": "sycophancy",
+    "n_train": 100
+  },
+  "steer": {
+    "method": "SPARE",
+    "layer": 14,
+    "coeff": 1.0,
+    "target_behavior": "contextual",
+    "n_test": 200
+  },
+  "test_dataset": "csqa",
+  "output": "./Results/spare"
+}

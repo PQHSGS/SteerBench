@@ -1,0 +1,43 @@
+{
+  "name": "gemma_toxic",
+  "description": "LinNEAS steering trained on toxic_jigsaw, evaluated on toxic",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:3",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "LinNEAS",
+    "layer": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
+    "hook_point": "ln2",
+    "position": "last",
+    "batch_size": 32,
+    "linneas_steps": 2000,
+    "linneas_lr": 0.001,
+    "linneas_reg_l1": 0.01,
+    "linneas_reg_l2": 0.001,
+    "linneas_optimizer": "adam",
+    "linneas_proximal": "l1",
+    "linneas_init_identity": true
+  },
+  "steer": {
+    "method": "LinNEAS",
+    "layer": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
+    "hook_point": "ln2",
+    "position": "last",
+    "coeff": 1.0,
+    "batch_size": 4,
+    "apply_all_layers": true
+  },
+  "train_dataset": "toxic_jigsaw",
+  "n_train": 500,
+  "test_dataset": "toxic",
+  "n_test": 100,
+  "load_vector": "Vector/LinNEAS/Gemma/toxic",
+  "output": "./Results/linneas",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42
+}

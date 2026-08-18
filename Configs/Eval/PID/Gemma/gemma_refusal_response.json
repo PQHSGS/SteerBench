@@ -1,0 +1,39 @@
+{
+  "name": "gemma_refusal_response",
+  "description": "PID steering on refusal_response",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "PID",
+    "layer": [10, 12, 14, 16],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "pid_kp": 1.0,
+    "pid_ki": 0.005,
+    "pid_kd": 0.02,
+    "pid_normalize_error": false,
+    "position": "last"
+  },
+  "steer": {
+    "method": "PID",
+    "layer": [10, 12, 14, 16],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 2.0,
+    "steer_once": false
+  },
+  "train_dataset": "refusal_cast_responses",
+  "test_dataset": "refusal_open",
+  "n_train": 500,
+  "n_test": 100,
+  "save_vector": "Vector/PID/Gemma/refusal_response",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/pid",
+  "seed": 42
+}

@@ -1,0 +1,42 @@
+{
+  "name": "gemma_ifeval",
+  "description": "CURVE steering for ifeval",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "CURVEBALL",
+    "layer": [
+      14
+    ],
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "curveball_dim": 8,
+    "curveball_degree": 2,
+    "curveball_coef0": 1.0
+  },
+  "steer": {
+    "method": "CURVEBALL",
+    "layer": [
+      14
+    ],
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 1.0,
+    "batch_size": 4
+  },
+  "train_dataset": "ifeval",
+  "test_dataset": "ifeval",
+  "n_train": null,
+  "n_test": 100,
+  "output": "./Results/curve",
+  "compute_perplexity": true,
+  "save_vector": "Vector/CURVE/Gemma/ifeval",
+  "include_baseline": false,
+  "seed": 42
+}

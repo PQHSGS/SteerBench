@@ -1,0 +1,38 @@
+{
+  "name": "gemma_evil_prefix_neg",
+  "description": "CHARS evil prefix_neg prefix split",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "CHARS",
+    "layer": 14,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "mask",
+    "apply_chat_template": true,
+    "inverse": false
+  },
+  "steer": {
+    "method": "CHARS",
+    "layer": 14,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 5,
+    "steer_once": false
+  },
+  "train_dataset": "evil_prefix_neg",
+  "n_train": 226,
+  "test_dataset": "evil",
+  "n_test": 100,
+  "output": "./Results/chars",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42,
+  "save_vector": "Vector/PREFIX_SPLIT/CHARS/evil_prefix_neg"
+}

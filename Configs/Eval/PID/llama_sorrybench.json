@@ -1,0 +1,34 @@
+{
+  "name": "llama_sorrybench",
+  "description": "PID layerwise dense steering vector for LLM residual activations, evaluated on sorrybench.",
+  "model": {
+    "name": "meta-llama/Llama-3.2-1B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "PID",
+    "layer": [7],
+    "hook_point": "mid",
+    "position": "last",
+    "batch_size": 4,
+    "pid_kp": 0.9,
+    "pid_ki": 0.01,
+    "pid_kd": 0.01
+  },
+  "steer": {
+    "method": "PID",
+    "layer": [7],
+    "hook_point": "mid",
+    "position": "last",
+    "coeff": 1.0,
+    "batch_size": 4
+  },
+  "train_dataset": "refusal",
+  "test_dataset": "sorrybench",
+  "n_train": null,
+  "n_test": null,
+  "save_vector": "Results/NewMethods/pid_sorrybench_vector"
+}

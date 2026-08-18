@@ -1,0 +1,40 @@
+{
+  "name": "qwen_toxic",
+  "description": "SAECOT toxic steering evaluated on toxic",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "inverse": false,
+    "method": "SAE-COT",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "apply_chat_template": true,
+    "saecot_value_mode": "target_mean",
+    "top_k": 15
+  },
+  "steer": {
+    "method": "SAE-COT",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "top_k": 5
+  },
+  "save_vector": "Vector/SAECOT/Qwen/toxic",
+  "train_dataset": "toxic_jigsaw",
+  "n_test": 100,
+  "n_train": 500,
+  "test_dataset": "toxic",
+  "output": "./Results/saecot",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

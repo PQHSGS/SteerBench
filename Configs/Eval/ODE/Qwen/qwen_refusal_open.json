@@ -1,0 +1,54 @@
+{
+  "name": "qwen_refusal_open",
+  "description": "ODE steering evaluated on refusal_open with refusal vector",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "ODE",
+    "layer": [
+      18
+    ],
+    "batch_size": 16,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "change_pad_token": false,
+    "classifier_type": "normed_poly",
+    "n_components": 4000,
+    "degree": 2,
+    "gamma": 0.1,
+    "coef0": 1.0,
+    "lin_clf_type": "lr",
+    "solver": "euler",
+    "steps": 20
+  },
+  "steer": {
+    "method": "ODE",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "apply_all_layers": false,
+    "solver": "euler",
+    "steps": 20,
+    "one_step": false
+  },
+  "post_process": {},
+  "test_dataset": "refusal_open",
+  "n_test": null,
+  "output": "Results/ODE",
+  "save_samples": false,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "load_vector": "Vector/ODE/Qwen/ai_risk_refusal"
+}

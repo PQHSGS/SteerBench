@@ -1,0 +1,39 @@
+{
+  "name": "qwen_gms8k",
+  "description": "SAE-COT steering trained on srps_roleplay_gms8k, evaluated on gms8k",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 300
+  },
+  "extractor": {
+    "method": "SAE-COT",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "mask",
+    "apply_chat_template": true,
+    "top_k": 15,
+    "saecot_value_mode": "target_mean"
+  },
+  "steer": {
+    "method": "SAE-COT",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "top_k": 5
+  },
+  "save_vector": "Vector/SAECOT/Qwen/gms8k",
+  "train_dataset": "srps_roleplay_gms8k",
+  "n_train": 1000,
+  "n_test": 100,
+  "test_dataset": "gms8k",
+  "output": "./Results/saecot",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

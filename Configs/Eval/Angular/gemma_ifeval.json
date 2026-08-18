@@ -1,0 +1,37 @@
+{
+  "name": "gemma_ifeval",
+  "description": "ANGULAR ifeval steering evaluated on ifeval",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ANGULAR",
+    "layer": 2,
+    "batch_size": 8,
+    "position": -1,
+    "strategy": "max_sim",
+    "hook_point": [
+      "mid",
+      "post"
+    ]
+  },
+  "steer": {
+    "method": "ANGULAR",
+    "layer": 22,
+    "adaptive": true,
+    "target_angle": 180,
+    "coeff": 1,
+    "apply_all_layers": true,
+    "n_test": null
+  },
+  "test_dataset": "ifeval",
+  "output": "./Results/angular",
+  "train_dataset": "ifeval",
+  "n_train": 512,
+  "n_test": null,
+  "include_baseline": false,
+  "compute_perplexity": true
+}

@@ -1,0 +1,7 @@
+model_task: "text_generation"
+dataset: "json-subsets"
+src_subsets: ["mundane"]
+dst_subsets: ["fantasy"]
+default_evaluation: ['text_generation']
+dataset_params:
+  json_path: "data/fantasy.json"

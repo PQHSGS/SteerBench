@@ -1,0 +1,64 @@
+{
+  "name": "gemma_refusal_response",
+  "description": "FlowSteer pipeline config for Gemma 2B on refusal_cast_responses \u2014 mirrors TruthFlow settings.",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "FLOW",
+    "layer": [
+      14
+    ],
+    "batch_size": 16,
+    "position": "last",
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "change_pad_token": false,
+    "flow_hidden_dim": 512,
+    "flow_layers": 4,
+    "flow_lr": 0.001,
+    "flow_epochs": 200,
+    "flow_batch_size": 64,
+    "flow_seed": 42,
+    "flow_subspace_dim": 16,
+    "flow_subspace_mode": "diff",
+    "flow_norm_mode": "gaussian",
+    "flow_loss_mode": "mse",
+    "flow_weighted": true,
+    "flow_max_weight": 10,
+    "flow_train_space": "full",
+    "flow_target_type": "concept"
+  },
+  "steer": {
+    "method": "FLOW",
+    "layer": [
+      14
+    ],
+    "coeff": 1,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "norm": false,
+    "apply_all_layers": false,
+    "flow_steps": 30,
+    "flow_guidance_strength": 0.0,
+    "flow_guidance_mode": "off",
+    "flow_denoise_mode": "none"
+  },
+  "post_process": {},
+  "train_dataset": "refusal_caa",
+  "n_train": null,
+  "test_dataset": "refusal_open",
+  "n_test": null,
+  "output": "Results/FlowSteer",
+  "save_samples": false,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "save_vector": "Vector/Flow/ai_risk_refusal_weighted/testing"
+}

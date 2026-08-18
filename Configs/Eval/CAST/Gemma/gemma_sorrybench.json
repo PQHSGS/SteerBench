@@ -1,0 +1,41 @@
+{
+  "name": "gemma_sorrybench",
+  "description": "CAST steering for sorrybench",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_pca": false
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "apply_to_all_tokens": true
+  },
+  "load_vector": "Vector/CAST/Gemma/ai_risk_refusal",
+  "n_test": null,
+  "test_dataset": "sorrybench",
+  "output": "./Results/cast",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "train_dataset": "sorrybench_refusal_response",
+  "n_train": 1000
+}

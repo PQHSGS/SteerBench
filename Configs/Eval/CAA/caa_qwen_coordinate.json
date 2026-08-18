@@ -1,0 +1,32 @@
+{
+  "name": "caa_coordinate_ab",
+  "description": "CAA steering trained on coordinate, evaluated on coordinate_ab",
+  "model": {
+    "name": "Qwen/Qwen1.5-1.8B-Chat",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 13,
+    "batch_size": 4,
+    "position": -2,
+    "hook_point": "post",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 13,
+    "coeff": 10,
+    "apply_chat_template": true,
+    "hook_point": "post",
+    "n_test": 500
+  },
+  "train_dataset": "ai_risk_coordinate",
+  "n_train": 360,
+  "save_vector": "Vector/CAA/ai_risk_coordinate_qwen",
+  "test_dataset": "coordinate_ab",
+  "output": "./Results/caa",
+  "seed": 42
+}

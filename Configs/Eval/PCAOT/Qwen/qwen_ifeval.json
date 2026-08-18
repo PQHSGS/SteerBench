@@ -1,0 +1,40 @@
+{
+  "name": "qwen_ifeval",
+  "description": "PCAOT steering on ifeval",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ACT",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "act_mode": "pca_ot"
+  },
+  "steer": {
+    "method": "ACT",
+    "layer": [
+      18
+    ],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 1.0,
+    "steer_once": false
+  },
+  "train_dataset": "ifeval",
+  "test_dataset": "ifeval",
+  "save_vector": "Vector/PCAOT/Qwen/ifeval",
+  "n_test": 100,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/pcaot",
+  "seed": 42
+}

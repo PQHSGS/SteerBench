@@ -1,0 +1,37 @@
+{
+  "name": "llama_gms8k",
+  "description": "SAEIO steering trained on hallucination, evaluated on gms8k",
+  "model": {
+    "name": "meta-llama/Llama-3.1-8B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 300
+  },
+  "extractor": {
+    "method": "SAEIO",
+    "layer": [
+      17
+    ],
+    "batch_size": 4,
+    "top_k": 20,
+    "apply_chat_template": true,
+    "act_threshold": 20,
+    "amp_factor": 10,
+    "position": "last"
+  },
+  "steer": {
+    "method": "SAEIO",
+    "layer": [
+      17
+    ],
+    "coeff": 1
+  },
+  "save_vector": "Vector/SAEIO/Llama/gms8k",
+  "train_dataset": "gms8k_train",
+  "n_train": 1000,
+  "test_dataset": "gms8k",
+  "n_test": null,
+  "output": "./Results/saeio",
+  "include_baseline": false,
+  "seed": 42
+}

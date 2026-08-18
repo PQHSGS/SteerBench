@@ -1,0 +1,42 @@
+{
+  "name": "gemma_sorrybench",
+  "description": "LoRA finetune config for refusal_cast_responses_flas, evaluated on refusal_open",
+  "model_name": "google/gemma-2-2b-it",
+  "train_dataset": "refusal_caa",
+  "n_train": 30,
+  "test_dataset": "sorrybench",
+  "n_test": null,
+  "apply_chat_template": true,
+  "method_name": "lora",
+  "backend": "peft",
+  "output": "./Results/finetune",
+  "compute_perplexity": true,
+  "eval_max_new_tokens": 128,
+  "seed": 42,
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "num_epochs": 1,
+  "train_batch_size": 2,
+  "eval_batch_size": 4,
+  "gradient_accumulation_steps": 1,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0,
+  "warmup_ratio": 0.03,
+  "max_length": 2048,
+  "grad_clip": 1.0,
+  "save_vector": "./Vector/FINETUNE/gemma_sorrybench",
+  "method": {
+    "name": "lora",
+    "backend": "peft",
+    "r": 8,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "bias": "none",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ]
+  }
+}

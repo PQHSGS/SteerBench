@@ -1,0 +1,10 @@
+{
+  "method": "all-layer r\u0302-subtract",
+  "train_dataset": "toxic",
+  "test_dataset": "toxic",
+  "layer": 22,
+  "coeff": 5.0,
+  "accuracy": 0.0,
+  "perplexity": 2.2265625,
+  "repetition_rate": 0.8929409886926802
+}

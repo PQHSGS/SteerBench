@@ -1,0 +1,38 @@
+{
+  "name": "qwen_sorrybench",
+  "description": "PCAOT steering on sorrybench",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ACT",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "act_mode": "pca_ot"
+  },
+  "steer": {
+    "method": "ACT",
+    "layer": [
+      18
+    ],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 1.0,
+    "batch_size": 4
+  },
+  "load_vector": "Vector/PCAOT/Qwen/ai_risk_refusal",
+  "test_dataset": "sorrybench",
+  "n_test": null,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/pcaot",
+  "seed": 42
+}

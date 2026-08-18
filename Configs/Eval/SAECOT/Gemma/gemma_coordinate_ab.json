@@ -1,0 +1,37 @@
+{
+  "name": "gemma_coordinate_ab",
+  "description": "SAE-COT steering trained on ai_risk_coordinate, evaluated on coordinate_ab",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SAE-COT",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": -2,
+    "apply_chat_template": true,
+    "saecot_value_mode": "target_mean"
+  },
+  "steer": {
+    "method": "SAE-COT",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "top_k": 5
+  },
+  "save_vector": "Vector/SAECOT/Gemma/ai_risk_coordinate",
+  "train_dataset": "ai_risk_coordinate",
+  "n_train": 1000,
+  "n_test": null,
+  "test_dataset": "coordinate_ab",
+  "output": "./Results/saecot",
+  "include_baseline": false,
+  "seed": 42
+}

@@ -1,0 +1,35 @@
+{
+  "name": "gemma_ifeval",
+  "description": "INN steering on ifeval",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "INNSTEER",
+    "layer": [14],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "INNSTEER",
+    "layer": [14],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 1.0,
+    "steer_once": false
+  },
+  "train_dataset": "ifeval",
+  "test_dataset": "ifeval",
+  "save_vector": "Vector/INN/Gemma/ifeval",
+  "n_test": 100,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/inn",
+  "seed": 42
+}

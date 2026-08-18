@@ -1,0 +1,41 @@
+{
+  "name": "reps_evil_smoke",
+  "description": "Quick smoke test: load pre-trained REPS evil vector, eval on 5 samples",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "max_new_tokens": 512,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "REPS",
+    "layer": [14]
+  },
+  "steer": {
+    "method": "REPS",
+    "layer": [14],
+    "coeff": {"14": 2},
+    "apply_chat_template": true,
+    "hook_point": ["pre"],
+    "position": "last",
+    "batch_size": 4,
+    "norm": false,
+    "apply_all_layers": false,
+    "steer_once": true,
+    "reft_type": "Loreft",
+    "add_bias": true,
+    "substraction_type": "normal",
+    "ot_steer": false
+  },
+  "train_dataset": "evil",
+  "test_dataset": "evil",
+  "n_test": 5,
+  "output": "./Results/reps_smoke",
+  "include_baseline": true,
+  "compute_perplexity": true,
+  "seed": 42,
+  "post_process": {},
+  "save_samples": false,
+  "load_vector": "Vector/REPS/Gemma/evil"
+}

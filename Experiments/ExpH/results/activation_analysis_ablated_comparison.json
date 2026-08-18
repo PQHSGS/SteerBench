@@ -1,0 +1,634 @@
+{
+  "14": {
+    "evil": {
+      "coeff": 5,
+      "steer_layer": 14,
+      "layers": {
+        "14": {
+          "vector_cos_orig": 0.12158203125,
+          "vector_cos_ablate": 0.0010528564453125,
+          "cos_h_base_mean": -0.057293511759489775,
+          "cos_h_steered_orig_mean": 0.015127326822839677,
+          "cos_h_steered_orig_std": 0.043363571741687916,
+          "delta_cos_orig": 0.07242083858232945,
+          "cos_h_steered_ablate_mean": -0.047973442152142526,
+          "cos_h_steered_ablate_std": 0.045624737876247934,
+          "delta_cos_ablate": 0.00932006960734725
+        },
+        "18": {
+          "vector_cos_orig": 0.115234375,
+          "vector_cos_ablate": 0.03955078125,
+          "cos_h_base_mean": -0.07087808161973953,
+          "cos_h_steered_orig_mean": -0.030298820375464858,
+          "cos_h_steered_orig_std": 0.02835670628117833,
+          "delta_cos_orig": 0.040579261244274675,
+          "cos_h_steered_ablate_mean": -0.05925666639581323,
+          "cos_h_steered_ablate_std": 0.029941555396347262,
+          "delta_cos_ablate": 0.011621415223926304
+        },
+        "22": {
+          "vector_cos_orig": 0.09130859375,
+          "vector_cos_ablate": 0.03662109375,
+          "cos_h_base_mean": -0.10954746283590794,
+          "cos_h_steered_orig_mean": -0.09508536346256732,
+          "cos_h_steered_orig_std": 0.022387001760060435,
+          "delta_cos_orig": 0.014462099373340614,
+          "cos_h_steered_ablate_mean": -0.11104263760149478,
+          "cos_h_steered_ablate_std": 0.02467465608184229,
+          "delta_cos_ablate": -0.0014951747655868458
+        },
+        "25": {
+          "vector_cos_orig": 0.072265625,
+          "vector_cos_ablate": 0.037841796875,
+          "cos_h_base_mean": -0.16958731263875962,
+          "cos_h_steered_orig_mean": -0.15997188940644264,
+          "cos_h_steered_orig_std": 0.025920131475571106,
+          "delta_cos_orig": 0.009615423232316983,
+          "cos_h_steered_ablate_mean": -0.1714291428029537,
+          "cos_h_steered_ablate_std": 0.02591452779943574,
+          "delta_cos_ablate": -0.0018418301641940915
+        }
+      },
+      "vector_orig_path": "Vector/CAA/Gemma/evil",
+      "vector_ablate_path": "Vector/CAA/Gemma_ablated/evil"
+    },
+    "toxic": {
+      "coeff": 5,
+      "steer_layer": 14,
+      "layers": {
+        "14": {
+          "vector_cos_orig": 0.154296875,
+          "vector_cos_ablate": 0.0016021728515625,
+          "cos_h_base_mean": -0.04538010048680007,
+          "cos_h_steered_orig_mean": 0.05632929818530101,
+          "cos_h_steered_orig_std": 0.03285288161999921,
+          "delta_cos_orig": 0.10170939867210108,
+          "cos_h_steered_ablate_mean": -0.029881543416995556,
+          "cos_h_steered_ablate_std": 0.0352039650910944,
+          "delta_cos_ablate": 0.015498557069804516
+        },
+        "18": {
+          "vector_cos_orig": 0.057373046875,
+          "vector_cos_ablate": -0.04052734375,
+          "cos_h_base_mean": -0.06291133738122881,
+          "cos_h_steered_orig_mean": -0.02209794969880022,
+          "cos_h_steered_orig_std": 0.026165501661285877,
+          "delta_cos_orig": 0.04081338768242859,
+          "cos_h_steered_ablate_mean": -0.062293010484427216,
+          "cos_h_steered_ablate_std": 0.029863976929746336,
+          "delta_cos_ablate": 0.0006183268968015937
+        },
+        "22": {
+          "vector_cos_orig": 0.00732421875,
+          "vector_cos_ablate": -0.0634765625,
+          "cos_h_base_mean": -0.10937772877514362,
+          "cos_h_steered_orig_mean": -0.10534594900906086,
+          "cos_h_steered_orig_std": 0.024321633790528444,
+          "delta_cos_orig": 0.004031779766082766,
+          "cos_h_steered_ablate_mean": -0.12427966758608817,
+          "cos_h_steered_ablate_std": 0.026959295960716684,
+          "delta_cos_ablate": -0.014901938810944551
+        },
+        "25": {
+          "vector_cos_orig": 0.09619140625,
+          "vector_cos_ablate": 0.0517578125,
+          "cos_h_base_mean": -0.17405395194888115,
+          "cos_h_steered_orig_mean": -0.15661233693361282,
+          "cos_h_steered_orig_std": 0.022515600047097233,
+          "delta_cos_orig": 0.017441615015268336,
+          "cos_h_steered_ablate_mean": -0.17128499373793601,
+          "cos_h_steered_ablate_std": 0.0234064523948677,
+          "delta_cos_ablate": 0.0027689582109451383
+        }
+      },
+      "vector_orig_path": "Vector/CAA/Gemma/toxic",
+      "vector_ablate_path": "Vector/CAA/Gemma_ablated/toxic"
+    },
+    "deception": {
+      "coeff": 5,
+      "steer_layer": 14,
+      "layers": {
+        "14": {
+          "vector_cos_orig": 0.05224609375,
+          "vector_cos_ablate": 9.489059448242188e-05,
+          "cos_h_base_mean": -0.05186212336178869,
+          "cos_h_steered_orig_mean": -0.012695829105468874,
+          "cos_h_steered_orig_std": 0.03136266298373978,
+          "delta_cos_orig": 0.03916629425631982,
+          "cos_h_steered_ablate_mean": -0.04278504006564617,
+          "cos_h_steered_ablate_std": 0.03233623131279304,
+          "delta_cos_ablate": 0.00907708329614252
+        },
+        "18": {
+          "vector_cos_orig": 0.05322265625,
+          "vector_cos_ablate": 0.02001953125,
+          "cos_h_base_mean": -0.07024682734161615,
+          "cos_h_steered_orig_mean": -0.05085657197982073,
+          "cos_h_steered_orig_std": 0.020792431155428084,
+          "delta_cos_orig": 0.019390255361795422,
+          "cos_h_steered_ablate_mean": -0.06362096497789026,
+          "cos_h_steered_ablate_std": 0.020973433034109906,
+          "delta_cos_ablate": 0.006625862363725893
+        },
+        "22": {
+          "vector_cos_orig": 0.05224609375,
+          "vector_cos_ablate": 0.0284423828125,
+          "cos_h_base_mean": -0.11321972390636802,
+          "cos_h_steered_orig_mean": -0.08214177023619414,
+          "cos_h_steered_orig_std": 0.018637494201567347,
+          "delta_cos_orig": 0.03107795367017388,
+          "cos_h_steered_ablate_mean": -0.08917613752186299,
+          "cos_h_steered_ablate_std": 0.018572509383309274,
+          "delta_cos_ablate": 0.02404358638450503
+        },
+        "25": {
+          "vector_cos_orig": 0.0281982421875,
+          "vector_cos_ablate": 0.01312255859375,
+          "cos_h_base_mean": -0.1692088598012924,
+          "cos_h_steered_orig_mean": -0.13768547728657723,
+          "cos_h_steered_orig_std": 0.03350398942559356,
+          "delta_cos_orig": 0.031523382514715176,
+          "cos_h_steered_ablate_mean": -0.14261193916201592,
+          "cos_h_steered_ablate_std": 0.03313943625208323,
+          "delta_cos_ablate": 0.02659692063927649
+        }
+      },
+      "vector_orig_path": "Vector/CAA/Gemma/deception",
+      "vector_ablate_path": "Vector/CAA/Gemma_ablated/deception"
+    }
+  },
+  "18": {
+    "evil": {
+      "coeff": 5,
+      "steer_layer": 18,
+      "layers": {
+        "14": {
+          "vector_cos_orig": 0.197265625,
+          "vector_cos_ablate": 0.0712890625,
+          "cos_h_base_mean": -0.057293511759489775,
+          "cos_h_steered_orig_mean": -0.057293511759489775,
+          "cos_h_steered_orig_std": 0.05278898398057798,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.057293511759489775,
+          "cos_h_steered_ablate_std": 0.05278898398057798,
+          "delta_cos_ablate": 0.0
+        },
+        "18": {
+          "vector_cos_orig": 0.2001953125,
+          "vector_cos_ablate": -0.00086212158203125,
+          "cos_h_base_mean": -0.07087808161973953,
+          "cos_h_steered_orig_mean": 0.0865484119951725,
+          "cos_h_steered_orig_std": 0.025424959011975334,
+          "delta_cos_orig": 0.15742649361491204,
+          "cos_h_steered_ablate_mean": -0.05445601344108582,
+          "cos_h_steered_ablate_std": 0.023583540721408495,
+          "delta_cos_ablate": 0.016422068178653715
+        },
+        "22": {
+          "vector_cos_orig": 0.16796875,
+          "vector_cos_ablate": 0.025390625,
+          "cos_h_base_mean": -0.10954746283590794,
+          "cos_h_steered_orig_mean": -0.018455889695324003,
+          "cos_h_steered_orig_std": 0.02350862998499557,
+          "delta_cos_orig": 0.09109157314058394,
+          "cos_h_steered_ablate_mean": -0.09882972202263772,
+          "cos_h_steered_ablate_std": 0.024956171346390155,
+          "delta_cos_ablate": 0.010717740813270218
+        },
+        "25": {
+          "vector_cos_orig": 0.10986328125,
+          "vector_cos_ablate": 0.01171875,
+          "cos_h_base_mean": -0.16958731263875962,
+          "cos_h_steered_orig_mean": -0.15974533662199975,
+          "cos_h_steered_orig_std": 0.02943270729179064,
+          "delta_cos_orig": 0.009841976016759874,
+          "cos_h_steered_ablate_mean": -0.21328795939683914,
+          "cos_h_steered_ablate_std": 0.029901999711620834,
+          "delta_cos_ablate": -0.043700646758079525
+        }
+      },
+      "vector_orig_path": "Vector/CAA/Gemma/evil",
+      "vector_ablate_path": "Vector/CAA/Gemma_ablated/evil"
+    },
+    "toxic": {
+      "coeff": 5,
+      "steer_layer": 18,
+      "layers": {
+        "14": {
+          "vector_cos_orig": 0.1962890625,
+          "vector_cos_ablate": 0.0859375,
+          "cos_h_base_mean": -0.04538010048680007,
+          "cos_h_steered_orig_mean": -0.04538010048680007,
+          "cos_h_steered_orig_std": 0.051629511292398254,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.04538010048680007,
+          "cos_h_steered_ablate_std": 0.051629511292398254,
+          "delta_cos_ablate": 0.0
+        },
+        "18": {
+          "vector_cos_orig": 0.177734375,
+          "vector_cos_ablate": 5.0067901611328125e-05,
+          "cos_h_base_mean": -0.06291133738122881,
+          "cos_h_steered_orig_mean": 0.047842678241431714,
+          "cos_h_steered_orig_std": 0.028588093152540024,
+          "delta_cos_orig": 0.11075401562266052,
+          "cos_h_steered_ablate_mean": -0.04991485602222383,
+          "cos_h_steered_ablate_std": 0.024040267526063697,
+          "delta_cos_ablate": 0.012996481359004983
+        },
+        "22": {
+          "vector_cos_orig": 0.12353515625,
+          "vector_cos_ablate": -0.0024261474609375,
+          "cos_h_base_mean": -0.10937772877514362,
+          "cos_h_steered_orig_mean": -0.05362593351630494,
+          "cos_h_steered_orig_std": 0.02384793108362953,
+          "delta_cos_orig": 0.055751795258838686,
+          "cos_h_steered_ablate_mean": -0.10080722257494927,
+          "cos_h_steered_ablate_std": 0.02596779938996154,
+          "delta_cos_ablate": 0.008570506200194353
+        },
+        "25": {
+          "vector_cos_orig": 0.107421875,
+          "vector_cos_ablate": 0.0206298828125,
+          "cos_h_base_mean": -0.17405395194888115,
+          "cos_h_steered_orig_mean": -0.15272730961441994,
+          "cos_h_steered_orig_std": 0.03463630746594309,
+          "delta_cos_orig": 0.021326642334461215,
+          "cos_h_steered_ablate_mean": -0.18189813792705536,
+          "cos_h_steered_ablate_std": 0.03663305111606925,
+          "delta_cos_ablate": -0.007844185978174212
+        }
+      },
+      "vector_orig_path": "Vector/CAA/Gemma/toxic",
+      "vector_ablate_path": "Vector/CAA/Gemma_ablated/toxic"
+    },
+    "deception": {
+      "coeff": 5,
+      "steer_layer": 18,
+      "layers": {
+        "14": {
+          "vector_cos_orig": 0.01708984375,
+          "vector_cos_ablate": 0.0137939453125,
+          "cos_h_base_mean": -0.05186212336178869,
+          "cos_h_steered_orig_mean": -0.05186212336178869,
+          "cos_h_steered_orig_std": 0.039070560908095506,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.05186212336178869,
+          "cos_h_steered_ablate_std": 0.039070560908095506,
+          "delta_cos_ablate": 0.0
+        },
+        "18": {
+          "vector_cos_orig": 0.0052490234375,
+          "vector_cos_ablate": 1.0788440704345703e-05,
+          "cos_h_base_mean": -0.07024682734161615,
+          "cos_h_steered_orig_mean": -0.06033437687903643,
+          "cos_h_steered_orig_std": 0.021540616718225693,
+          "delta_cos_orig": 0.00991245046257972,
+          "cos_h_steered_ablate_mean": -0.06265978747978806,
+          "cos_h_steered_ablate_std": 0.021465266649250817,
+          "delta_cos_ablate": 0.007587039861828085
+        },
+        "22": {
+          "vector_cos_orig": -0.006744384765625,
+          "vector_cos_ablate": -0.01055908203125,
+          "cos_h_base_mean": -0.11321972390636802,
+          "cos_h_steered_orig_mean": -0.08186059631407261,
+          "cos_h_steered_orig_std": 0.01896602038134213,
+          "delta_cos_orig": 0.03135912759229541,
+          "cos_h_steered_ablate_mean": -0.08308705907315016,
+          "cos_h_steered_ablate_std": 0.019021537863864714,
+          "delta_cos_ablate": 0.03013266483321786
+        },
+        "25": {
+          "vector_cos_orig": 0.03369140625,
+          "vector_cos_ablate": 0.031005859375,
+          "cos_h_base_mean": -0.1692088598012924,
+          "cos_h_steered_orig_mean": -0.13883767008781434,
+          "cos_h_steered_orig_std": 0.03004625410819992,
+          "delta_cos_orig": 0.030371189713478075,
+          "cos_h_steered_ablate_mean": -0.1397121587395668,
+          "cos_h_steered_ablate_std": 0.029974219557421508,
+          "delta_cos_ablate": 0.02949670106172561
+        }
+      },
+      "vector_orig_path": "Vector/CAA/Gemma/deception",
+      "vector_ablate_path": "Vector/CAA/Gemma_ablated/deception"
+    }
+  },
+  "22": {
+    "evil": {
+      "coeff": 5,
+      "steer_layer": 22,
+      "layers": {
+        "14": {
+          "vector_cos_orig": 0.16796875,
+          "vector_cos_ablate": 0.10693359375,
+          "cos_h_base_mean": -0.057293511759489775,
+          "cos_h_steered_orig_mean": -0.057293511759489775,
+          "cos_h_steered_orig_std": 0.05278898398057798,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.057293511759489775,
+          "cos_h_steered_ablate_std": 0.05278898398057798,
+          "delta_cos_ablate": 0.0
+        },
+        "18": {
+          "vector_cos_orig": 0.1455078125,
+          "vector_cos_ablate": 0.048828125,
+          "cos_h_base_mean": -0.07087808161973953,
+          "cos_h_steered_orig_mean": -0.07087808161973953,
+          "cos_h_steered_orig_std": 0.03103500773873851,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.07087808161973953,
+          "cos_h_steered_ablate_std": 0.03103500773873851,
+          "delta_cos_ablate": 0.0
+        },
+        "22": {
+          "vector_cos_orig": 0.13671875,
+          "vector_cos_ablate": -0.000156402587890625,
+          "cos_h_base_mean": -0.10954746283590794,
+          "cos_h_steered_orig_mean": -0.002364568202756345,
+          "cos_h_steered_orig_std": 0.021199830301643255,
+          "delta_cos_orig": 0.10718289463315159,
+          "cos_h_steered_ablate_mean": -0.08873624570667743,
+          "cos_h_steered_ablate_std": 0.018099424307526816,
+          "delta_cos_ablate": 0.020811217129230508
+        },
+        "25": {
+          "vector_cos_orig": 0.09423828125,
+          "vector_cos_ablate": -0.009033203125,
+          "cos_h_base_mean": -0.16958731263875962,
+          "cos_h_steered_orig_mean": -0.14602510035037994,
+          "cos_h_steered_orig_std": 0.01946976912602728,
+          "delta_cos_orig": 0.02356221228837968,
+          "cos_h_steered_ablate_mean": -0.2059938821196556,
+          "cos_h_steered_ablate_std": 0.020098409669460575,
+          "delta_cos_ablate": -0.03640656948089599
+        }
+      },
+      "vector_orig_path": "Vector/CAA/Gemma/evil",
+      "vector_ablate_path": "Vector/CAA/Gemma_ablated/evil"
+    },
+    "toxic": {
+      "coeff": 5,
+      "steer_layer": 22,
+      "layers": {
+        "14": {
+          "vector_cos_orig": 0.1806640625,
+          "vector_cos_ablate": 0.10400390625,
+          "cos_h_base_mean": -0.04538010048680007,
+          "cos_h_steered_orig_mean": -0.04538010048680007,
+          "cos_h_steered_orig_std": 0.051629511292398254,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.04538010048680007,
+          "cos_h_steered_ablate_std": 0.051629511292398254,
+          "delta_cos_ablate": 0.0
+        },
+        "18": {
+          "vector_cos_orig": 0.1748046875,
+          "vector_cos_ablate": 0.05419921875,
+          "cos_h_base_mean": -0.06291133738122881,
+          "cos_h_steered_orig_mean": -0.06291133738122881,
+          "cos_h_steered_orig_std": 0.029873510959242598,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.06291133738122881,
+          "cos_h_steered_ablate_std": 0.029873510959242598,
+          "delta_cos_ablate": 0.0
+        },
+        "22": {
+          "vector_cos_orig": 0.1708984375,
+          "vector_cos_ablate": -0.00010538101196289062,
+          "cos_h_base_mean": -0.10937772877514362,
+          "cos_h_steered_orig_mean": -0.01404158185236156,
+          "cos_h_steered_orig_std": 0.026792861590746234,
+          "delta_cos_orig": 0.09533614692278206,
+          "cos_h_steered_ablate_mean": -0.09552140295505523,
+          "cos_h_steered_ablate_std": 0.022984877038107532,
+          "delta_cos_ablate": 0.013856325820088389
+        },
+        "25": {
+          "vector_cos_orig": 0.16796875,
+          "vector_cos_ablate": 0.039306640625,
+          "cos_h_base_mean": -0.17405395194888115,
+          "cos_h_steered_orig_mean": -0.0908119280077517,
+          "cos_h_steered_orig_std": 0.02925094912360207,
+          "delta_cos_orig": 0.08324202394112945,
+          "cos_h_steered_ablate_mean": -0.14146924667060376,
+          "cos_h_steered_ablate_std": 0.0325607494229297,
+          "delta_cos_ablate": 0.03258470527827739
+        }
+      },
+      "vector_orig_path": "Vector/CAA/Gemma/toxic",
+      "vector_ablate_path": "Vector/CAA/Gemma_ablated/toxic"
+    },
+    "deception": {
+      "coeff": 5,
+      "steer_layer": 22,
+      "layers": {
+        "14": {
+          "vector_cos_orig": 0.037841796875,
+          "vector_cos_ablate": 0.0167236328125,
+          "cos_h_base_mean": -0.05186212336178869,
+          "cos_h_steered_orig_mean": -0.05186212336178869,
+          "cos_h_steered_orig_std": 0.039070560908095506,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.05186212336178869,
+          "cos_h_steered_ablate_std": 0.039070560908095506,
+          "delta_cos_ablate": 0.0
+        },
+        "18": {
+          "vector_cos_orig": 0.03857421875,
+          "vector_cos_ablate": 0.005157470703125,
+          "cos_h_base_mean": -0.07024682734161615,
+          "cos_h_steered_orig_mean": -0.07024682734161615,
+          "cos_h_steered_orig_std": 0.024229299852193235,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.07024682734161615,
+          "cos_h_steered_ablate_std": 0.024229299852193235,
+          "delta_cos_ablate": 0.0
+        },
+        "22": {
+          "vector_cos_orig": 0.047119140625,
+          "vector_cos_ablate": -0.00016307830810546875,
+          "cos_h_base_mean": -0.11321972390636802,
+          "cos_h_steered_orig_mean": -0.09716599349863828,
+          "cos_h_steered_orig_std": 0.022722736039977307,
+          "delta_cos_orig": 0.01605373040772974,
+          "cos_h_steered_ablate_mean": -0.11232634883373976,
+          "cos_h_steered_ablate_std": 0.022002367920850065,
+          "delta_cos_ablate": 0.0008933750726282524
+        },
+        "25": {
+          "vector_cos_orig": 0.04638671875,
+          "vector_cos_ablate": 0.010986328125,
+          "cos_h_base_mean": -0.1692088598012924,
+          "cos_h_steered_orig_mean": -0.17883749723434447,
+          "cos_h_steered_orig_std": 0.02094417260063588,
+          "delta_cos_orig": -0.009628637433052062,
+          "cos_h_steered_ablate_mean": -0.18902431488037108,
+          "cos_h_steered_ablate_std": 0.021424875976243343,
+          "delta_cos_ablate": -0.01981545507907867
+        }
+      },
+      "vector_orig_path": "Vector/CAA/Gemma/deception",
+      "vector_ablate_path": "Vector/CAA/Gemma_ablated/deception"
+    }
+  },
+  "25": {
+    "evil": {
+      "coeff": 5,
+      "steer_layer": 25,
+      "layers": {
+        "14": {
+          "vector_cos_orig": 0.1376953125,
+          "vector_cos_ablate": 0.11767578125,
+          "cos_h_base_mean": -0.057293511759489775,
+          "cos_h_steered_orig_mean": -0.057293511759489775,
+          "cos_h_steered_orig_std": 0.05278898398057798,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.057293511759489775,
+          "cos_h_steered_ablate_std": 0.05278898398057798,
+          "delta_cos_ablate": 0.0
+        },
+        "18": {
+          "vector_cos_orig": 0.10595703125,
+          "vector_cos_ablate": 0.072265625,
+          "cos_h_base_mean": -0.07087808161973953,
+          "cos_h_steered_orig_mean": -0.07087808161973953,
+          "cos_h_steered_orig_std": 0.03103500773873851,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.07087808161973953,
+          "cos_h_steered_ablate_std": 0.03103500773873851,
+          "delta_cos_ablate": 0.0
+        },
+        "22": {
+          "vector_cos_orig": 0.1220703125,
+          "vector_cos_ablate": 0.07080078125,
+          "cos_h_base_mean": -0.10954746283590794,
+          "cos_h_steered_orig_mean": -0.10954746283590794,
+          "cos_h_steered_orig_std": 0.020944896568140383,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.10954746283590794,
+          "cos_h_steered_ablate_std": 0.020944896568140383,
+          "delta_cos_ablate": 0.0
+        },
+        "25": {
+          "vector_cos_orig": 0.06884765625,
+          "vector_cos_ablate": 8.487701416015625e-05,
+          "cos_h_base_mean": -0.16958731263875962,
+          "cos_h_steered_orig_mean": -0.1010367227345705,
+          "cos_h_steered_orig_std": 0.02015924956130836,
+          "delta_cos_orig": 0.06855058990418912,
+          "cos_h_steered_ablate_mean": -0.14254024833440782,
+          "cos_h_steered_ablate_std": 0.020153531032404092,
+          "delta_cos_ablate": 0.027047064304351803
+        }
+      },
+      "vector_orig_path": "Vector/CAA/Gemma/evil",
+      "vector_ablate_path": "Vector/CAA/Gemma_ablated/evil"
+    },
+    "toxic": {
+      "coeff": 5,
+      "steer_layer": 25,
+      "layers": {
+        "14": {
+          "vector_cos_orig": 0.109375,
+          "vector_cos_ablate": 0.0240478515625,
+          "cos_h_base_mean": -0.04538010048680007,
+          "cos_h_steered_orig_mean": -0.04538010048680007,
+          "cos_h_steered_orig_std": 0.051629511292398254,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.04538010048680007,
+          "cos_h_steered_ablate_std": 0.051629511292398254,
+          "delta_cos_ablate": 0.0
+        },
+        "18": {
+          "vector_cos_orig": 0.1259765625,
+          "vector_cos_ablate": -0.0220947265625,
+          "cos_h_base_mean": -0.06291133738122881,
+          "cos_h_steered_orig_mean": -0.06291133738122881,
+          "cos_h_steered_orig_std": 0.029873510959242598,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.06291133738122881,
+          "cos_h_steered_ablate_std": 0.029873510959242598,
+          "delta_cos_ablate": 0.0
+        },
+        "22": {
+          "vector_cos_orig": 0.1650390625,
+          "vector_cos_ablate": -0.064453125,
+          "cos_h_base_mean": -0.10937772877514362,
+          "cos_h_steered_orig_mean": -0.10937772877514362,
+          "cos_h_steered_orig_std": 0.025860228382473795,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.10937772877514362,
+          "cos_h_steered_ablate_std": 0.025860228382473795,
+          "delta_cos_ablate": 0.0
+        },
+        "25": {
+          "vector_cos_orig": 0.30078125,
+          "vector_cos_ablate": -0.001312255859375,
+          "cos_h_base_mean": -0.17405395194888115,
+          "cos_h_steered_orig_mean": -0.0005411805550102145,
+          "cos_h_steered_orig_std": 0.024779182971513672,
+          "delta_cos_orig": 0.17351277139387095,
+          "cos_h_steered_ablate_mean": -0.15510881841182708,
+          "cos_h_steered_ablate_std": 0.02615393809817425,
+          "delta_cos_ablate": 0.01894513353705407
+        }
+      },
+      "vector_orig_path": "Vector/CAA/Gemma/toxic",
+      "vector_ablate_path": "Vector/CAA/Gemma_ablated/toxic"
+    },
+    "deception": {
+      "coeff": 5,
+      "steer_layer": 25,
+      "layers": {
+        "14": {
+          "vector_cos_orig": 0.0255126953125,
+          "vector_cos_ablate": 0.035400390625,
+          "cos_h_base_mean": -0.05186212336178869,
+          "cos_h_steered_orig_mean": -0.05186212336178869,
+          "cos_h_steered_orig_std": 0.039070560908095506,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.05186212336178869,
+          "cos_h_steered_ablate_std": 0.039070560908095506,
+          "delta_cos_ablate": 0.0
+        },
+        "18": {
+          "vector_cos_orig": 0.0517578125,
+          "vector_cos_ablate": 0.06884765625,
+          "cos_h_base_mean": -0.07024682734161615,
+          "cos_h_steered_orig_mean": -0.07024682734161615,
+          "cos_h_steered_orig_std": 0.024229299852193235,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.07024682734161615,
+          "cos_h_steered_ablate_std": 0.024229299852193235,
+          "delta_cos_ablate": 0.0
+        },
+        "22": {
+          "vector_cos_orig": 0.050048828125,
+          "vector_cos_ablate": 0.076171875,
+          "cos_h_base_mean": -0.11321972390636802,
+          "cos_h_steered_orig_mean": -0.11321972390636802,
+          "cos_h_steered_orig_std": 0.02202727840474124,
+          "delta_cos_orig": 0.0,
+          "cos_h_steered_ablate_mean": -0.11321972390636802,
+          "cos_h_steered_ablate_std": 0.02202727840474124,
+          "delta_cos_ablate": 0.0
+        },
+        "25": {
+          "vector_cos_orig": -0.03466796875,
+          "vector_cos_ablate": -0.00013065338134765625,
+          "cos_h_base_mean": -0.1692088598012924,
+          "cos_h_steered_orig_mean": -0.17773990958929062,
+          "cos_h_steered_orig_std": 0.02648201093225321,
+          "delta_cos_orig": -0.008531049787998207,
+          "cos_h_steered_ablate_mean": -0.16858850479125975,
+          "cos_h_steered_ablate_std": 0.026134316728813906,
+          "delta_cos_ablate": 0.0006203550100326582
+        }
+      },
+      "vector_orig_path": "Vector/CAA/Gemma/deception",
+      "vector_ablate_path": "Vector/CAA/Gemma_ablated/deception"
+    }
+  }
+}

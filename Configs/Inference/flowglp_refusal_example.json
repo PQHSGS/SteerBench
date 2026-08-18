@@ -1,0 +1,40 @@
+{
+  "name": "flowglp_refusal_example",
+  "description": "Subspace GLP steering via FLOWGLP with precomputed steering vector.",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": [
+      14
+    ],
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4
+  },
+  "steer": {
+    "method": "FLOWGLP",
+    "layer": [
+      14
+    ],
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 1.0,
+    "timesteps": 5,
+    "subspace_source": "GLP/subspace-glp-uni",
+    "subspace_checkpoint": "checkpoints/final",
+    "subspace_local_files_only": true
+  },
+  "load_vector": "Vector/CAA/Gemma/ai_risk_refusal",
+  "test_dataset": "refusal_open",
+  "train_dataset": "refusal_cast_responses",
+  "n_test": null,
+  "output": "./Results/flowglp",
+  "compute_perplexity": true,
+  "seed": 42
+}

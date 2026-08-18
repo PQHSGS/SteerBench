@@ -1,0 +1,41 @@
+{
+  "name": "qwen_evil",
+  "description": "MANIFOLD evil steering evaluated on evil",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "MANIFOLD",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "manifold_dim": 10,
+    "inverse": false
+  },
+  "steer": {
+    "method": "MANIFOLD",
+    "layer": [
+      18
+    ],
+    "coeff": 0.3,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "apply_all_layers": false
+  },
+  "save_vector": "Vector/MANIFOLD/Qwen/evil",
+  "n_test": 100,
+  "test_dataset": "evil",
+  "train_dataset": "evil",
+  "output": "./Results/manifold",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "n_train": 500
+}

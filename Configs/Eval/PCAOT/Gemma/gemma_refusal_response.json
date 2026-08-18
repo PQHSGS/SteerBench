@@ -1,0 +1,36 @@
+{
+  "name": "gemma_refusal_response",
+  "description": "PCAOT steering on refusal_response",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ACT",
+    "layer": [14],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "act_mode": "pca_ot",
+    "pca_components": 16
+  },
+  "steer": {
+    "method": "ACT",
+    "layer": [14],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 2.0,
+    "steer_once": false
+  },
+  "train_dataset": "refusal_cast_responses",
+  "test_dataset": "refusal_open",
+  "save_vector": "Vector/PCAOT/Gemma/refusal_response",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/pcaot",
+  "seed": 42
+}

@@ -1,0 +1,35 @@
+{
+  "name": "qwen_coordinate_ab",
+  "description": "SRPS steering trained on ai_risk_coordinate, evaluated on coordinate_ab",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "do_sample": false,
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SPARE",
+    "layer": 18,
+    "batch_size": 4,
+    "position": -2,
+    "apply_chat_template": true,
+    "top_k_proportion": 0.07
+  },
+  "steer": {
+    "method": "SPARE",
+    "layer": 18,
+    "coeff": 1.0,
+    "batch_size": 4,
+    "apply_chat_template": true,
+    "target_behavior": "contextual",
+    "top_k": 5
+  },
+  "load_vector": "Vector/SPARE/Qwen/ai_risk_coordinate",
+  "train_dataset": "ai_risk_coordinate",
+  "n_train": 1000,
+  "n_test": null,
+  "test_dataset": "coordinate_ab",
+  "output": "./Results/spare",
+  "include_baseline": false
+}

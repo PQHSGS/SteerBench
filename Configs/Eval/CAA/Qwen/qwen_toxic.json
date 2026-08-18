@@ -1,0 +1,40 @@
+{
+  "name": "qwen_toxic",
+  "description": "CAA toxic steering evaluated on toxic",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "inverse": false,
+    "method": "CAA",
+    "layer": 18,
+    "batch_size": 64,
+    "hook_point": "pre",
+    "position": "mask",
+    "apply_chat_template": true,
+    "ot_steer": false
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 18,
+    "coeff": 3,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "steer_once": false,
+    "batch_size": 16,
+    "ot_steer": false
+  },
+  "save_vector": "Vector/CAA/Qwen/toxic",
+  "train_dataset": "toxic_jigsaw",
+  "test_dataset": "toxic",
+  "output": "./Results/caa",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42,
+  "n_test": 100,
+  "n_train": 500
+}

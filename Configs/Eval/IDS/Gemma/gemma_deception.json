@@ -1,0 +1,40 @@
+{
+  "name": "gemma_deception",
+  "description": "IDS deception steering evaluated on deception",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "IDS",
+    "layer": 14,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "inverse": true,
+    "position": "last",
+    "ids_var_explained": 0.40,
+    "ids_epsilon_pct": 0.95,
+    "ids_f1_threshold": 0.70
+  },
+  "steer": {
+    "method": "IDS",
+    "layer": 14,
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "steer_once": false,
+    "ids_f1_threshold": 0.70
+  },
+  "save_vector": "./Results/ids/vector/deception",
+  "train_dataset": "liarbench",
+  "test_dataset": "liarbench",
+  "output": "./Results/ids",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42,
+  "n_test": 100,
+  "n_train": 500
+}

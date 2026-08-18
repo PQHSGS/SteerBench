@@ -1,0 +1,98 @@
+{
+  "selected_concept_id": 0,
+  "n_samples": 48,
+  "smoke_data_dir": "/home/caotue/SAESteeringBench/Verification/Level1/FLAS/artifacts/concept500_smoke_data",
+  "gt_checkpoint": "/home/caotue/SAESteeringBench/Verification/Level1/FLAS/artifacts/gt_checkpoints/flas_smoke_cid_0/final.pt",
+  "ours_vector_dir": "/home/caotue/SAESteeringBench/Verification/Level1/FLAS/artifacts/ours_vector",
+  "hyperparameters": {
+    "model_id": "google/gemma-2-2b-it",
+    "layer": 20,
+    "device": "cuda:4",
+    "seed": 42,
+    "num_blocks": 1,
+    "concept_encoder_layers": 2,
+    "batch_size": 4,
+    "grad_accum": 2,
+    "lr": 5e-05,
+    "enc_lr": 1e-05,
+    "div_weight": 0.1,
+    "max_len": 128,
+    "concept_max_len": 48,
+    "T_min": 0.5,
+    "T_max": 2.0,
+    "n_steps": 3,
+    "disable_cross_attn": false,
+    "disable_self_attn": false,
+    "disable_mlp": false,
+    "no_gemma_init": false,
+    "unfreeze_concept_enc": false,
+    "gt_total_steps": 6,
+    "gt_val_every": 3,
+    "gt_n_val_samples": 6,
+    "ours_epochs": 20,
+    "ours_max_steps": 6
+  },
+  "gt_summary": {
+    "n_tensors": 26,
+    "n_params": 97641728,
+    "l2_norm": 176.34292602539062
+  },
+  "ours_summary": {
+    "n_tensors": 26,
+    "n_params": 97641728,
+    "l2_norm": 176.34902954101562
+  },
+  "state_dict_comparison": {
+    "gt_only_keys": [],
+    "ours_only_keys": [],
+    "shape_mismatches": [],
+    "shared_key_count": 26,
+    "same_shape_key_count": 26,
+    "mean_abs_diff_avg": 0.006798627427017961,
+    "mean_abs_diff_max": 0.05902407690882683,
+    "cosine_similarity_avg": 0.5788892571722015,
+    "cosine_similarity_min": -0.05934577455667662,
+    "per_key_cosine_similarity": {
+      "blocks.0.cross_attn.k_norm.weight": 0.02805143587166353,
+      "blocks.0.cross_attn.k_proj.weight": -0.0005882480377347803,
+      "blocks.0.cross_attn.o_proj.weight": -0.00017203338687041736,
+      "blocks.0.cross_attn.q_norm.weight": -0.05934577455667662,
+      "blocks.0.cross_attn.q_proj.weight": -1.6279427511493065e-05,
+      "blocks.0.cross_attn.v_proj.weight": -0.0007598415215546556,
+      "blocks.0.cross_gate": 0.9999980163953591,
+      "blocks.0.down_proj.weight": 0.9998319566695938,
+      "blocks.0.gate_proj.weight": 0.9998473280379531,
+      "blocks.0.mlp_gate": 0.9999986283547536,
+      "blocks.0.post_cross_norm.weight": 0.06166650228342821,
+      "blocks.0.post_mlp_norm.weight": 0.9999999980265251,
+      "blocks.0.post_sa_norm.weight": 0.9999999925484526,
+      "blocks.0.pre_cross_norm.weight": 0.006070119994096489,
+      "blocks.0.pre_mlp_norm.weight": 0.9999995355943346,
+      "blocks.0.pre_sa_norm.weight": 0.9999999794013414,
+      "blocks.0.self_attn.k_proj.weight": 0.9999356236631232,
+      "blocks.0.self_attn.o_proj.weight": 0.9999209256128465,
+      "blocks.0.self_attn.q_proj.weight": 0.999933765711039,
+      "blocks.0.self_attn.v_proj.weight": 0.9999212462209669,
+      "blocks.0.self_attn_gate": 0.9999984408750237,
+      "blocks.0.up_proj.weight": 0.9998377125296851,
+      "time_embed.mlp.0.bias": 0.009884982911204179,
+      "time_embed.mlp.0.weight": -0.0014162686689909451,
+      "time_embed.mlp.2.bias": 0.8600984985291903,
+      "time_embed.mlp.2.weight": 0.1484244428460003
+    },
+    "per_block_cosine_similarity": {
+      "blocks.0": {
+        "n_keys": 22,
+        "cosine_avg": 0.6379149559481744,
+        "cosine_min": -0.05934577455667662,
+        "mean_abs_diff_avg": 0.002680096610592128
+      },
+      "global": {
+        "n_keys": 4,
+        "cosine_avg": 0.2542479139043509,
+        "cosine_min": -0.0014162686689909451,
+        "mean_abs_diff_avg": 0.029450546917360043
+      }
+    }
+  }
+}

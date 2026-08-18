@@ -1,0 +1,44 @@
+{
+  "name": "gemma_sorrybench",
+  "description": "COLD steering for sorrybench",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "COLD",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": false,
+    "cold_variant": "fd",
+    "cold_eta": 1.0,
+    "cold_epsilon": 1e-06,
+    "cold_pair_margin": 0.0
+  },
+  "steer": {
+    "method": "COLD",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": false
+  },
+  "train_dataset": "sorrybench_refusal_response",
+  "test_dataset": "sorrybench",
+  "n_train": 1000,
+  "n_test": null,
+  "seed": 42,
+  "output": "./Results/cold",
+  "load_vector": "Vector/COLD/Gemma/ai_risk_refusal",
+  "compute_perplexity": true,
+  "include_baseline": false
+}

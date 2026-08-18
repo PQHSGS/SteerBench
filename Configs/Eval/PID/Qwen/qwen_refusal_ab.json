@@ -1,0 +1,46 @@
+{
+  "name": "qwen_refusal_ab",
+  "description": "PID steering on refusal_ab",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "PID",
+    "layer": [
+      14,
+      16,
+      18,
+      20
+    ],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "position": "last",
+    "pid_kp": 1.0,
+    "pid_ki": 0.005,
+    "pid_kd": 0.02,
+    "pid_normalize_error": false
+  },
+  "steer": {
+    "method": "PID",
+    "layer": [
+      14,
+      16,
+      18,
+      20
+    ],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 2.0,
+    "steer_once": false
+  },
+  "train_dataset": "refusal_caa",
+  "n_train": 1000,
+  "test_dataset": "refusal_ab",
+  "save_vector": "Vector/PID/Qwen/ai_risk_refusal",
+  "output": "./Results/pid",
+  "seed": 42
+}

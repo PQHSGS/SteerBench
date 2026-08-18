@@ -1,0 +1,43 @@
+{
+  "name": "gemma_toxic",
+  "description": "CAST toxic steering evaluated on toxic",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "inverse": false,
+    "method": "CAST",
+    "layer": [
+      14
+    ],
+    "position": "last",
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "use_pca": true
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "apply_to_all_tokens": false
+  },
+  "save_vector": "Vector/CAST/Gemma/toxic",
+  "train_dataset": "toxic_jigsaw" ,
+  "n_test": 100,
+"n_train": 500,
+  "test_dataset": "toxic",
+  "output": "./Results/cast",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

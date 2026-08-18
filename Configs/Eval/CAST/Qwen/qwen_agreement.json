@@ -1,0 +1,41 @@
+{
+  "name": "qwen_agreement",
+  "description": "CAST steering for agreement",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST",
+    "layer": [
+      18
+    ],
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_pca": true,
+    "inverse": true
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "apply_to_all_tokens": false
+  },
+  "save_vector": "Vector/CAST/Qwen/agreement",
+  "train_dataset": "refusal_cast_responses",
+  "n_train": 1000,
+  "n_test": null,
+  "test_dataset": "refusal_open",
+  "output": "./Results/cast",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

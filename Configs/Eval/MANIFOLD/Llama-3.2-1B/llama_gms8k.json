@@ -1,0 +1,41 @@
+{
+  "name": "llama_gms8k",
+  "description": "MANIFOLD steering trained on srps_roleplay_gms8k, evaluated on gms8k",
+  "model": {
+    "name": "meta-llama/Llama-3.2-1B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 300
+  },
+  "extractor": {
+    "method": "MANIFOLD",
+    "layer": [
+      7
+    ],
+    "batch_size": 4,
+    "position": "mask",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "manifold_dim": 10
+  },
+  "steer": {
+    "method": "MANIFOLD",
+    "layer": [
+      7
+    ],
+    "coeff": 0.3,
+    "hook_point": "pre",
+    "position": "all",
+    "apply_chat_template": true,
+    "apply_all_layers": true
+  },
+  "save_vector": "Vector/MANIFOLD/Llama/gms8k",
+  "train_dataset": "srps_roleplay_gms8k",
+  "n_train": 1000,
+  "n_test": 100,
+  "test_dataset": "gms8k",
+  "output": "./Results/manifold",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

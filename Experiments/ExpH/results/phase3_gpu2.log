@@ -1,0 +1,48 @@
+/data/caotue/anaconda3/envs/sae_circuit/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Loading all-layer r̂ vectors...
+  Loaded 26 layers.
+
+======================================================================
+PHASE 3: Accuracy evals (all-layer ablation)
+Partition 0/4
+======================================================================
+[0/24] subtract evil L14... 2026-06-30 14:57:28 | Steering.pipeline                   | WARNING  | No HF_TOKEN found, attempting to use cached credentials...
+2026-06-30 14:57:28 | Steering.pipeline                   | INFO     | Skipping extraction - loading vector from: Vector/CAA/Gemma/evil
+2026-06-30 14:57:28 | Steering.pipeline                   | INFO     | Loading model: google/gemma-2-2b-it (tl)
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 45.27it/s]
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+Loaded pretrained model google/gemma-2-2b-it into HookedTransformer
+2026-06-30 14:58:07 | Steering.pipeline                   | INFO     | Initialized CAA steer model at layer [14]
+2026-06-30 14:58:07 | Steering.data.loader                | INFO     | Loaded 50 samples from toxic
+Device set to use cuda:0
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+Computing response metrics:   0%|          | 0/50 [00:00<?, ?it/s]Computing response metrics:   4%|▍         | 2/50 [00:00<00:02, 16.85it/s]Computing response metrics:   8%|▊         | 4/50 [00:00<00:02, 17.85it/s]Computing response metrics:  12%|█▏        | 6/50 [00:00<00:02, 18.16it/s]Computing response metrics:  16%|█▌        | 8/50 [00:00<00:02, 18.32it/s]Computing response metrics:  20%|██        | 10/50 [00:00<00:02, 18.41it/s]Computing response metrics:  24%|██▍       | 12/50 [00:00<00:02, 18.46it/s]Computing response metrics:  28%|██▊       | 14/50 [00:00<00:01, 18.47it/s]Computing response metrics:  32%|███▏      | 16/50 [00:00<00:01, 18.50it/s]Computing response metrics:  36%|███▌      | 18/50 [00:00<00:01, 18.53it/s]Computing response metrics:  40%|████      | 20/50 [00:01<00:01, 18.56it/s]Computing response metrics:  44%|████▍     | 22/50 [00:01<00:01, 18.53it/s]Computing response metrics:  48%|████▊     | 24/50 [00:01<00:01, 18.55it/s]Computing response metrics:  52%|█████▏    | 26/50 [00:01<00:01, 18.54it/s]Computing response metrics:  56%|█████▌    | 28/50 [00:01<00:01, 18.56it/s]Computing response metrics:  60%|██████    | 30/50 [00:01<00:01, 18.31it/s]Computing response metrics:  64%|██████▍   | 32/50 [00:01<00:00, 18.39it/s]Computing response metrics:  68%|██████▊   | 34/50 [00:01<00:00, 18.45it/s]Computing response metrics:  72%|███████▏  | 36/50 [00:01<00:00, 18.47it/s]Computing response metrics:  76%|███████▌  | 38/50 [00:02<00:00, 18.49it/s]Computing response metrics:  80%|████████  | 40/50 [00:02<00:00, 18.51it/s]Computing response metrics:  84%|████████▍ | 42/50 [00:02<00:00, 18.52it/s]Computing response metrics:  88%|████████▊ | 44/50 [00:02<00:00, 18.42it/s]Computing response metrics:  92%|█████████▏| 46/50 [00:02<00:00, 18.45it/s]Computing response metrics:  96%|█████████▌| 48/50 [00:02<00:00, 18.46it/s]Computing response metrics: 100%|██████████| 50/50 [00:02<00:00, 18.46it/s]Computing response metrics: 100%|██████████| 50/50 [00:02<00:00, 18.43it/s]
+acc=0.0000 ppl=1.79 rep=0.9716
+[4/24] subtract toxic L14... 2026-06-30 15:04:31 | Steering.pipeline                   | WARNING  | No HF_TOKEN found, attempting to use cached credentials...
+2026-06-30 15:04:31 | Steering.pipeline                   | INFO     | Skipping extraction - loading vector from: Vector/CAA/Gemma/toxic
+2026-06-30 15:04:31 | Steering.pipeline                   | INFO     | Loading model: google/gemma-2-2b-it (tl)
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 43.51it/s]
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+Loaded pretrained model google/gemma-2-2b-it into HookedTransformer
+2026-06-30 15:04:43 | Steering.pipeline                   | INFO     | Initialized CAA steer model at layer [14]
+2026-06-30 15:04:43 | Steering.data.loader                | INFO     | Loaded 50 samples from evil
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:01,  2.22it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.95it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:01<00:00,  1.90it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  2.51it/s]
+Computing response metrics:   0%|          | 0/50 [00:00<?, ?it/s]Computing response metrics:   4%|▍         | 2/50 [00:00<00:02, 18.52it/s]Computing response metrics:   8%|▊         | 4/50 [00:00<00:02, 18.86it/s]Computing response metrics:  12%|█▏        | 6/50 [00:00<00:02, 19.06it/s]Computing response metrics:  16%|█▌        | 8/50 [00:00<00:02, 19.13it/s]Computing response metrics:  20%|██        | 10/50 [00:00<00:02, 18.85it/s]Computing response metrics:  24%|██▍       | 12/50 [00:00<00:02, 18.56it/s]Computing response metrics:  28%|██▊       | 14/50 [00:00<00:01, 18.62it/s]Computing response metrics:  32%|███▏      | 16/50 [00:00<00:01, 18.66it/s]Computing response metrics:  36%|███▌      | 18/50 [00:00<00:01, 18.70it/s]Computing response metrics:  40%|████      | 20/50 [00:01<00:01, 18.72it/s]Computing response metrics:  44%|████▍     | 22/50 [00:01<00:01, 18.73it/s]Computing response metrics:  48%|████▊     | 24/50 [00:01<00:01, 18.71it/s]Computing response metrics:  52%|█████▏    | 26/50 [00:01<00:01, 18.67it/s]Computing response metrics:  56%|█████▌    | 28/50 [00:01<00:01, 18.29it/s]Computing response metrics:  60%|██████    | 30/50 [00:01<00:01, 18.40it/s]Computing response metrics:  64%|██████▍   | 32/50 [00:01<00:00, 18.46it/s]Computing response metrics:  68%|██████▊   | 34/50 [00:01<00:00, 18.49it/s]Computing response metrics:  72%|███████▏  | 36/50 [00:01<00:00, 18.56it/s]Computing response metrics:  76%|███████▌  | 38/50 [00:02<00:00, 18.61it/s]Computing response metrics:  80%|████████  | 40/50 [00:02<00:00, 18.65it/s]Computing response metrics:  84%|████████▍ | 42/50 [00:02<00:00, 18.64it/s]Computing response metrics:  88%|████████▊ | 44/50 [00:02<00:00, 18.64it/s]Computing response metrics:  92%|█████████▏| 46/50 [00:02<00:00, 18.62it/s]Computing response metrics:  96%|█████████▌| 48/50 [00:02<00:00, 18.65it/s]Computing response metrics: 100%|██████████| 50/50 [00:02<00:00, 18.64it/s]Computing response metrics: 100%|██████████| 50/50 [00:02<00:00, 18.64it/s]
+acc=0.0000 ppl=1.80 rep=0.9710
+[8/24] subtract deception L14... 2026-06-30 15:14:13 | Steering.pipeline                   | WARNING  | No HF_TOKEN found, attempting to use cached credentials...
+2026-06-30 15:14:13 | Steering.pipeline                   | INFO     | Skipping extraction - loading vector from: Vector/CAA/Gemma/deception
+2026-06-30 15:14:13 | Steering.pipeline                   | INFO     | Loading model: google/gemma-2-2b-it (tl)
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 42.86it/s]
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+Loaded pretrained model google/gemma-2-2b-it into HookedTransformer
+2026-06-30 15:14:27 | Steering.pipeline                   | INFO     | Initialized CAA steer model at layer [14]
+2026-06-30 15:14:27 | Steering.data.loader                | INFO     | Loaded 50 samples from toxic
+Device set to use cuda:0

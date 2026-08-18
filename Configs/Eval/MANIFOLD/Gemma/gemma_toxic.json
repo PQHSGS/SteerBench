@@ -1,0 +1,44 @@
+{
+  "name": "gemma_toxic",
+  "description": "MANIFOLD toxic steering evaluated on toxic",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "inverse": false,
+    "method": "MANIFOLD",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "manifold_dim": 8,
+    "ot_steer": true
+  },
+  "steer": {
+    "method": "MANIFOLD",
+    "layer": [
+      14
+    ],
+    "coeff": 5,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "apply_all_layers": false,
+    "ot_steer": true
+  },
+  "save_vector": "Vector/MANIFOLD/Gemma/toxic",
+  "n_test": 100,
+"n_train": 500,
+  "test_dataset": "toxic",
+  "train_dataset": "toxic_jigsaw" ,
+  "output": "./Results/manifold",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

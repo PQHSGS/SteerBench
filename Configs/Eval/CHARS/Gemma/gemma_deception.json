@@ -1,0 +1,37 @@
+{
+  "name": "gemma_deception",
+  "description": "CHARS steering on deception",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:2",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CHARS",
+    "layer": 14,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "inverse": true,
+    "chars_k": 3,
+    "chars_lambda": 0.1
+  },
+  "steer": {
+    "method": "CHARS",
+    "layer": 14,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 8,
+    "steer_once": false
+  },
+  "train_dataset": "liarbench",
+  "n_train": 500,
+  "test_dataset": "liarbench",
+  "save_vector": "Vector/CHARS/Gemma/deception",
+  "n_test": 100,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/chars",
+  "seed": 42
+}

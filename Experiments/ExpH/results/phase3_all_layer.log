@@ -1,0 +1,17 @@
+/data/caotue/anaconda3/envs/sae_circuit/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Loading all-layer r̂ vectors...
+  Loaded 26 layers.
+
+======================================================================
+PHASE 3: Accuracy evals (all-layer ablation)
+======================================================================
+
+--- Variant: subtract ---
+  evil L14... 2026-06-30 14:34:32 | Steering.pipeline                   | WARNING  | No HF_TOKEN found, attempting to use cached credentials...
+2026-06-30 14:34:32 | Steering.pipeline                   | INFO     | Skipping extraction - loading vector from: Vector/CAA/Gemma/evil
+2026-06-30 14:34:32 | Steering.pipeline                   | INFO     | Loading model: google/gemma-2-2b-it (tl)
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 44.57it/s]
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.

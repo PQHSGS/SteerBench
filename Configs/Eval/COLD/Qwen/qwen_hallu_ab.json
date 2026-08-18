@@ -1,0 +1,43 @@
+{
+  "name": "qwen_hallu_ab",
+  "description": "COLD steering for hallu_ab",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "COLD",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": -2,
+    "hook_point": "pre",
+    "apply_chat_template": false,
+    "cold_variant": "fd",
+    "cold_eta": 1.0,
+    "cold_epsilon": 1e-06,
+    "cold_pair_margin": 0.0
+  },
+  "steer": {
+    "method": "COLD",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": -2,
+    "apply_chat_template": false
+  },
+  "train_dataset": "hallucination",
+  "test_dataset": "hallucination_ab",
+  "n_train": null,
+  "n_test": 500,
+  "seed": 42,
+  "output": "./Results/cold",
+  "save_vector": "Vector/COLD/Qwen/ai_risk_hallucination",
+  "include_baseline": false
+}

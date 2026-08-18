@@ -1,0 +1,44 @@
+{
+  "name": "qwen_toxic",
+  "description": "FGAA toxic steering evaluated on toxic",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "inverse": false,
+    "method": "FGAA",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "fgaa_density_threshold": 0.01,
+    "fgaa_n1": 8,
+    "fgaa_n2": 0,
+    "fgaa_remove_bos": true,
+    "fgaa_l1_normalize_target": true
+  },
+  "steer": {
+    "method": "FGAA",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true
+  },
+  "train_dataset": "toxic_jigsaw",
+  "n_train": 500,
+  "test_dataset": "toxic",
+  "output": "./Results/fgaa",
+  "save_vector": "Vector/FGAA/Qwen/toxic",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42,
+  "n_test": 100
+}

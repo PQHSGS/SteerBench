@@ -1,0 +1,35 @@
+{
+  "name": "qwen_sorrybench_refusal_response",
+  "description": "PID steering on sorrybench using response refusal vector",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "PID",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "PID",
+    "layer": [
+      18
+    ],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 1.0
+  },
+  "load_vector": "Vector/PID/Qwen/refusal_response",
+  "test_dataset": "sorrybench",
+  "n_test": null,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/pid",
+  "seed": 42
+}

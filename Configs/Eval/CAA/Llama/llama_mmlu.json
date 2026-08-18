@@ -1,0 +1,32 @@
+{
+  "name": "gemma_coordinate",
+  "description": "CAA steering trained on sycophancy, evaluated on corrigible",
+  "model": {
+    "name": "meta-llama/Llama-2-7b-hf",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 14,
+    "batch_size": 4,
+    "position": -2,
+    "hook_point": "post",
+    "apply_chat_template": false,
+    "use_pca": false,
+    "train_dataset": "ai_risk_corrigible",
+    "n_train": 500
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 14,
+    "coeff": 1.0,
+    "hook_point": "post",
+    "apply_chat_template": true
+  },
+  "test_dataset": "mmlu",
+  "output": "./Results/caa",
+  "include_baseline": false,
+  "seed": 42
+}

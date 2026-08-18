@@ -1,0 +1,44 @@
+{
+  "name": "llama_sorrybench_refusal_response",
+  "description": "Flow Matching source-to-target residual transport for LLM steering, evaluated on sorrybench_refusal_response.",
+  "model": {
+    "name": "meta-llama/Llama-3.2-1B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "FLOW",
+    "layer": [7],
+    "hook_point": "post",
+    "position": "last",
+    "batch_size": 4,
+    "flow_hidden_dim": 512,
+    "flow_layers": 6,
+    "flow_epochs": 200,
+    "flow_batch_size": 64,
+    "flow_lr": 0.001,
+    "flow_subspace_dim": null,
+    "flow_subspace_mode": "none",
+    "flow_norm_mode": "iqr",
+    "flow_loss_mode": "huber",
+    "flow_weighted": false,
+    "flow_train_space": "full",
+    "flow_denoise_mode": "none"
+  },
+  "steer": {
+    "method": "FLOW",
+    "layer": [7],
+    "hook_point": "post",
+    "position": "last",
+    "coeff": 1.0,
+    "flow_steps": 16,
+    "batch_size": 4
+  },
+  "train_dataset": "refusal",
+  "test_dataset": "sorrybench_refusal_response",
+  "n_train": null,
+  "n_test": null,
+  "save_vector": "Results/NewMethods/flowsteer_sorrybench_refusal_response_vector"
+}

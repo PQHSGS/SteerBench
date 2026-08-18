@@ -1,0 +1,37 @@
+{
+  "name": "cast_qwen_refusal",
+  "description": "CAST (Conditional Activation Steering) for refusal using Qwen1.5-1.8B - replicating CAST paper results",
+  "model": {
+    "name": "Qwen/Qwen1.5-1.8B-Chat",
+    "device": "cuda",
+    "dtype": "bfloat16"
+  },
+  "extractor": {
+    "method": "CAST",
+    "layer": 14,
+    "batch_size": 4,
+    "position": "last",
+    "apply_chat_template": true,
+    "use_pca": true,
+    "conditional_dataset": "refusal",
+    "conditional_layer": 7,
+    "train_dataset": "refusal_cast_responses",
+    "n_train": 1000
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": 14,
+    "coeff": 1.00,
+    "apply_chat_template": true,
+    "use_conditional": true,
+    "conditional_threshold": 0.043,
+    "conditional_threshold_is": "larger",
+    "conditional_pos": "mean",
+    "n_test": 500
+  },
+  "test_dataset": "cast_xstest",
+  "output": "./Results/cast",
+  "include_baseline": true,
+  "save_samples": false,
+  "seed": 42
+}

@@ -1,0 +1,38 @@
+{
+  "name": "gemma_evil",
+  "description": "SPARE evil steering evaluated on evil",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "do_sample": false,
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SPARE",
+    "layer": 14,
+    "batch_size": 4,
+    "apply_chat_template": true,
+    "top_k_proportion": 0.07,
+    "top_k": 15,
+    "inverse": false
+  },
+  "steer": {
+    "method": "SPARE",
+    "layer": 14,
+    "coeff": 3.0,
+    "batch_size": 4,
+    "apply_chat_template": true,
+    "target_behavior": "contextual",
+    "top_k": 5
+  },
+  "train_dataset": "evil",
+  "n_train": 500,
+  "n_test": 100,
+  "test_dataset": "evil",
+  "output": "./Results/spare",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "save_vector": "Vector/SPARE/Gemma/evil",
+  "seed": 42
+}

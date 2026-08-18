@@ -1,0 +1,38 @@
+{
+  "name": "gemma_agreement",
+  "description": "ANGULAR agreement steering evaluated on refusal_open",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ANGULAR",
+    "layer": 2,
+    "batch_size": 8,
+    "position": -1,
+    "strategy": "max_sim",
+    "hook_point": [
+      "mid",
+      "post"
+    ],
+    "inverse": true
+  },
+  "steer": {
+    "method": "ANGULAR",
+    "layer": 22,
+    "adaptive": true,
+    "target_angle": 180,
+    "coeff": 1,
+    "apply_all_layers": true,
+    "n_test": null
+  },
+  "test_dataset": "refusal_open",
+  "output": "./Results/angular",
+  "train_dataset": "refusal_cast_responses",
+  "n_train": 512,
+  "n_test": null,
+  "include_baseline": false,
+  "compute_perplexity": true
+}

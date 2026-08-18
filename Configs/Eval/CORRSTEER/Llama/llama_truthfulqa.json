@@ -1,0 +1,28 @@
+{
+  "name": "corrsteer_truthfulqa",
+  "description": "CORRSTEER steering trained on hallucination, evaluated on TruthfulQA",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CORRSTEER",
+    "layer": 14,
+    "batch_size": 4,
+    "top_k": 15,
+    "act_frac": 0.2,
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CORRSTEER",
+    "layer": 14,
+    "coeff": 1.0
+  },
+  "load_vector": "Vector/CORRSTEER/hallucination",
+  "n_test": null,
+  "test_dataset": "truthfulqa",
+  "output": "./Results/corrsteer",
+  "include_baseline": true
+}

@@ -1,0 +1,37 @@
+{
+  "name": "llama32_1b_cold_fd_refusal",
+  "description": "Paper-style COLD-FD setup (eta=1, epsilon=1e-6) for Llama-3.2-1B-Instruct on jigsaw toxicity.",
+  "model": {
+    "name": "meta-llama/Llama-3.2-1B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "COLD",
+    "layer": [7],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": false,
+    "cold_variant": "fd",
+    "cold_eta": 1.0,
+    "cold_epsilon": 1e-6,
+    "cold_pair_margin": 0.0
+  },
+  "steer": {
+    "method": "COLD",
+    "layer": [7],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "all",
+    "apply_chat_template": false
+  },
+  "train_dataset": "refusal_caa",
+  "test_dataset": "refusal_response",
+  "n_train": null,
+  "n_test": null,
+  "seed": 42,
+  "save_vector": "Results/NewMethods/cold_toxicity_vector"
+}

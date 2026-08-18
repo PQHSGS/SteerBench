@@ -1,0 +1,34 @@
+{
+  "name": "llama_xstest",
+  "description": "CAA steering trained on sycophancy, evaluated on corrigible",
+  "model": {
+    "name": "meta-llama/Llama-3.1-8B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 17,
+    "batch_size": 4,
+    "position": -2,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "train_dataset": "refusal_caa",
+    "n_train": 1000
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 17,
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "n_test": 500
+  },
+  "load_vector": "Vector/CAA/Llama/ai_risk_refusal",
+  "test_dataset": "xstest",
+  "output": "./Results/caa",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

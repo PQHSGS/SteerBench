@@ -1,0 +1,36 @@
+{
+  "name": "gemma_refusal_response",
+  "description": "CORRSTEER steering for refusal_response",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CORRSTEER",
+    "layer": 14,
+    "batch_size": 4,
+    "top_k": 10,
+    "corrsteer_max_new_tokens": 30,
+    "corrsteer_pool": "max",
+    "corrsteer_pos_only": true,
+    "apply_chat_template": true,
+    "corrsteer_reward_evaluator": "refusal"
+  },
+  "steer": {
+    "method": "CORRSTEER",
+    "layer": 14,
+    "coeff": 5.0,
+    "top_k": 5
+  },
+  "load_vector": "Vector/CORRSTEER/Gemma/refusal_response",
+  "train_dataset": "refusal_cast_responses",
+  "n_train": 1000,
+  "n_test": null,
+  "test_dataset": "refusal_open",
+  "output": "./Results/corrsteer",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

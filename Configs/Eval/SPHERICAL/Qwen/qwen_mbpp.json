@@ -1,0 +1,43 @@
+{
+  "name": "qwen_mbpp",
+  "description": "SPHERICAL deception steering evaluated on mbpp",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "inverse": true,
+    "method": "SPHERICAL",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre"
+  },
+  "steer": {
+    "method": "SPHERICAL",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "spherical_kappa": 20.0,
+    "spherical_alpha": 0.7,
+    "spherical_beta": -0.15,
+    "spherical_use_vmf_gate": true
+  },
+  "test_dataset": "mbpp",
+  "n_train": null,
+  "n_test": 100,
+  "seed": 42,
+  "output": "./Results/spherical",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "load_vector": "Vector/SPHERICAL/Qwen/deception"
+}

@@ -1,0 +1,65 @@
+{
+  "name": "gemma_mbpp",
+  "description": "FLOW deception steering evaluated on mbpp",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "inverse": true,
+    "method": "FLOW",
+    "layer": [
+      14
+    ],
+    "batch_size": 16,
+    "position": "last",
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "change_pad_token": false,
+    "flow_hidden_dim": 512,
+    "flow_layers": 2,
+    "flow_lr": 0.001,
+    "flow_epochs": 400,
+    "flow_batch_size": 64,
+    "flow_seed": 42,
+    "flow_subspace_dim": 16,
+    "flow_subspace_mode": "diff",
+    "flow_norm_mode": "gaussian",
+    "flow_loss_mode": "mse",
+    "flow_weighted": true,
+    "flow_max_weight": 10,
+    "flow_train_space": "full",
+    "flow_target_type": "concept"
+  },
+  "steer": {
+    "method": "FLOW",
+    "layer": [
+      14
+    ],
+    "coeff": 1,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "norm": false,
+    "apply_all_layers": false,
+    "flow_steps": 16,
+    "flow_guidance_strength": 0.0,
+    "flow_guidance_mode": "off",
+    "flow_denoise_mode": "none",
+    "steer_once": false
+  },
+  "post_process": {},
+  "n_train": 500,
+  "test_dataset": "mbpp",
+  "n_test": 100,
+  "output": "Results/FlowSteer",
+  "save_samples": false,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "load_vector": "Vector/Flow/gemma_deception_r1"
+}

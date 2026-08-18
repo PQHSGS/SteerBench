@@ -1,0 +1,32 @@
+{
+  "name": "gemma_hallu_ab",
+  "description": "CHARS steering on hallu_ab",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CHARS",
+    "layer": 14,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "position": -2
+  },
+  "steer": {
+    "method": "CHARS",
+    "layer": 14,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 1.0
+  },
+  "train_dataset": "hallucination",
+  "n_train": 1000,
+  "test_dataset": "hallucination_ab",
+  "n_test": 500,
+  "save_vector": "Vector/CHARS/Gemma/ai_risk_hallucination",
+  "output": "./Results/chars",
+  "seed": 42
+}

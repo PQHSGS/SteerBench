@@ -1,0 +1,73 @@
+{
+  "name": "gemma_reps_sorrybench",
+  "description": "RePS pipeline config for Gemma 2B on refusal_cast_responses.",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "REPS",
+    "layer": [
+      14
+    ],
+    "batch_size": 16,
+    "position": "last",
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "change_pad_token": false,
+    "reft_type": "Loreft",
+    "low_rank_dimension": 8,
+    "dropout": 0.1,
+    "act_fn": "linear",
+    "add_bias": true,
+    "preference_pairs": [
+      "orig_add",
+      "orig_sub"
+    ],
+    "substraction_type": "normal",
+    "steering_factors": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0
+    ],
+    "reft_seed": 40,
+    "lr": 0.004,
+    "weight_decay": 0.0,
+    "epochs": 20,
+    "reft_steer_once": true,
+    "inverse": false
+  },
+  "steer": {
+    "method": "REPS",
+    "layer": [
+      14
+    ],
+    "coeff": 2,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "norm": false,
+    "apply_all_layers": false,
+    "reft_type": "Loreft",
+    "add_bias": true,
+    "substraction_type": "normal",
+    "steer_once": true
+  },
+  "post_process": {},
+  "train_dataset": "refusal_cast_responses",
+  "n_train": null,
+  "test_dataset": "sorrybench",
+  "n_test": null,
+  "output": "Results/reps",
+  "save_samples": false,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "load_vector": "Vector/REPS/refusal_response"
+}

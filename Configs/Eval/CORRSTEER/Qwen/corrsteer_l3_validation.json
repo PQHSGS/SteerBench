@@ -1,0 +1,39 @@
+{
+  "name": "corrsteer_l3_validation",
+  "description": "Level 3: CorrSteer - EXACT match with GT: train.py train --model=gemma2b --task=mmlu --layer=13 --eval --limit=10",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CORRSTEER",
+    "layer": [
+      17
+    ],
+    "batch_size": 4,
+    "top_k": 20,
+    "apply_chat_template": false,
+    "corrsteer_max_new_tokens": 1,
+    "corrsteer_pool": "max",
+    "corrsteer_steer_pool": "max",
+    "corrsteer_pos_only": true
+  },
+  "steer": {
+    "method": "CORRSTEER",
+    "layer": [
+      17
+    ],
+    "coeff": 1.0,
+    "apply_chat_template": false,
+    "corrsteer_lastk": 1,
+    "batch_size": 4
+  },
+  "train_dataset": "mmlu_corrsteer_train",
+  "n_train": 4000,
+  "test_dataset": "mmlu_corrsteer_test",
+  "n_test": 30,
+  "include_baseline": true,
+  "output": "./Results/corrsteer"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "qwen_refusal_response",
+  "description": "CAA steering trained on refusal_response, evaluated on refusal_open",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 18,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 18,
+    "coeff": 2,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "steer_once": false
+  },
+  "save_vector": "Vector/CAA/Qwen/refusal_response",
+  "train_dataset": "refusal_cast_responses",
+  "test_dataset": "refusal_open",
+  "output": "./Results/caa",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42
+}

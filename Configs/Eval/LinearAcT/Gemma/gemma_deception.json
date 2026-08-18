@@ -1,0 +1,43 @@
+{
+  "name": "gemma_deception",
+  "description": "LINEARACT steering for deception",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "inverse": true,
+    "method": "ACT",
+    "layer": [
+      14
+    ],
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "act_mode": "linear"
+  },
+  "steer": {
+    "method": "ACT",
+    "layer": [
+      14
+    ],
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 3,
+    "batch_size": 4,
+    "apply_chat_template": false,
+    "act_support": "none"
+  },
+  "train_dataset": "liarbench",
+  "test_dataset": "liarbench",
+  "n_train": 500,
+  "n_test": 100,
+  "output": "./Results/linearact",
+  "compute_perplexity": true,
+  "load_vector": "Vector/LinearAcT/Gemma/deception",
+  "include_baseline": false,
+  "seed": 42
+}

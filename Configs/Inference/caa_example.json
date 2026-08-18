@@ -1,0 +1,30 @@
+{
+  "name": "caa_sycophancy_csqa",
+  "description": "CAA steering trained on sycophancy, evaluated on CSQA",
+  "model": {
+    "name": "meta-llama/Llama-2-7b-hf",
+    "device": "cuda",
+    "dtype": "bfloat16"
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 14,
+    "batch_size": 4,
+    "position": "last",
+    "apply_chat_template": false,
+    "use_pca": false,
+    "train_dataset": "ai_risk_corrigible",
+    "n_train": 500
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 14,
+    "coeff": 1.0,
+    "apply_chat_template": false,
+    "load_vector": null,
+    "n_test": 200
+  },
+  "test_dataset": "corrigible_open",
+  "output": "./Results/caa",
+  "seed": 42
+}

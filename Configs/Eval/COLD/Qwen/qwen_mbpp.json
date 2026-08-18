@@ -1,0 +1,44 @@
+{
+  "name": "qwen_mbpp",
+  "description": "COLD deception steering evaluated on mbpp",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "inverse": true,
+    "method": "COLD",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": false,
+    "cold_variant": "fd",
+    "cold_eta": 1.0,
+    "cold_epsilon": 1e-06,
+    "cold_pair_margin": 0.0
+  },
+  "steer": {
+    "method": "COLD",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": false
+  },
+  "test_dataset": "mbpp",
+  "n_train": null,
+  "n_test": 100,
+  "seed": 42,
+  "output": "./Results/cold",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "load_vector": "Vector/COLD/Qwen/deception"
+}

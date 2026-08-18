@@ -1,0 +1,60 @@
+{
+  "name": "cast_qwen_hallu",
+  "description": "CAST (Conditional Activation Steering) for refusal using Qwen1.5-1.8B compare with CAA",
+  "model": {
+    "name": "Qwen/Qwen1.5-1.8B-Chat",
+    "device": "cuda",
+    "dtype": "float16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST_HF",
+    "change_pad_token": true,
+    "apply_chat_template": true,
+    "layer": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "batch_size": 4,
+    "position": -2,
+    "use_pca": true,
+    "conditional_dataset": null,
+    "apply_conditional_chat_template": true,
+    "conditional_layer": 7,
+    "hook_point": "post",
+    "verbose": true
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      15
+    ],
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "conditional_threshold": 0.03,
+    "conditional_threshold_is": "smaller",
+    "conditional_pos": "mean",
+    "apply_conditional_chat_template": true,
+    "apply_to_all_tokens": false
+  },
+  "test_dataset": "hallucination_ab",
+  "train_dataset": "hallucination",
+  "n_train": 1000,
+  "save_vector": "Vector/CAST/hallucination",
+  "n_test": null,
+  "output": "./Results/cast",
+  "include_baseline": true,
+  "save_samples": false,
+  "seed": 42,
+  "load_vector": "Vector/CAST/hallucination"
+}

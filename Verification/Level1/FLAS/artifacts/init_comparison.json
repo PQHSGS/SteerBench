@@ -1,0 +1,209 @@
+{
+  "n_shared_keys": 26,
+  "cos_mean": 0.9999999999999056,
+  "cos_min": 0.9999999999993597,
+  "cos_max": 1.0,
+  "per_key": {
+    "blocks.0.cross_attn.k_norm.weight": {
+      "cos": null,
+      "norm_ratio": null,
+      "shape": [
+        256
+      ]
+    },
+    "blocks.0.cross_attn.k_proj.weight": {
+      "cos": 0.9999999999995793,
+      "norm_ratio": 1.0,
+      "shape": [
+        1024,
+        2304
+      ]
+    },
+    "blocks.0.cross_attn.o_proj.weight": {
+      "cos": 0.9999999999997001,
+      "norm_ratio": 1.0,
+      "shape": [
+        2304,
+        2048
+      ]
+    },
+    "blocks.0.cross_attn.q_norm.weight": {
+      "cos": null,
+      "norm_ratio": null,
+      "shape": [
+        256
+      ]
+    },
+    "blocks.0.cross_attn.q_proj.weight": {
+      "cos": 0.9999999999993597,
+      "norm_ratio": 1.0,
+      "shape": [
+        2048,
+        2304
+      ]
+    },
+    "blocks.0.cross_attn.v_proj.weight": {
+      "cos": 0.9999999999995556,
+      "norm_ratio": 1.0,
+      "shape": [
+        1024,
+        2304
+      ]
+    },
+    "blocks.0.cross_gate": {
+      "cos": 0.9999999999999916,
+      "norm_ratio": 1.0,
+      "shape": [
+        2304
+      ]
+    },
+    "blocks.0.down_proj.weight": {
+      "cos": 1.0,
+      "norm_ratio": 1.0,
+      "shape": [
+        2304,
+        9216
+      ]
+    },
+    "blocks.0.gate_proj.weight": {
+      "cos": 1.0,
+      "norm_ratio": 1.0,
+      "shape": [
+        9216,
+        2304
+      ]
+    },
+    "blocks.0.mlp_gate": {
+      "cos": 0.9999999999999916,
+      "norm_ratio": 1.0,
+      "shape": [
+        2304
+      ]
+    },
+    "blocks.0.post_cross_norm.weight": {
+      "cos": null,
+      "norm_ratio": null,
+      "shape": [
+        2304
+      ]
+    },
+    "blocks.0.post_mlp_norm.weight": {
+      "cos": 1.0,
+      "norm_ratio": 1.0,
+      "shape": [
+        2304
+      ]
+    },
+    "blocks.0.post_sa_norm.weight": {
+      "cos": 0.9999999999999998,
+      "norm_ratio": 1.0,
+      "shape": [
+        2304
+      ]
+    },
+    "blocks.0.pre_cross_norm.weight": {
+      "cos": null,
+      "norm_ratio": null,
+      "shape": [
+        2304
+      ]
+    },
+    "blocks.0.pre_mlp_norm.weight": {
+      "cos": 0.9999999999999999,
+      "norm_ratio": 1.0,
+      "shape": [
+        2304
+      ]
+    },
+    "blocks.0.pre_sa_norm.weight": {
+      "cos": 0.9999999999999999,
+      "norm_ratio": 1.0,
+      "shape": [
+        2304
+      ]
+    },
+    "blocks.0.self_attn.k_proj.weight": {
+      "cos": 1.0,
+      "norm_ratio": 1.0,
+      "shape": [
+        1024,
+        2304
+      ]
+    },
+    "blocks.0.self_attn.o_proj.weight": {
+      "cos": 1.0,
+      "norm_ratio": 1.0,
+      "shape": [
+        2304,
+        2048
+      ]
+    },
+    "blocks.0.self_attn.q_proj.weight": {
+      "cos": 1.0,
+      "norm_ratio": 1.0,
+      "shape": [
+        2048,
+        2304
+      ]
+    },
+    "blocks.0.self_attn.v_proj.weight": {
+      "cos": 1.0,
+      "norm_ratio": 1.0,
+      "shape": [
+        1024,
+        2304
+      ]
+    },
+    "blocks.0.self_attn_gate": {
+      "cos": 0.9999999999999916,
+      "norm_ratio": 1.0,
+      "shape": [
+        2304
+      ]
+    },
+    "blocks.0.up_proj.weight": {
+      "cos": 1.0,
+      "norm_ratio": 1.0,
+      "shape": [
+        9216,
+        2304
+      ]
+    },
+    "time_embed.mlp.0.bias": {
+      "cos": 1.0,
+      "norm_ratio": 1.0,
+      "shape": [
+        2304
+      ]
+    },
+    "time_embed.mlp.0.weight": {
+      "cos": 0.9999999999999436,
+      "norm_ratio": 1.0,
+      "shape": [
+        2304,
+        128
+      ]
+    },
+    "time_embed.mlp.2.bias": {
+      "cos": null,
+      "norm_ratio": null,
+      "shape": [
+        2304
+      ]
+    },
+    "time_embed.mlp.2.weight": {
+      "cos": null,
+      "norm_ratio": null,
+      "shape": [
+        2304,
+        2304
+      ]
+    }
+  },
+  "per_layer": {
+    "0": {
+      "n_keys": 18,
+      "cos_mean": 0.9999999999998983
+    }
+  }
+}

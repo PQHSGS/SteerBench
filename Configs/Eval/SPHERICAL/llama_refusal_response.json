@@ -1,0 +1,36 @@
+{
+  "name": "llama32_1b_spherical_refusal",
+  "description": "Spherical steering setup for Llama-3.2-1B-Instruct.",
+  "model": {
+    "name": "meta-llama/Llama-3.2-1B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "SPHERICAL",
+    "layer": [7],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "post"
+  },
+  "steer": {
+    "method": "SPHERICAL",
+    "layer": [7],
+    "coeff": 1.0,
+    "hook_point": "post",
+    "position": "all",
+    "apply_chat_template": true,
+    "spherical_kappa": 20.0,
+    "spherical_alpha": 0.7,
+    "spherical_beta": -0.15,
+    "spherical_use_vmf_gate": true
+  },
+  "train_dataset": "refusal",
+  "test_dataset": "refusal_response",
+  "n_train": null,
+  "n_test": null,
+  "seed": 42,
+  "save_vector": "Results/NewMethods/spherical_refusal_response_vector"
+}

@@ -1,0 +1,30 @@
+name: lineas
+pooling_op: mean
+estimation_strategy: end2end
+state_path: null
+optimization_params:
+  max_batches: null
+  bin_targets: false
+  learning_rate: 1e-3
+  dampen_lr: 0.001
+  steps: 1000
+  post_steps: 0
+  init_identity: true
+  criterion: wasserstein
+  criterion_kwargs:
+    p: 2
+  optimizer: Adam
+  optimizer_kwargs:
+    betas: [0.9, 0.9]
+    weight_decay: 0
+  regularization_l1_weight: 0.0
+  regularization_l2_weight: 0.0
+  regularization_l1_bias: null
+  regularization_l2_bias: null
+  proximal: null  # l1, sparse
+  sparsity_threshold: 1e-5
+hook_params:
+  intervention_position: all # last, avg
+  strength: 1.0
+  device: ${device}
+  dtype: ${dtype:torch.float32}

@@ -1,0 +1,5 @@
+model_task: "text_generation"
+dataset: "OneSecConcepts-100_1.5.0"
+src_subsets: ["non-football-1_04_00__"]
+dst_subsets: ["football-1_04_00__"]
+default_evaluation: ['text_generation']

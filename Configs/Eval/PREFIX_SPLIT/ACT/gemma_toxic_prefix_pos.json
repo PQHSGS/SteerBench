@@ -1,0 +1,43 @@
+{
+  "name": "gemma_toxic_prefix_pos",
+  "description": "ACT toxic prefix_pos prefix split",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "ACT",
+    "layer": [
+      14
+    ],
+    "hook_point": "pre",
+    "position": "mask",
+    "batch_size": 4,
+    "act_mode": "linear",
+    "inverse": false
+  },
+  "steer": {
+    "method": "ACT",
+    "layer": [
+      14
+    ],
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 2,
+    "batch_size": 4,
+    "apply_chat_template": false,
+    "act_support": "none"
+  },
+  "train_dataset": "toxic_jigsaw_prefix_pos",
+  "n_train": 287,
+  "test_dataset": "toxic",
+  "n_test": 100,
+  "output": "./Results/linearact",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42,
+  "save_vector": "Vector/PREFIX_SPLIT/ACT/toxic_prefix_pos"
+}

@@ -1,0 +1,13 @@
+model_path: ByteDance/SDXL-Lightning
+default_batch_size: 16
+unet_with_grads: false
+training_kwargs:
+  inference_steps: 1
+  guidance_scale: 0
+generation_kwargs:
+  inference_steps: 4
+  guidance_scale: 0
+default_modules:
+  default: ${.layernorm}
+  layernorm: ['unet.*norm.*']
+  fast: ['text_encoder.text_model.encoder.layers.0.mlp:0']

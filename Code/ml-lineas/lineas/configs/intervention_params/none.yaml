@@ -1,0 +1,9 @@
+name: none
+pooling_op: mean
+estimation_strategy: atonce
+state_path: null
+hook_params:
+  intervention_position: all
+  strength: 0.0
+  device: ${device}
+  dtype: ${dtype:torch.float32}

@@ -1,0 +1,65 @@
+{
+  "name": "gemma_toxic",
+  "description": "FLOW toxic steering evaluated on toxic (with Sinkhorn OT alignment)",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:2",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "inverse": false,
+    "method": "FLOW",
+    "layer": [
+      14
+    ],
+    "batch_size": 16,
+    "position": "mask",
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "change_pad_token": false,
+    "flow_hidden_dim": 512,
+    "flow_layers": 2,
+    "flow_lr": 0.001,
+    "flow_epochs": 400,
+    "flow_batch_size": 64,
+    "flow_seed": 42,
+    "flow_subspace_dim": 16,
+    "flow_norm_mode": "gaussian",
+    "flow_loss_mode": "mse",
+    "flow_weighted": false,
+    "flow_max_weight": 10,
+    "flow_train_space": "pca_diff",
+    "flow_target_type": "concept",
+    "flow_ot": "sinkhorn"
+  },
+  "steer": {
+    "method": "FLOW",
+    "layer": [
+      14
+    ],
+    "coeff": 1,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "norm": false,
+    "apply_all_layers": false,
+    "flow_steps": 20,
+    "flow_guidance_strength": 3.0,
+    "flow_guidance_mode": "off",
+    "flow_denoise_mode": "proj",
+    "steer_once": false
+  },
+  "post_process": {},
+  "train_dataset": "toxic_jigsaw" ,
+  "n_train": 500,
+  "test_dataset": "toxic",
+  "n_test": 100,
+  "output": "Results/FlowSteer",
+  "save_samples": false,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

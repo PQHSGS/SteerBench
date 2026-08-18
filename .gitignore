@@ -1,0 +1,54 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+.venv/
+env/
+venv/
+ENV/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# AI agent & internal tool metadata
+.agents/
+.antigravitycli/
+.claude/
+.opencode/
+opencode-quota/
+opencode.json
+token-optimizer/
+tui.json
+.gitlab/
+.kaggle/
+
+# Testing & Caches
+.pytest_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Logging & Runs
+*.log
+wandb/
+runs/
+graphify-out/
+
+# Large Model Checkpoints, Vectors & Raw Result Dumps
+Vector/
+Results/
+Paper/
+data/
+GLP/
+TrainDataset/mmlu/
+TrainDataset/behaviour/asteer/result/

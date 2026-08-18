@@ -1,0 +1,45 @@
+{
+  "name": "qwen_sorrybench_refusal_response",
+  "description": "FEAT steering for sorrybench_refusal_response",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SAEIO",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "apply_chat_template": true,
+    "hook_point": "pre"
+  },
+  "steer": {
+    "method": "FEAT",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "feature_list": {
+      "14": [
+        0,
+        1,
+        2
+      ]
+    },
+    "overwrite_with_max_act": false,
+    "max_act": 20.0,
+    "use_reconstruction_error": true,
+    "hook_point": "pre"
+  },
+  "load_vector": "Vector/SAEIO/Qwen/refusal_response",
+  "n_test": null,
+  "test_dataset": "sorrybench",
+  "output": "./Results/feat",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "train_dataset": "sorrybench_refusal_response"
+}

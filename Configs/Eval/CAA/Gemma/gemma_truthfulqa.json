@@ -1,0 +1,30 @@
+{
+  "name": "gemma_truthfulqa_hallu",
+  "description": "CAA steering trained on sycophancy, evaluated on truthfulqa",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 14,
+    "batch_size": 4,
+    "position": "last",
+    "apply_chat_template": true,
+    "train_dataset": "hallucination",
+    "n_train": 1000
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 14,
+    "coeff": 1.0,
+    "apply_chat_template": true
+  },
+  "load_vector": "Vector/CAA/Gemma/ai_risk_hallucination",
+  "test_dataset": "truthfulqa",
+  "output": "./Results/caa",
+  "include_baseline": false,
+  "seed": 42
+}

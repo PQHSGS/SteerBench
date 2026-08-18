@@ -1,0 +1,43 @@
+{
+  "name": "gemma_evil_prefix_neg",
+  "description": "ACT evil prefix_neg prefix split",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "ACT",
+    "layer": [
+      14
+    ],
+    "hook_point": "pre",
+    "position": "mask",
+    "batch_size": 4,
+    "act_mode": "linear",
+    "inverse": false
+  },
+  "steer": {
+    "method": "ACT",
+    "layer": [
+      14
+    ],
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 2,
+    "batch_size": 4,
+    "apply_chat_template": false,
+    "act_support": "none"
+  },
+  "train_dataset": "evil_prefix_neg",
+  "n_train": 226,
+  "test_dataset": "evil",
+  "n_test": 100,
+  "output": "./Results/linearact",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42,
+  "save_vector": "Vector/PREFIX_SPLIT/ACT/evil_prefix_neg"
+}

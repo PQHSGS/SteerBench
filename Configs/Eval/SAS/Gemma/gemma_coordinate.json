@@ -1,0 +1,31 @@
+{
+  "name": "gemma_coordinate",
+  "description": "SAS (SAE-based) steering for hallucination reduction, evaluated on math",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SAS",
+    "layer": 14,
+    "batch_size": 4,
+    "top_k": 15,
+    "act_frac": 0.2,
+    "position": -2,
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "SAS",
+    "layer": 14,
+    "coeff": 1.0,
+    "top_k": 5
+  },
+  "save_vector": "Vector/SAS/Gemma/ai_risk_coordinate",
+  "train_dataset": "ai_risk_coordinate",
+  "n_train": 1000,
+  "n_test": 100,
+  "test_dataset": "coordinate_ab",
+  "output": "./Results/sas"
+}

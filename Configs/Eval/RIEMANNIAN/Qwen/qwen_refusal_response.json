@@ -1,0 +1,36 @@
+{
+  "name": "qwen_refusal_response",
+  "description": "Riemannian exponential map steering on refusal",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "RIEMANNIAN",
+    "layer": 18,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "riemannian_steps": 50,
+    "riemannian_calpha": 1.0,
+    "riemannian_norm_output": true
+  },
+  "steer": {
+    "method": "RIEMANNIAN",
+    "layer": 18,
+    "coeff": 2,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "steer_once": false,
+    "riemannian_calpha": 1.0
+  },
+  "save_vector": "Vector/RIEMANNIAN/Qwen/refusal_response",
+  "train_dataset": "refusal_cast_responses",
+  "test_dataset": "refusal_open",
+  "output": "./Results/riemannian",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42
+}

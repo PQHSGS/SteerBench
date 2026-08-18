@@ -1,0 +1,35 @@
+{
+  "name": "llama_sorrybench",
+  "description": "MANIFOLD steering using refusal vector, evaluated on sorrybench",
+  "model": {
+    "name": "meta-llama/Llama-3.2-1B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "MANIFOLD",
+    "layer": [7],
+    "batch_size": 4,
+    "position": -2,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "manifold_dim": 10
+  },
+  "steer": {
+    "method": "MANIFOLD",
+    "layer": [7],
+    "coeff": 0.3,
+    "hook_point": "pre",
+    "position": "all",
+    "apply_chat_template": true,
+    "apply_all_layers": false
+  },
+  "load_vector": "Vector/MANIFOLD/Llama/ai_risk_refusal",
+  "n_test": null,
+  "test_dataset": "sorrybench",
+  "output": "./Results/manifold",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

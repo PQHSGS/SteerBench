@@ -1,0 +1,52 @@
+{
+  "name": "qwen_deception",
+  "description": "PID steering on deception",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "PID",
+    "layer": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "position": "last",
+    "inverse": true,
+    "pid_kp": 1.0,
+    "pid_ki": 0.005,
+    "pid_kd": 0.02,
+    "pid_normalize_error": false
+  },
+  "steer": {
+    "method": "PID",
+    "layer": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 2.0,
+    "steer_once": false
+  },
+  "train_dataset": "liarbench",
+  "test_dataset": "liarbench",
+  "n_train": 500,
+  "n_test": 100,
+  "save_vector": "Vector/PID/Qwen/deception",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/pid",
+  "seed": 42
+}

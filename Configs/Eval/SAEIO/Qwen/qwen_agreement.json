@@ -1,0 +1,39 @@
+{
+  "name": "qwen_agreement",
+  "description": "SAEIO steering for agreement",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SAEIO",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "top_k": 15,
+    "apply_chat_template": true,
+    "act_threshold": 20,
+    "amp_factor": 10,
+    "hook_point": "pre",
+    "inverse": true
+  },
+  "steer": {
+    "method": "SAEIO",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "top_k": 1
+  },
+  "save_vector": "Vector/SAEIO/Qwen/agreement",
+  "train_dataset": "refusal_cast_responses",
+  "test_dataset": "refusal_open",
+  "n_test": null,
+  "output": "./Results/saeio",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42
+}

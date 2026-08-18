@@ -1,0 +1,21 @@
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+matplotlib==3.10.0
+scikit-learn==1.6.1
+seaborn==0.13.2
+pandas==2.2.3
+
+transformers==4.49.0
+sentence-transformers==5.2.0
+diffusers>=0.31.0
+einops>=0.8.0
+wandb>=0.17.0
+
+transformer-lens==2.11.0
+sae-lens==5.3.0
+
+# thêm để tránh mismatch
+accelerate>=0.23.0
+datasets>=2.21.0
+git+https://github.com/davidbau/baukit
+omegaconf

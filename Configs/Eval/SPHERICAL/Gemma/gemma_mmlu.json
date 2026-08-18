@@ -1,0 +1,33 @@
+{
+  "name": "gemma_mmlu",
+  "description": "SPHERICAL steering evaluated on MMLU",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SPHERICAL",
+    "layer": [14],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre"
+  },
+  "steer": {
+    "method": "SPHERICAL",
+    "layer": [14],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "spherical_kappa": 20.0,
+    "spherical_alpha": 0.7,
+    "spherical_beta": -0.15,
+    "spherical_use_vmf_gate": true
+  },
+  "load_vector": "Vector/SPHERICAL/Gemma/refusal_response",
+  "test_dataset": "mmlu",
+  "output": "./Results/spherical",
+  "include_baseline": false,
+  "seed": 42
+}

@@ -1,0 +1,67 @@
+{
+  "name": "cast_qwen_coordinate_open",
+  "description": "CAST (Conditional Activation Steering) for refusal using Qwen1.5-1.8B - replicating CAST paper results",
+  "model": {
+    "name": "Qwen/Qwen1.5-1.8B-Chat",
+    "device": "cuda",
+    "dtype": "float16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST_HF",
+    "apply_chat_template": true,
+    "layer": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "use_pca": true,
+    "apply_conditional_chat_template": true,
+    "conditional_layer": 7,
+    "hook_point": "post",
+    "train_dataset": "ai_risk_coordinate",
+    "n_train": 128,
+    "verbose": true
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "coeff": 5,
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "conditional_threshold": 0.03,
+    "conditional_threshold_is": "smaller",
+    "conditional_pos": "mean",
+    "apply_conditional_chat_template": true,
+    "apply_to_all_tokens": true
+  },
+  "test_dataset": "coordinate_open",
+  "n_test": null,
+  "load_vector": "Vector/CAST/coordinate",
+  "output": "./Results/cast",
+  "include_baseline": true,
+  "save_samples": false,
+  "seed": 42
+}

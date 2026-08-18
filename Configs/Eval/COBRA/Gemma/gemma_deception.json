@@ -1,0 +1,40 @@
+{
+  "name": "gemma_deception",
+  "description": "COBRA steering on deception",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "COBRA",
+    "layer": 14,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "inverse": true,
+    "cobra_k": 4,
+    "cobra_lambda": 0.1,
+    "cobra_dim": 8
+  },
+  "steer": {
+    "method": "COBRA",
+    "layer": 14,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 2.0,
+    "steer_once": false
+  },
+  "train_dataset": "liarbench",
+  "n_train": 500,
+  "test_dataset": "liarbench",
+  "save_vector": "Vector/COBRA/Gemma/deception",
+  "n_test": 100,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/cobra",
+  "seed": 42
+}

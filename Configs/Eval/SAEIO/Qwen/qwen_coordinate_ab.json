@@ -1,0 +1,37 @@
+{
+  "name": "qwen_coordinate_ab",
+  "description": "SAEIO steering trained on coordinate, evaluated on coordinate_ab",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SAEIO",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "top_k": 20,
+    "apply_chat_template": true,
+    "act_threshold": 20,
+    "amp_factor": 10,
+    "position": -2,
+    "hook_point": "pre"
+  },
+  "steer": {
+    "method": "SAEIO",
+    "layer": [
+      18
+    ],
+    "coeff": 1
+  },
+  "train_dataset": "ai_risk_coordinate",
+  "n_train": 360,
+  "n_test": 500,
+  "load_vector": "Vector/SAEIO/Qwen/ai_risk_coordinate",
+  "test_dataset": "coordinate_ab",
+  "output": "./Results/saeio",
+  "seed": 42
+}

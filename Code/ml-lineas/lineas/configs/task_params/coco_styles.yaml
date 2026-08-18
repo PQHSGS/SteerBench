@@ -1,0 +1,6 @@
+model_task: "text_to_image_generation"
+dataset: "coco-captions-styles"
+src_subsets: ["none"]
+dst_subsets: ["art_nouveau"]
+prompt_subset: [none]
+default_evaluation: ['text_to_image_generation', 'clip_score']

@@ -1,0 +1,41 @@
+{
+  "name": "qwen_refusal_ab",
+  "description": "MANIFOLD steering for refusal_ab",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "MANIFOLD",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": -2,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "manifold_dim": 10
+  },
+  "steer": {
+    "method": "MANIFOLD",
+    "layer": [
+      18
+    ],
+    "coeff": 0.3,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "apply_all_layers": false,
+    "position": -2
+  },
+  "save_vector": "Vector/MANIFOLD/Qwen/ai_risk_refusal",
+  "n_test": null,
+  "test_dataset": "refusal_ab",
+  "train_dataset": "refusal_caa",
+  "output": "./Results/manifold",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "n_train": 1000
+}

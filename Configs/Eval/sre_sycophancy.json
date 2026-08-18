@@ -1,0 +1,27 @@
+{
+  "name": "sre_sycophancy",
+  "description": "SRE (Sparse Representation Engineering) for sycophancy",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "sae_width": "65k",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SRE",
+    "layer": 14,
+    "batch_size": 4,
+    "act_threshold": 0.3,
+    "train_dataset": "sycophancy",
+    "n_train": 100
+  },
+  "steer": {
+    "method": "SRE",
+    "layer": 14,
+    "coeff": 1.0,
+    "n_test": 200
+  },
+  "test_dataset": "csqa",
+  "output": "./Results/sre"
+}

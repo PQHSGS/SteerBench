@@ -1,0 +1,38 @@
+{
+  "name": "gemma_deception_deception_k_auto",
+  "description": "CHARS deception_k_auto on deception",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CHARS",
+    "layer": 14,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "inverse": true,
+    "chars_k": "auto",
+    "chars_lambda": 0.1,
+    "chars_eps": null
+  },
+  "steer": {
+    "method": "CHARS",
+    "layer": 14,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 7,
+    "steer_once": false
+  },
+  "train_dataset": "liarbench",
+  "n_train": 500,
+  "test_dataset": "liarbench",
+  "save_vector": "Vector/CHARS/Gemma/deception_k_auto",
+  "n_test": 100,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/chars",
+  "seed": 42
+}

@@ -1,0 +1,36 @@
+{
+  "name": "gemma_truthfulqa",
+  "description": "SAECOT steering for truthfulqa",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SAE-COT",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "apply_chat_template": true,
+    "saecot_value_mode": "target_mean"
+  },
+  "steer": {
+    "method": "SAE-COT",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "top_k": 5
+  },
+  "load_vector": "Vector/SAECOT/Gemma/ai_risk_hallucination",
+  "n_test": null,
+  "test_dataset": "truthfulqa",
+  "output": "./Results/saecot",
+  "include_baseline": false,
+  "seed": 42,
+  "train_dataset": "hallucination"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "qwen_gms8k",
+  "description": "SAEIO steering trained on hallucination, evaluated on gms8k",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 300
+  },
+  "extractor": {
+    "method": "SAEIO",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "top_k": 20,
+    "apply_chat_template": true,
+    "act_threshold": 20,
+    "amp_factor": 10,
+    "position": "mask"
+  },
+  "steer": {
+    "method": "SAEIO",
+    "layer": [
+      18
+    ],
+    "coeff": 0.3,
+    "top_k": 3
+  },
+  "save_vector": "Vector/SAEIO/Qwen/gms8k",
+  "train_dataset": "srps_roleplay_gms8k",
+  "n_train": 1000,
+  "test_dataset": "gms8k",
+  "n_test": 100,
+  "output": "./Results/saeio",
+  "include_baseline": false,
+  "seed": 42
+}

@@ -1,0 +1,37 @@
+{
+  "name": "gemma_refusal_response",
+  "description": "LQR response-only refusal vector extraction (gemma-2-2b-it)",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "LQR",
+    "layer": [12, 13, 14, 15, 16],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "lqr_Q": 1.0,
+    "lqr_R": 1.0,
+    "lqr_Qf": 1.0,
+    "lqr_jac_chunk_size": 64,
+    "lqr_store_jacobians": false
+  },
+  "steer": {
+    "method": "LQR",
+    "layer": [12, 13, 14, 15, 16],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 1,
+    "steer_once": false
+  },
+  "train_dataset": "refusal_cast_responses",
+  "test_dataset": "refusal_open",
+  "load_vector": "Vector/LQR/Gemma/refusal_response",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "output": "./Results/lqr"
+}

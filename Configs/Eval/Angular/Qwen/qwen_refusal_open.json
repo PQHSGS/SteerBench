@@ -1,0 +1,38 @@
+{
+  "name": "qwen_refusal_open",
+  "description": "ANGULAR steering for refusal_open",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ANGULAR",
+    "layer": 6,
+    "batch_size": 8,
+    "position": "last",
+    "strategy": "max_sim",
+    "hook_point": [
+      "mid",
+      "post"
+    ]
+  },
+  "steer": {
+    "method": "ANGULAR",
+    "layer": 26,
+    "adaptive": true,
+    "target_angle": 0,
+    "coeff": 1,
+    "apply_all_layers": true,
+    "n_test": null
+  },
+  "test_dataset": "refusal_open",
+  "load_vector": "Vector/Angular/Qwen/ai_risk_refusal",
+  "output": "./Results/angular",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "train_dataset": "refusal_caa",
+  "n_test": null
+}

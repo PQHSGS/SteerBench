@@ -1,0 +1,34 @@
+{
+  "name": "qwen_refusal_harmbench",
+  "description": "SAEIO steering trained on refusal, evaluated on HarmBench",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SAEIO",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "top_k": 20,
+    "apply_chat_template": false,
+    "act_threshold": 20,
+    "amp_factor": 10,
+    "position": -2,
+    "hook_point": "pre"
+  },
+  "steer": {
+    "method": "SAEIO",
+    "layer": [
+      18
+    ],
+    "coeff": 1
+  },
+  "test_dataset": "harmbench",
+  "output": "./Results/saeio",
+  "include_baseline": false,
+  "seed": 42
+}

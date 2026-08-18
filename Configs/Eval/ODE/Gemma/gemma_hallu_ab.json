@@ -1,0 +1,52 @@
+{
+  "name": "gemma_hallu_ab",
+  "description": "ODE steering trained on hallucination, evaluated on hallucination_ab",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "ODE",
+    "layer": [14],
+    "batch_size": 16,
+    "position": -2,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "change_pad_token": false,
+    "classifier_type": "normed_poly",
+    "n_components": 4000,
+    "degree": 2,
+    "gamma": 0.1,
+    "coef0": 1.0,
+    "lin_clf_type": "lr",
+    "solver": "euler",
+    "steps": 20
+  },
+  "steer": {
+    "method": "ODE",
+    "layer": [14],
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "apply_all_layers": false,
+    "solver": "euler",
+    "steps": 20,
+    "one_step": false
+  },
+  "post_process": {},
+  "train_dataset": "hallucination",
+  "n_train": 1000,
+  "test_dataset": "hallucination_ab",
+  "n_test": 500,
+  "output": "Results/ODE",
+  "save_samples": false,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "save_vector": "Vector/ODE/Gemma/ai_risk_hallucination"
+}

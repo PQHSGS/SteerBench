@@ -1,0 +1,23 @@
+point_id,selected_for_plot,setup,method,coefficient,steer.top_k,accuracy,perplexity,ppl_cluster,cluster_center
+3,True,c=1.7 k=15,CAA,1.7,15,98.0,3.08,3,3.5
+8,True,c=10.0 k=15,MANIFOLD,10.0,15,98.0,6.87,6,6.5
+2,True,c=1.5 k=15,CAA,1.5,15,96.0,2.56,2,2.5
+7,True,c=7.5 k=15,MANIFOLD,7.5,15,96.0,4.94,4,4.5
+6,True,c=5.0 k=15,MANIFOLD,5.0,15,94.0,2.18,2,2.5
+16,True,c=7.5 k=3,SAS,7.5,top3,94.0,3.49,3,3.5
+1,True,c=1.0 k=15,CAA,1.0,15,92.0,1.74,1,1.5
+14,True,c=4.0 k=15,SAS,4.0,15,92.0,1.9,1,1.5
+15,True,c=5.0 k=3,SAS,5.0,top3,92.0,2.29,2,2.5
+19,True,c=3.0 k=15,SPARE,3.0,15,90.0,1.42,1,1.5
+5,True,c=3.0 k=15,MANIFOLD,3.0,15,90.0,1.56,1,1.5
+18,True,c=10.0 k=15,SAS,10.0,15,90.0,5.89,5,5.5
+20,True,c=10.0 k=mid5,SRPS,10.0,mid5,88.0,1.48,1,1.5
+13,True,c=10.0 k=15,SAEIO,10.0,15,88.0,2.24,2,2.5
+21,True,c=7.5 k=3,SRPS,7.5,top3,88.0,3.14,3,3.5
+4,True,c=0.7 k=15,CAST,0.7,15,86.0,1.43,1,1.5
+12,True,c=3.0 k=15,SAEIO,3.0,15,86.0,1.45,1,1.5
+9,True,c=0.7 k=15,SAECOT,0.7,15,86.0,1.47,1,1.5
+17,True,c=10.0 k=3,SAS,10.0,top3,86.0,4.19,4,4.5
+10,True,c=5.0 k=3,SAECOT,5.0,top3,84.0,2.13,2,2.5
+11,True,c=7.5 k=3,SAECOT,7.5,top3,78.0,6.58,6,6.5
+22,True,c=7.5 k=5,SRPS,7.5,top5,76.0,4.12,4,4.5

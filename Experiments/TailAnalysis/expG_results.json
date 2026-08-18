@@ -1,0 +1,222 @@
+{
+  "toxic": {
+    "task": "toxic",
+    "n_samples": 1000,
+    "n_pca_keep": 441,
+    "explained_var_90": 0.9003857374191284,
+    "steering_vector_decomposition": {
+      "norm_total": 142.54344177246094,
+      "norm_in_manifold": 139.3828582763672,
+      "norm_off_manifold": 29.850488662719727,
+      "frac_in_manifold": 0.977827250957489,
+      "frac_off_manifold": 0.20941327512264252,
+      "tail_canonical_dims_fraction": 0.05479023605585098
+    },
+    "target": {
+      "off_ratio_mean": 0.22806026590370237,
+      "off_ratio_std": 0.046387845796844136,
+      "hill_alpha_in_manifold_mean": 4.240439126001517,
+      "hill_alpha_off_manifold_mean": 4.180642730989037,
+      "hill_alpha_canonical_mean": 4.6874703583919874,
+      "tail_dim_count": 54,
+      "min_hill_alpha_canonical": 3.005481345546904
+    },
+    "contrast": {
+      "off_ratio_mean": 0.22622455933607757,
+      "off_ratio_std": 0.04662317153916068,
+      "hill_alpha_in_manifold_mean": 4.285154154075038,
+      "hill_alpha_off_manifold_mean": 4.121214066898144,
+      "hill_alpha_canonical_mean": 4.583474654614585,
+      "tail_dim_count": 67,
+      "min_hill_alpha_canonical": 2.80015298248671
+    },
+    "tail_dim_agreement": {
+      "iou_tail_dims": 0.03418803418803419,
+      "tail_dims_target": 54,
+      "tail_dims_contrast": 67,
+      "tail_dims_intersection": 4,
+      "tail_dims_union": 117
+    },
+    "separation": {
+      "in_manifold": 36.5030517578125,
+      "off_manifold": 1.9669958353042603,
+      "ratio_off_vs_in": 0.05388579145073891,
+      "frac_sig_off_dims": 0.0,
+      "n_sig_off_dims": 0,
+      "n_off_dims_total": 559
+    },
+    "mw_test": {
+      "off_ratio_target_vs_contrast_p": 0.9014475489936908,
+      "significant_005": false,
+      "n_sig_canonical_dims": 502,
+      "sig_dims_in_tail": 21,
+      "sig_dims_in_tail_frac": 0.1794871794871795,
+      "n_sig_dims_total_out_of": 2304
+    }
+  },
+  "evil": {
+    "task": "evil",
+    "n_samples": 1000,
+    "n_pca_keep": 212,
+    "explained_var_90": 0.900455892086029,
+    "steering_vector_decomposition": {
+      "norm_total": 211.891845703125,
+      "norm_in_manifold": 201.5627899169922,
+      "norm_off_manifold": 65.3498306274414,
+      "frac_in_manifold": 0.9512531757354736,
+      "frac_off_manifold": 0.30841127038002014,
+      "tail_canonical_dims_fraction": 0.06918647140264511
+    },
+    "target": {
+      "off_ratio_mean": 0.15617054730589408,
+      "off_ratio_std": 0.017446419803932148,
+      "hill_alpha_in_manifold_mean": 4.337303772085323,
+      "hill_alpha_off_manifold_mean": 4.405943588214737,
+      "hill_alpha_canonical_mean": 5.872394164079076,
+      "tail_dim_count": 51,
+      "min_hill_alpha_canonical": 1.2946469580162285
+    },
+    "contrast": {
+      "off_ratio_mean": 0.1511961406410424,
+      "off_ratio_std": 0.01488905399704248,
+      "hill_alpha_in_manifold_mean": 4.270577841145071,
+      "hill_alpha_off_manifold_mean": 4.377101952128552,
+      "hill_alpha_canonical_mean": 5.950373862580552,
+      "tail_dim_count": 16,
+      "min_hill_alpha_canonical": 2.838979703087869
+    },
+    "tail_dim_agreement": {
+      "iou_tail_dims": 0.0,
+      "tail_dims_target": 51,
+      "tail_dims_contrast": 16,
+      "tail_dims_intersection": 0,
+      "tail_dims_union": 67
+    },
+    "separation": {
+      "in_manifold": 105.12773132324219,
+      "off_manifold": 0.3168078362941742,
+      "ratio_off_vs_in": 0.0030135514680296183,
+      "frac_sig_off_dims": 0.0,
+      "n_sig_off_dims": 0,
+      "n_off_dims_total": 788
+    },
+    "mw_test": {
+      "off_ratio_target_vs_contrast_p": 6.714350960587745e-06,
+      "significant_005": true,
+      "n_sig_canonical_dims": 1815,
+      "sig_dims_in_tail": 54,
+      "sig_dims_in_tail_frac": 0.8059701492537313,
+      "n_sig_dims_total_out_of": 2304
+    }
+  },
+  "deception": {
+    "task": "deception",
+    "n_samples": 1000,
+    "n_pca_keep": 17,
+    "explained_var_90": 0.9027235507965088,
+    "steering_vector_decomposition": {
+      "norm_total": 177.0364227294922,
+      "norm_in_manifold": 71.2236099243164,
+      "norm_off_manifold": 162.0774383544922,
+      "frac_in_manifold": 0.40231049060821533,
+      "frac_off_manifold": 0.9155033230781555,
+      "tail_canonical_dims_fraction": 0.01827378198504448
+    },
+    "target": {
+      "off_ratio_mean": 0.10384674082788757,
+      "off_ratio_std": 0.03158509547272385,
+      "hill_alpha_in_manifold_mean": 6.067057947374524,
+      "hill_alpha_off_manifold_mean": 3.8606705872180553,
+      "hill_alpha_canonical_mean": 10.645929639660874,
+      "tail_dim_count": 24,
+      "min_hill_alpha_canonical": 2.345669201285942
+    },
+    "contrast": {
+      "off_ratio_mean": 0.10531491427616567,
+      "off_ratio_std": 0.03867114970596398,
+      "hill_alpha_in_manifold_mean": 6.698025614938282,
+      "hill_alpha_off_manifold_mean": 3.822561644054755,
+      "hill_alpha_canonical_mean": 10.656708911740951,
+      "tail_dim_count": 46,
+      "min_hill_alpha_canonical": 1.9377963483918241
+    },
+    "tail_dim_agreement": {
+      "iou_tail_dims": 0.14754098360655737,
+      "tail_dims_target": 24,
+      "tail_dims_contrast": 46,
+      "tail_dims_intersection": 9,
+      "tail_dims_union": 61
+    },
+    "separation": {
+      "in_manifold": 17.838470458984375,
+      "off_manifold": 2.387627363204956,
+      "ratio_off_vs_in": 0.13384708762168884,
+      "frac_sig_off_dims": 0.001017293997965412,
+      "n_sig_off_dims": 1,
+      "n_off_dims_total": 983
+    },
+    "mw_test": {
+      "off_ratio_target_vs_contrast_p": 0.6347326924675165,
+      "significant_005": false,
+      "n_sig_canonical_dims": 749,
+      "sig_dims_in_tail": 26,
+      "sig_dims_in_tail_frac": 0.4262295081967213,
+      "n_sig_dims_total_out_of": 2304
+    }
+  },
+  "refusal": {
+    "task": "refusal",
+    "n_samples": 1000,
+    "n_pca_keep": 156,
+    "explained_var_90": 0.9002272486686707,
+    "steering_vector_decomposition": {
+      "norm_total": 170.72732543945312,
+      "norm_in_manifold": 160.7522735595703,
+      "norm_off_manifold": 57.50239181518555,
+      "frac_in_manifold": 0.9415732026100159,
+      "frac_off_manifold": 0.33680835366249084,
+      "tail_canonical_dims_fraction": 0.1525300145149231
+    },
+    "target": {
+      "off_ratio_mean": 0.185549406266664,
+      "off_ratio_std": 0.03426026393913597,
+      "hill_alpha_in_manifold_mean": 4.086457726712594,
+      "hill_alpha_off_manifold_mean": 4.27505593644624,
+      "hill_alpha_canonical_mean": 5.850168259553336,
+      "tail_dim_count": 108,
+      "min_hill_alpha_canonical": 1.4213933508249643
+    },
+    "contrast": {
+      "off_ratio_mean": 0.22444093940008666,
+      "off_ratio_std": 0.04936205864380627,
+      "hill_alpha_in_manifold_mean": 4.351686454845522,
+      "hill_alpha_off_manifold_mean": 3.9808323928835803,
+      "hill_alpha_canonical_mean": 5.0726915016760366,
+      "tail_dim_count": 67,
+      "min_hill_alpha_canonical": 2.1012025932992326
+    },
+    "tail_dim_agreement": {
+      "iou_tail_dims": 0.029411764705882353,
+      "tail_dims_target": 108,
+      "tail_dims_contrast": 67,
+      "tail_dims_intersection": 5,
+      "tail_dims_union": 170
+    },
+    "separation": {
+      "in_manifold": 104.8744888305664,
+      "off_manifold": 0.3063484728336334,
+      "ratio_off_vs_in": 0.002921096282079816,
+      "frac_sig_off_dims": 0.001184834123222749,
+      "n_sig_off_dims": 1,
+      "n_off_dims_total": 844
+    },
+    "mw_test": {
+      "off_ratio_target_vs_contrast_p": 7.167008933214485e-37,
+      "significant_005": true,
+      "n_sig_canonical_dims": 1726,
+      "sig_dims_in_tail": 111,
+      "sig_dims_in_tail_frac": 0.6529411764705882,
+      "n_sig_dims_total_out_of": 2304
+    }
+  }
+}

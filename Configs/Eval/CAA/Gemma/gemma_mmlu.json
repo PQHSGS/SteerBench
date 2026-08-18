@@ -1,0 +1,30 @@
+{
+  "name": "gemma_mmlu",
+  "description": "CAA steering evaluated on MMLU",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 14,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 14,
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "steer_once": false
+  },
+  "load_vector": "Vector/CAA/Gemma/deception",
+  "test_dataset": "mmlu",
+  "output": "./Results/caa",
+  "include_baseline": false,
+  "seed": 42
+}

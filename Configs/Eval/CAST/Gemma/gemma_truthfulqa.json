@@ -1,0 +1,39 @@
+{
+  "name": "gemma_truthfulqa",
+  "description": "CAST steering for truthfulqa",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_pca": false
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "apply_to_all_tokens": true
+  },
+  "load_vector": "Vector/CAST/Gemma/ai_risk_hallucination",
+  "n_test": null,
+  "test_dataset": "truthfulqa",
+  "output": "./Results/cast",
+  "include_baseline": false,
+  "seed": 42,
+  "train_dataset": "hallucination"
+}

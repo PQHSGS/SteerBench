@@ -1,0 +1,68 @@
+{
+  "name": "cast_llama_sorrybench",
+  "description": "CAST (Conditional Activation Steering) for refusal using Llama-2-7b for multi-layer steering test",
+  "model": {
+    "name": "meta-llama/Llama-3.1-8B-Instruct",
+    "device": "cuda",
+    "dtype": "float16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST_HF",
+    "apply_chat_template": true,
+    "layer": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "use_pca": true,
+    "conditional_dataset": "refusal",
+    "apply_conditional_chat_template": true,
+    "conditional_layer": 7,
+    "save_conditional_vector": "Vector/CAST/Llama_condition.pt",
+    "hook_point": "post",
+    "verbose": true
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "conditional_threshold": 0.03,
+    "load_conditional_vector": "Vector/CAST/Llama_condition.pt",
+    "conditional_threshold_is": "smaller",
+    "conditional_pos": "mean",
+    "apply_to_all_tokens": true
+  },
+  "train_dataset": "refusal_cast_responses",
+  "n_train": null,
+  "test_dataset": "sorrybench",
+  "n_test": null,
+  "load_vector": "Vector/CAST/llama_steering_vector",
+  "output": "./Results/cast",
+  "include_baseline": true,
+  "seed": 42
+}

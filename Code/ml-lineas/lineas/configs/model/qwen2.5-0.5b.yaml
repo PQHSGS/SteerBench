@@ -1,0 +1,23 @@
+model_path: Qwen/Qwen2.5-0.5B
+default_batch_size: 32
+seq_len: 128
+dtype: ${dtype:torch.bfloat16}
+use_lora: false
+lora_params:
+  r: 8 # Lora attention dimension (the “rank”).
+  target_modules: ".*post.*layernorm" # Accepts either list of fully matching endswith strings, or one simple regex string or "all-linear"
+  use_rslora: true # When set to True, uses Rank-Stabilized LoRA which sets the adapter scaling factor to lora_alpha/math.sqrt(r), since it was proven to work better.
+  peft_type: "LORA"
+  init_lora_weights: true # init_lora_weights (bool | Literal["gaussian", "eva", "olora", "pissa", "pissa_niter_[number of iters]", "loftq"]) — How to initialize the weights of the adapter layers. Passing True (default) results in the default initialization from the reference implementation from Microsoft.
+  task_type: "CAUSAL_LM"
+
+default_modules:
+  icml24:
+    - "model.layers.*.mlp.up_proj"
+    - "model.layers.*.mlp.down_proj"
+    - "model.layers.*.mlp.gate_proj"
+  layernorm: ['.+layernorm']
+  post_layernorm: [".*post_.*_layernorm"]
+  post_attention_layernorm: [".*post_attention_layernorm"]
+  fast: ['model.layers.0.mlp.down_proj']
+  default: ${.post_layernorm}

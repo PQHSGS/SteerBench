@@ -1,0 +1,42 @@
+{
+  "name": "gemma_toxic",
+  "description": "LQR toxic steering extraction/eval (gemma-2-2b-it)",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "LQR",
+    "layer": [12, 13, 14, 15, 16],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "last",
+    "inverse": false,
+    "apply_chat_template": true,
+    "lqr_Q": 1.0,
+    "lqr_R": 1.0,
+    "lqr_Qf": 1.0,
+    "lqr_jac_chunk_size": 64,
+    "lqr_store_jacobians": false
+  },
+  "steer": {
+    "method": "LQR",
+    "layer": [12, 13, 14, 15, 16],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 1.0,
+    "steer_once": false
+  },
+  "train_dataset": "toxic_jigsaw",
+  "n_train": 500,
+  "test_dataset": "toxic",
+  "n_test": 100,
+  "save_vector": "Vector/LQR/Gemma/toxic",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "output": "./Results/lqr"
+}

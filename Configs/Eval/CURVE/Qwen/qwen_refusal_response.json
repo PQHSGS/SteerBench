@@ -1,0 +1,47 @@
+{
+  "name": "qwen_refusal_response",
+  "description": "CURVE steering for refusal_response",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "CURVEBALL",
+    "layer": [
+      18
+    ],
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 64,
+    "curveball_dim": 8,
+    "curveball_kernel": "rbf",
+    "curveball_gamma": null,
+    "curveball_degree": 2,
+    "curveball_coef0": 1.0,
+    "ot_steer": false
+  },
+  "steer": {
+    "method": "CURVEBALL",
+    "layer": [
+      18
+    ],
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 1,
+    "batch_size": 4,
+    "norm": true,
+    "ot_steer": false
+  },
+  "train_dataset": "refusal_cast_responses",
+  "test_dataset": "refusal_open",
+  "n_train": 1000,
+  "n_test": 100,
+  "output": "./Results/curve",
+  "compute_perplexity": true,
+  "save_vector": "Vector/CURVE/Qwen/refusal_response",
+  "include_baseline": false,
+  "seed": 42
+}

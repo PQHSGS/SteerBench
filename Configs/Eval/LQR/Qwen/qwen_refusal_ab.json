@@ -1,0 +1,41 @@
+{
+  "name": "qwen_refusal_ab",
+  "description": "LQR refusal steering vector extraction on gemma-2-2b-it",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "LQR",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": -2,
+    "apply_chat_template": true,
+    "lqr_Q": 1.0,
+    "lqr_R": 1.0,
+    "lqr_Qf": 1.0,
+    "lqr_jac_chunk_size": 64,
+    "lqr_store_jacobians": false
+  },
+  "steer": {
+    "method": "LQR",
+    "layer": [
+      18
+    ],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": -2,
+    "coeff": 2.0
+  },
+  "train_dataset": "refusal_caa",
+  "n_train": 1000,
+  "test_dataset": "refusal_ab",
+  "save_vector": "Vector/LQR/Qwen/ai_risk_refusal",
+  "seed": 42,
+  "output": "./Results/lqr"
+}

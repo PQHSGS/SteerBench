@@ -1,0 +1,26 @@
+{
+  "name": "gemma_mmlu",
+  "description": "CORRSTEER steering evaluated on MMLU",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CORRSTEER",
+    "layer": 14,
+    "batch_size": 4,
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CORRSTEER",
+    "layer": 14,
+    "coeff": 1.0
+  },
+  "load_vector": "Vector/CORRSTEER/Gemma/refusal_response",
+  "test_dataset": "mmlu",
+  "output": "./Results/corrsteer",
+  "include_baseline": false,
+  "seed": 42
+}

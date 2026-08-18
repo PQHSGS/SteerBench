@@ -1,0 +1,40 @@
+{
+  "name": "gemma_evil",
+  "description": "Riemannian exponential map steering on evil",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "RIEMANNIAN",
+    "layer": 14,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "inverse": false,
+    "position": "mask",
+    "riemannian_steps": 50,
+    "riemannian_calpha": 1.0,
+    "riemannian_norm_output": true
+  },
+  "steer": {
+    "method": "RIEMANNIAN",
+    "layer": 14,
+    "coeff": 1,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "steer_once": false,
+    "riemannian_calpha": 1.0
+  },
+  "save_vector": "Vector/RIEMANNIAN/Gemma/evil",
+  "train_dataset": "evil",
+  "test_dataset": "evil",
+  "output": "./Results/riemannian",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42,
+  "n_test": 100,
+  "n_train": 500
+}

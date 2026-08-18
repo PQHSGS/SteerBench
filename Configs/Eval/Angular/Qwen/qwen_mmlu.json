@@ -1,0 +1,34 @@
+{
+  "name": "qwen_mmlu",
+  "description": "ANGULAR steering evaluated on MMLU",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ANGULAR",
+    "layer": 6,
+    "batch_size": 8,
+    "strategy": "max_sim",
+    "hook_point": [
+      "mid",
+      "post"
+    ]
+  },
+  "steer": {
+    "method": "ANGULAR",
+    "layer": 26,
+    "adaptive": true,
+    "target_angle": 0,
+    "coeff": 1,
+    "apply_all_layers": true,
+    "n_test": null
+  },
+  "load_vector": "Vector/Angular/Qwen/refusal_response",
+  "test_dataset": "mmlu",
+  "output": "./Results/angular",
+  "include_baseline": false,
+  "seed": 42
+}

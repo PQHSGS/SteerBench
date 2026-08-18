@@ -1,0 +1,42 @@
+{
+  "name": "gemma_evil_evil_pct",
+  "description": "CHARS evil_pct on evil",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CHARS",
+    "layer": 14,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "position": "mask",
+    "inverse": false,
+    "chars_k": 10,
+    "chars_lambda": 0.1,
+    "chars_pct": true,
+    "chars_pct_l": 4
+  },
+  "steer": {
+    "method": "CHARS",
+    "layer": 14,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 2.0,
+    "steer_once": false,
+    "chars_pct": true,
+    "chars_pct_l": 4
+  },
+  "test_dataset": "evil",
+  "n_test": 100,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/chars",
+  "seed": 42,
+  "train_dataset": "evil",
+  "n_train": 500,
+  "save_vector": "Vector/CHARS/Gemma/evil_pct"
+}

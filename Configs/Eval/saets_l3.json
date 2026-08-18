@@ -1,0 +1,36 @@
+{
+    "name": "saets_l3_validation",
+    "description": "Level 3: SAE-TS - EXACT match with GT: python -m sae_ts.baselines.analysis (anger concept, layer 12)",
+    "model": {
+        "name": "google/gemma-2-2b-it",
+        "device": "cuda",
+        "dtype": "float16",
+        "max_new_tokens": 100
+    },
+    "extractor": {
+        "method": "SAE-TS",
+        "layer": [
+            12
+        ],
+        "batch_size": 4,
+        "saets_lr": 0.0001,
+        "saets_epochs": 15,
+        "saets_bias_scale": 1.0
+    },
+    "steer": {
+        "method": "SAE-TS",
+        "layer": [
+            12
+        ],
+        "coeff": 1.0,
+        "auto_scale": true,
+        "target_loss_increase": 0.5
+    },
+    "train_dataset": "sycophancy",
+    "n_train": 1000,
+    "test_dataset": "sycophancy_ab",
+    "n_test": 20,
+    "include_baseline": true,
+    "save_vector": true,
+    "output": "./Results/l3_saets"
+}

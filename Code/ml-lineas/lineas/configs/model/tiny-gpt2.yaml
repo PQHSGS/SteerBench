@@ -1,0 +1,12 @@
+model_path: sshleifer/tiny-gpt2
+default_batch_size: 32
+seq_len: 32
+dtype: ${dtype:torch.float32}
+default_modules:
+  c_proj:
+    - 'transformer.h.0.mlp.c_proj:0'
+    - 'transformer.h.1.mlp.c_proj:0'
+  fast:
+    - 'transformer.h.0.mlp.c_proj:0'
+    - 'transformer.h.1.mlp.c_proj:0'
+  default: ${.c_proj}

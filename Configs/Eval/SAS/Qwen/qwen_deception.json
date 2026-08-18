@@ -1,0 +1,34 @@
+{
+  "name": "qwen_deception",
+  "description": "SAS steering for deception",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "inverse": true,
+    "method": "SAS",
+    "layer": 18,
+    "batch_size": 4,
+    "top_k": 15,
+    "act_frac": 0.1,
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "SAS",
+    "layer": 18,
+    "coeff": 2,
+    "top_k": 5
+  },
+  "train_dataset": "liarbench",
+  "n_train": 1000,
+  "n_test": 100,
+  "test_dataset": "liarbench",
+  "output": "./Results/sas",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "save_vector": "Vector/SAS/Qwen/deception",
+  "seed": 42
+}

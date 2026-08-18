@@ -1,0 +1,2338 @@
+{
+  "toxic_K3": {
+    "task": "toxic",
+    "K": 3,
+    "K_actual": 3,
+    "path": "Vector/CHARS/Gemma/toxic_K3/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 28,
+    "centroid_norm_cv_l2": 0.19507548213005066,
+    "centroid_norm_cv_tail": 0.07601018249988556,
+    "active_centroids": 3,
+    "tail_hill": {
+      "n_tail": 1,
+      "n_tail_targets": 1,
+      "mass_to_tail": 0.5163211226463318,
+      "mass_self": 0.5163211226463318,
+      "mass_to_common": 0.4836789071559906,
+      "uniform_baseline": 0.3333333333333333,
+      "enrichment_over_uniform": 1.5489633679389954,
+      "spearman_norm_vs_self_mass": 0.0,
+      "n_tail_with_inter_tail_partner": 0,
+      "tot_mass_to_tail": 0.147667795419693,
+      "tot_mass_from_tail": 0.28599992394447327,
+      "flow_matrix": {
+        "tail_to_tail": 0.14766778331737507,
+        "tail_to_normal": 0.1383321171875798,
+        "normal_to_tail": 0.12033222374577476,
+        "normal_to_normal": 0.5936678757492704
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.5163211226463318,
+        "normal_mean_max_frac": 0.812410831451416,
+        "tail_mean_entropy_norm": 0.6532777747905677,
+        "normal_mean_entropy_norm": 0.41929463025849
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 1,
+      "mass_to_tail": 0.999951183795929,
+      "enrichment_over_uniform": 2.999853551387787,
+      "flow_matrix": {
+        "tail_to_tail": 0.11399456204922706,
+        "tail_to_normal": 5.563324656776305e-06,
+        "normal_to_tail": 0.10600543159315978,
+        "normal_to_normal": 0.7799944430329564
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.999951183795929,
+        "normal_mean_max_frac": 0.5705958604812622,
+        "tail_mean_entropy_norm": 0.00048739496092678393,
+        "normal_mean_entropy_norm": 0.7456898201733104
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 1,
+      "mass_to_tail": 0.999951183795929,
+      "enrichment_over_uniform": 2.999853551387787,
+      "flow_matrix": {
+        "tail_to_tail": 0.11399456204922706,
+        "tail_to_normal": 5.563324656776305e-06,
+        "normal_to_tail": 0.10600543159315978,
+        "normal_to_normal": 0.7799944430329564
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 1,
+      "mass_to_tail": 0.999951183795929,
+      "enrichment_over_uniform": 2.999853551387787,
+      "flow_matrix": {
+        "tail_to_tail": 0.11399456204922706,
+        "tail_to_normal": 5.563324656776305e-06,
+        "normal_to_tail": 0.10600543159315978,
+        "normal_to_normal": 0.7799944430329564
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 1,
+      "n_l2_tail": 1,
+      "intersection": 0,
+      "iou": 0.0
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": 0.5,
+      "norm_l2_vs_mass_from": -0.5,
+      "norm_tail_vs_self_mass": 1.0
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 50.2620849609375,
+      "tail_min": 0.0033428119495511055,
+      "tail_max": 0.919856071472168,
+      "tail_mean": 0.5433505177497864,
+      "common_min": 0.0030102913733571768,
+      "common_mean": 0.4286738336086273
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 12.85341041551828,
+      "hill_alpha_norm_target": 16.575224103367326,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 1,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.7137142817179362
+      }
+    }
+  },
+  "toxic_K5": {
+    "task": "toxic",
+    "K": 5,
+    "K_actual": 5,
+    "path": "Vector/CHARS/Gemma/toxic_K5/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 28,
+    "centroid_norm_cv_l2": 0.2893065810203552,
+    "centroid_norm_cv_tail": 0.31414464116096497,
+    "active_centroids": 5,
+    "tail_hill": {
+      "n_tail": 2,
+      "n_tail_targets": 2,
+      "mass_to_tail": 0.09004651755094528,
+      "mass_self": 0.39275500178337097,
+      "mass_to_common": 0.9099534153938293,
+      "uniform_baseline": 0.4,
+      "enrichment_over_uniform": 0.2251162938773632,
+      "spearman_norm_vs_self_mass": 0.0,
+      "n_tail_with_inter_tail_partner": 2,
+      "tot_mass_to_tail": 0.03115600161254406,
+      "tot_mass_from_tail": 0.34599897265434265,
+      "flow_matrix": {
+        "tail_to_tail": 0.031156001670576635,
+        "tail_to_normal": 0.31484293996327173,
+        "normal_to_tail": 0.13484400535904617,
+        "normal_to_normal": 0.5191570530071055
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.4320371150970459,
+        "normal_mean_max_frac": 0.6111626625061035,
+        "tail_mean_entropy_norm": 0.7061063047233388,
+        "normal_mean_entropy_norm": 0.5795753415118511
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 2,
+      "mass_to_tail": 0.8113235831260681,
+      "enrichment_over_uniform": 2.0283089578151703,
+      "flow_matrix": {
+        "tail_to_tail": 0.11683186453462152,
+        "tail_to_normal": 0.027169710875685853,
+        "normal_to_tail": 0.16316812622665888,
+        "normal_to_normal": 0.6928302983630338
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.7063494324684143,
+        "normal_mean_max_frac": 0.4282877445220947,
+        "tail_mean_entropy_norm": 0.4656530863665478,
+        "normal_mean_entropy_norm": 0.739877487083045
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 2,
+      "mass_to_tail": 0.8113235831260681,
+      "enrichment_over_uniform": 2.0283089578151703,
+      "flow_matrix": {
+        "tail_to_tail": 0.11683186453462152,
+        "tail_to_normal": 0.027169710875685853,
+        "normal_to_tail": 0.16316812622665888,
+        "normal_to_normal": 0.6928302983630338
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 2,
+      "mass_to_tail": 0.8113235831260681,
+      "enrichment_over_uniform": 2.0283089578151703,
+      "flow_matrix": {
+        "tail_to_tail": 0.11683186453462152,
+        "tail_to_normal": 0.027169710875685853,
+        "normal_to_tail": 0.16316812622665888,
+        "normal_to_normal": 0.6928302983630338
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 2,
+      "n_l2_tail": 2,
+      "intersection": 0,
+      "iou": 0.0
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": -0.19999999999999998,
+      "norm_l2_vs_mass_from": 0.09999999999999999,
+      "norm_tail_vs_self_mass": -0.39999999999999997
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 99.45968627929688,
+      "tail_min": 0.014820360578596592,
+      "tail_max": 0.9832639098167419,
+      "tail_mean": 0.5291791558265686,
+      "common_min": 0.016641896218061447,
+      "common_mean": 0.5687011480331421
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 12.85341041551828,
+      "hill_alpha_norm_target": 16.575224103367326,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 1,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.539512437582016
+      }
+    }
+  },
+  "toxic_K20": {
+    "task": "toxic",
+    "K": 20,
+    "K_actual": 20,
+    "path": "Vector/CHARS/Gemma/toxic_K20/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 28,
+    "centroid_norm_cv_l2": 0.245350643992424,
+    "centroid_norm_cv_tail": 0.28940078616142273,
+    "active_centroids": 20,
+    "tail_hill": {
+      "n_tail": 5,
+      "n_tail_targets": 5,
+      "mass_to_tail": 0.07003563642501831,
+      "mass_self": 0.032303839921951294,
+      "mass_to_common": 0.9299643039703369,
+      "uniform_baseline": 0.25,
+      "enrichment_over_uniform": 0.28014254570007324,
+      "spearman_norm_vs_self_mass": -0.3,
+      "n_tail_with_inter_tail_partner": 5,
+      "tot_mass_to_tail": 0.009384769946336746,
+      "tot_mass_from_tail": 0.13399992883205414,
+      "flow_matrix": {
+        "tail_to_tail": 0.009384770435790666,
+        "tail_to_normal": 0.12461515420903324,
+        "normal_to_tail": 0.04061523664226127,
+        "normal_to_normal": 0.8253848387129148
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.13795830309391022,
+        "normal_mean_max_frac": 0.11707470566034317,
+        "tail_mean_entropy_norm": 0.8876683067346602,
+        "normal_mean_entropy_norm": 0.9005141999041569
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 5,
+      "mass_to_tail": 0.4504503905773163,
+      "enrichment_over_uniform": 1.8018015623092651,
+      "flow_matrix": {
+        "tail_to_tail": 0.054955077204896875,
+        "tail_to_normal": 0.06704521728677593,
+        "normal_to_tail": 0.12304494793336412,
+        "normal_to_normal": 0.7549547575749631
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.14990058541297913,
+        "normal_mean_max_frac": 0.11309394985437393,
+        "tail_mean_entropy_norm": 0.8753513426322556,
+        "normal_mean_entropy_norm": 0.9046198546049585
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 5,
+      "mass_to_tail": 0.4504503905773163,
+      "enrichment_over_uniform": 1.8018015623092651,
+      "flow_matrix": {
+        "tail_to_tail": 0.054955077204896875,
+        "tail_to_normal": 0.06704521728677593,
+        "normal_to_tail": 0.12304494793336412,
+        "normal_to_normal": 0.7549547575749631
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 5,
+      "mass_to_tail": 0.4504503905773163,
+      "enrichment_over_uniform": 1.8018015623092651,
+      "flow_matrix": {
+        "tail_to_tail": 0.054955077204896875,
+        "tail_to_normal": 0.06704521728677593,
+        "normal_to_tail": 0.12304494793336412,
+        "normal_to_normal": 0.7549547575749631
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 5,
+      "n_l2_tail": 5,
+      "intersection": 1,
+      "iou": 0.1111111111111111
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": -0.16240601503759397,
+      "norm_l2_vs_mass_from": -0.051127819548872175,
+      "norm_tail_vs_self_mass": -0.030075187969924807
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 95.11128234863281,
+      "tail_min": 7.966293651406886e-07,
+      "tail_max": 0.972547709941864,
+      "tail_mean": 0.434794157743454,
+      "common_min": 4.758822342409985e-06,
+      "common_mean": 0.5817859172821045
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 12.85341041551828,
+      "hill_alpha_norm_target": 16.575224103367326,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 2,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.12229560650885105
+      }
+    }
+  },
+  "evil_K3": {
+    "task": "evil",
+    "K": 3,
+    "K_actual": 3,
+    "path": "Vector/CHARS/Gemma/evil_K3/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 19,
+    "centroid_norm_cv_l2": 0.012971297837793827,
+    "centroid_norm_cv_tail": 0.1697884202003479,
+    "active_centroids": 3,
+    "tail_hill": {
+      "n_tail": 1,
+      "n_tail_targets": 1,
+      "mass_to_tail": 0.8933784365653992,
+      "mass_self": 0.03927632048726082,
+      "mass_to_common": 0.10662158578634262,
+      "uniform_baseline": 0.3333333333333333,
+      "enrichment_over_uniform": 2.6801353096961975,
+      "spearman_norm_vs_self_mass": 0.0,
+      "n_tail_with_inter_tail_partner": 0,
+      "tot_mass_to_tail": 0.26980870962142944,
+      "tot_mass_from_tail": 0.3020094335079193,
+      "flow_matrix": {
+        "tail_to_tail": 0.2698087131393347,
+        "tail_to_normal": 0.03220072430633953,
+        "normal_to_tail": 0.022191303140184138,
+        "normal_to_normal": 0.6757992594141417
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.8933784365653992,
+        "normal_mean_max_frac": 0.8795169591903687,
+        "tail_mean_entropy_norm": 0.3727966235943255,
+        "normal_mean_entropy_norm": 0.3732978061883786
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 1,
+      "mass_to_tail": 0.8068647980690002,
+      "enrichment_over_uniform": 2.4205943942070007,
+      "flow_matrix": {
+        "tail_to_tail": 0.284015185028654,
+        "tail_to_normal": 0.06798330846391562,
+        "normal_to_tail": 0.03398478107120352,
+        "normal_to_normal": 0.6140167254362269
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.8068647980690002,
+        "normal_mean_max_frac": 0.9227738380432129,
+        "tail_mean_entropy_norm": 0.5515404683947569,
+        "normal_mean_entropy_norm": 0.2839258837881629
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 1,
+      "mass_to_tail": 0.8068647980690002,
+      "enrichment_over_uniform": 2.4205943942070007,
+      "flow_matrix": {
+        "tail_to_tail": 0.284015185028654,
+        "tail_to_normal": 0.06798330846391562,
+        "normal_to_tail": 0.03398478107120352,
+        "normal_to_normal": 0.6140167254362269
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 1,
+      "mass_to_tail": 0.8068647980690002,
+      "enrichment_over_uniform": 2.4205943942070007,
+      "flow_matrix": {
+        "tail_to_tail": 0.284015185028654,
+        "tail_to_normal": 0.06798330846391562,
+        "normal_to_tail": 0.03398478107120352,
+        "normal_to_normal": 0.6140167254362269
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 1,
+      "n_l2_tail": 1,
+      "intersection": 0,
+      "iou": 0.0
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": -1.0,
+      "norm_l2_vs_mass_from": 0.5,
+      "norm_tail_vs_self_mass": -0.5
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 41.55322265625,
+      "tail_min": 0.5545320510864258,
+      "tail_max": 0.6590510606765747,
+      "tail_mean": 0.606704592704773,
+      "common_min": 0.5215142965316772,
+      "common_mean": 0.6127609610557556
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 47.033303818752266,
+      "hill_alpha_norm_target": 39.191439641109895,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 1,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.8841374715169271
+      }
+    }
+  },
+  "evil_K5": {
+    "task": "evil",
+    "K": 5,
+    "K_actual": 5,
+    "path": "Vector/CHARS/Gemma/evil_K5/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 19,
+    "centroid_norm_cv_l2": 0.023777009919285774,
+    "centroid_norm_cv_tail": 0.13914500176906586,
+    "active_centroids": 5,
+    "tail_hill": {
+      "n_tail": 2,
+      "n_tail_targets": 2,
+      "mass_to_tail": 0.45704177021980286,
+      "mass_self": 0.2340754121541977,
+      "mass_to_common": 0.5429581999778748,
+      "uniform_baseline": 0.4,
+      "enrichment_over_uniform": 1.1426044255495071,
+      "spearman_norm_vs_self_mass": 0.0,
+      "n_tail_with_inter_tail_partner": 2,
+      "tot_mass_to_tail": 0.1947009563446045,
+      "tot_mass_from_tail": 0.42600253224372864,
+      "flow_matrix": {
+        "tail_to_tail": 0.19470096214714533,
+        "tail_to_normal": 0.23130158279244847,
+        "normal_to_tail": 0.189299052634807,
+        "normal_to_normal": 0.38469840242559916
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.5472543239593506,
+        "normal_mean_max_frac": 0.6118953824043274,
+        "tail_mean_entropy_norm": 0.6357709253793284,
+        "normal_mean_entropy_norm": 0.640273783436453
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 2,
+      "mass_to_tail": 0.5220940709114075,
+      "enrichment_over_uniform": 1.3052351772785187,
+      "flow_matrix": {
+        "tail_to_tail": 0.21301351805051444,
+        "tail_to_normal": 0.19498484127200905,
+        "normal_to_tail": 0.22498648203889254,
+        "normal_to_normal": 0.36701515863858397
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.6322885751724243,
+        "normal_mean_max_frac": 0.5552058219909668,
+        "tail_mean_entropy_norm": 0.6243871471137805,
+        "normal_mean_entropy_norm": 0.6478629689468184
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 2,
+      "mass_to_tail": 0.7171204090118408,
+      "enrichment_over_uniform": 1.792801022529602,
+      "flow_matrix": {
+        "tail_to_tail": 0.2925839169708478,
+        "tail_to_normal": 0.11541442745051425,
+        "normal_to_tail": 0.21941608517491945,
+        "normal_to_normal": 0.3725855704037185
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 2,
+      "mass_to_tail": 0.5220940709114075,
+      "enrichment_over_uniform": 1.3052351772785187,
+      "flow_matrix": {
+        "tail_to_tail": 0.21301351805051444,
+        "tail_to_normal": 0.19498484127200905,
+        "normal_to_tail": 0.22498648203889254,
+        "normal_to_normal": 0.36701515863858397
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 2,
+      "n_l2_tail": 2,
+      "intersection": 1,
+      "iou": 0.3333333333333333
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": 0.19999999999999998,
+      "norm_l2_vs_mass_from": 0.3,
+      "norm_tail_vs_self_mass": -0.09999999999999999
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 45.33261489868164,
+      "tail_min": 0.5220308899879456,
+      "tail_max": 0.7166846990585327,
+      "tail_mean": 0.6278774738311768,
+      "common_min": 0.5117639899253845,
+      "common_mean": 0.6218283176422119
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 47.033303818752266,
+      "hill_alpha_norm_target": 39.191439641109895,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 1,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.5860389471054077
+      }
+    }
+  },
+  "evil_K10": {
+    "task": "evil",
+    "K": 10,
+    "K_actual": 10,
+    "path": "Vector/CHARS/Gemma/evil_K10/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 19,
+    "centroid_norm_cv_l2": 0.029764695093035698,
+    "centroid_norm_cv_tail": 0.16427409648895264,
+    "active_centroids": 10,
+    "tail_hill": {
+      "n_tail": 3,
+      "n_tail_targets": 3,
+      "mass_to_tail": 0.11325740069150925,
+      "mass_self": 0.22456085681915283,
+      "mass_to_common": 0.8867426514625549,
+      "uniform_baseline": 0.3,
+      "enrichment_over_uniform": 0.3775246689716975,
+      "spearman_norm_vs_self_mass": 0.5,
+      "n_tail_with_inter_tail_partner": 3,
+      "tot_mass_to_tail": 0.026955394074320793,
+      "tot_mass_from_tail": 0.23800116777420044,
+      "flow_matrix": {
+        "tail_to_tail": 0.026955394124529127,
+        "tail_to_normal": 0.2110457871314991,
+        "normal_to_tail": 0.2290446017478492,
+        "normal_to_normal": 0.5329542169961226
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.28393983840942383,
+        "normal_mean_max_frac": 0.30899879336357117,
+        "tail_mean_entropy_norm": 0.8263381624287295,
+        "normal_mean_entropy_norm": 0.8092604248744691
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 3,
+      "mass_to_tail": 0.47742611169815063,
+      "enrichment_over_uniform": 1.591420372327169,
+      "flow_matrix": {
+        "tail_to_tail": 0.14418231380529148,
+        "tail_to_normal": 0.157816906506327,
+        "normal_to_tail": 0.21781767063789578,
+        "normal_to_normal": 0.4801831090504858
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.2822447121143341,
+        "normal_mean_max_frac": 0.309725284576416,
+        "tail_mean_entropy_norm": 0.8339904515828214,
+        "normal_mean_entropy_norm": 0.8059808723798583
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 3,
+      "mass_to_tail": 0.47742611169815063,
+      "enrichment_over_uniform": 1.591420372327169,
+      "flow_matrix": {
+        "tail_to_tail": 0.14418231380529148,
+        "tail_to_normal": 0.157816906506327,
+        "normal_to_tail": 0.21781767063789578,
+        "normal_to_normal": 0.4801831090504858
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 3,
+      "mass_to_tail": 0.23161794245243073,
+      "enrichment_over_uniform": 0.7720598081747692,
+      "flow_matrix": {
+        "tail_to_tail": 0.06948533343589305,
+        "tail_to_normal": 0.23051445645774352,
+        "normal_to_tail": 0.19651467219674562,
+        "normal_to_normal": 0.5034855379096178
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 3,
+      "n_l2_tail": 3,
+      "intersection": 0,
+      "iou": 0.0
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": -0.24848484848484845,
+      "norm_l2_vs_mass_from": 0.33333333333333326,
+      "norm_tail_vs_self_mass": -0.309090909090909
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 46.97431945800781,
+      "tail_min": 0.49922069907188416,
+      "tail_max": 0.7376853227615356,
+      "tail_mean": 0.6251115798950195,
+      "common_min": 0.44493961334228516,
+      "common_mean": 0.6048797965049744
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 47.033303818752266,
+      "hill_alpha_norm_target": 39.191439641109895,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 1,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.3014811038970947
+      }
+    }
+  },
+  "deception_K5": {
+    "task": "deception",
+    "K": 5,
+    "K_actual": 5,
+    "path": "Vector/CHARS/Gemma/deception_K5/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 12,
+    "centroid_norm_cv_l2": 0.01390357781201601,
+    "centroid_norm_cv_tail": 0.2648511528968811,
+    "active_centroids": 5,
+    "tail_hill": {
+      "n_tail": 2,
+      "n_tail_targets": 2,
+      "mass_to_tail": 0.8650586009025574,
+      "mass_self": 0.3581187427043915,
+      "mass_to_common": 0.13494138419628143,
+      "uniform_baseline": 0.4,
+      "enrichment_over_uniform": 2.1626465022563934,
+      "spearman_norm_vs_self_mass": 0.0,
+      "n_tail_with_inter_tail_partner": 2,
+      "tot_mass_to_tail": 0.4359854757785797,
+      "tot_mass_from_tail": 0.5039952993392944,
+      "flow_matrix": {
+        "tail_to_tail": 0.4359854790110636,
+        "tail_to_normal": 0.06800982406495322,
+        "normal_to_tail": 1.4536119232160167e-05,
+        "normal_to_normal": 0.495990160804751
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.6394872665405273,
+        "normal_mean_max_frac": 0.5591323971748352,
+        "tail_mean_entropy_norm": 0.577159374602962,
+        "normal_mean_entropy_norm": 0.4248258324625178
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 2,
+      "mass_to_tail": 0.8650586009025574,
+      "enrichment_over_uniform": 2.1626465022563934,
+      "flow_matrix": {
+        "tail_to_tail": 0.4359854790110636,
+        "tail_to_normal": 0.06800982406495322,
+        "normal_to_tail": 1.4536119232160167e-05,
+        "normal_to_normal": 0.495990160804751
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.6394872665405273,
+        "normal_mean_max_frac": 0.5591323971748352,
+        "tail_mean_entropy_norm": 0.577159374602962,
+        "normal_mean_entropy_norm": 0.4248258324625178
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 2,
+      "mass_to_tail": 0.9999783635139465,
+      "enrichment_over_uniform": 2.4999459087848663,
+      "flow_matrix": {
+        "tail_to_tail": 0.2419970402158913,
+        "tail_to_normal": 5.246670901659753e-06,
+        "normal_to_tail": 0.26200292256921065,
+        "normal_to_normal": 0.4959947905439964
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 2,
+      "mass_to_tail": 0.8650586009025574,
+      "enrichment_over_uniform": 2.1626465022563934,
+      "flow_matrix": {
+        "tail_to_tail": 0.4359854790110636,
+        "tail_to_normal": 0.06800982406495322,
+        "normal_to_tail": 1.4536119232160167e-05,
+        "normal_to_normal": 0.495990160804751
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 2,
+      "n_l2_tail": 2,
+      "intersection": 2,
+      "iou": 1.0
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": 0.6,
+      "norm_l2_vs_mass_from": 0.39999999999999997,
+      "norm_tail_vs_self_mass": 0.19999999999999998
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 105.93695068359375,
+      "tail_min": 0.5667386651039124,
+      "tail_max": 0.9904923439025879,
+      "tail_mean": 0.804216742515564,
+      "common_min": 0.49904030561447144,
+      "common_mean": 0.7012344598770142
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 52.63185410432083,
+      "hill_alpha_norm_target": 49.674664853645176,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 1,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.5912743449211121
+      }
+    }
+  },
+  "deception_K10": {
+    "task": "deception",
+    "K": 10,
+    "K_actual": 10,
+    "path": "Vector/CHARS/Gemma/deception_k10/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 12,
+    "centroid_norm_cv_l2": 0.01524157915264368,
+    "centroid_norm_cv_tail": 0.2623246908187866,
+    "active_centroids": 10,
+    "tail_hill": {
+      "n_tail": 3,
+      "n_tail_targets": 3,
+      "mass_to_tail": 0.8493072390556335,
+      "mass_self": 0.20892547070980072,
+      "mass_to_common": 0.15069273114204407,
+      "uniform_baseline": 0.3,
+      "enrichment_over_uniform": 2.8310241301854453,
+      "spearman_norm_vs_self_mass": -0.5,
+      "n_tail_with_inter_tail_partner": 3,
+      "tot_mass_to_tail": 0.25988757610321045,
+      "tot_mass_from_tail": 0.3059994876384735,
+      "flow_matrix": {
+        "tail_to_tail": 0.259887583848464,
+        "tail_to_normal": 0.04611189800834352,
+        "normal_to_tail": 0.20411240172721154,
+        "normal_to_normal": 0.48988811641598096
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.3849433660507202,
+        "normal_mean_max_frac": 0.3491016924381256,
+        "tail_mean_entropy_norm": 0.6551610360406598,
+        "normal_mean_entropy_norm": 0.7265821064609896
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 3,
+      "mass_to_tail": 0.3748498260974884,
+      "enrichment_over_uniform": 1.2494994203249614,
+      "flow_matrix": {
+        "tail_to_tail": 0.059226295959557654,
+        "tail_to_normal": 0.09877376856246936,
+        "normal_to_tail": 0.4047737061266049,
+        "normal_to_normal": 0.4372262293513681
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.3211371600627899,
+        "normal_mean_max_frac": 0.3764472007751465,
+        "tail_mean_entropy_norm": 0.6921679097277492,
+        "normal_mean_entropy_norm": 0.7107220177379512
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 3,
+      "mass_to_tail": 0.5539194941520691,
+      "enrichment_over_uniform": 1.8463983138402305,
+      "flow_matrix": {
+        "tail_to_tail": 0.10856845651362966,
+        "tail_to_normal": 0.08743194975161703,
+        "normal_to_tail": 0.09343154449964927,
+        "normal_to_normal": 0.7105680492351041
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 3,
+      "mass_to_tail": 0.884040355682373,
+      "enrichment_over_uniform": 2.94680118560791,
+      "flow_matrix": {
+        "tail_to_tail": 0.4190343853975179,
+        "tail_to_normal": 0.05496478743903656,
+        "normal_to_tail": 0.044965631589805606,
+        "normal_to_normal": 0.48103519557363994
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 3,
+      "n_l2_tail": 3,
+      "intersection": 1,
+      "iou": 0.2
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": 0.29696969696969694,
+      "norm_l2_vs_mass_from": -0.43030303030303024,
+      "norm_tail_vs_self_mass": 0.2606060606060606
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 71.63076782226562,
+      "tail_min": 0.20540480315685272,
+      "tail_max": 0.983086109161377,
+      "tail_mean": 0.46633031964302063,
+      "common_min": 0.20058074593544006,
+      "common_mean": 0.5823243856430054
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 52.63185410432083,
+      "hill_alpha_norm_target": 49.674664853645176,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 1,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.3598541796207428
+      }
+    }
+  },
+  "deception_K20": {
+    "task": "deception",
+    "K": 20,
+    "K_actual": 20,
+    "path": "Vector/CHARS/Gemma/deception_K20/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 12,
+    "centroid_norm_cv_l2": 0.014672319404780865,
+    "centroid_norm_cv_tail": 0.2527223527431488,
+    "active_centroids": 20,
+    "tail_hill": {
+      "n_tail": 5,
+      "n_tail_targets": 5,
+      "mass_to_tail": 0.8488674163818359,
+      "mass_self": 0.06937310844659805,
+      "mass_to_common": 0.15113267302513123,
+      "uniform_baseline": 0.25,
+      "enrichment_over_uniform": 3.3954696655273438,
+      "spearman_norm_vs_self_mass": 0.7,
+      "n_tail_with_inter_tail_partner": 5,
+      "tot_mass_to_tail": 0.2563571333885193,
+      "tot_mass_from_tail": 0.301999032497406,
+      "flow_matrix": {
+        "tail_to_tail": 0.25635713529852877,
+        "tail_to_normal": 0.045641921800687324,
+        "normal_to_tail": 0.13964286550613392,
+        "normal_to_normal": 0.5583580773946499
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.31091779470443726,
+        "normal_mean_max_frac": 0.2510263919830322,
+        "tail_mean_entropy_norm": 0.5835259833353941,
+        "normal_mean_entropy_norm": 0.7500088531481024
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 5,
+      "mass_to_tail": 0.5345511436462402,
+      "enrichment_over_uniform": 2.138204574584961,
+      "flow_matrix": {
+        "tail_to_tail": 0.1261537959713206,
+        "tail_to_normal": 0.10984567470963541,
+        "normal_to_tail": 0.19984620660658026,
+        "normal_to_normal": 0.5641543227124637
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.2825217843055725,
+        "normal_mean_max_frac": 0.2604916989803314,
+        "tail_mean_entropy_norm": 0.6569782498702623,
+        "normal_mean_entropy_norm": 0.7255247643031463
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 5,
+      "mass_to_tail": 0.41300007700920105,
+      "enrichment_over_uniform": 1.6520003080368042,
+      "flow_matrix": {
+        "tail_to_tail": 0.047082159492812456,
+        "tail_to_normal": 0.06691821639642784,
+        "normal_to_tail": 0.09491784090206831,
+        "normal_to_normal": 0.7910817832086914
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 5,
+      "mass_to_tail": 0.8200610876083374,
+      "enrichment_over_uniform": 3.2802443504333496,
+      "flow_matrix": {
+        "tail_to_tail": 0.2870204555623403,
+        "tail_to_normal": 0.0629784190274186,
+        "normal_to_tail": 0.10897951979113817,
+        "normal_to_normal": 0.541021605619103
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 5,
+      "n_l2_tail": 5,
+      "intersection": 2,
+      "iou": 0.25
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": 0.3954887218045112,
+      "norm_l2_vs_mass_from": -0.4270676691729323,
+      "norm_tail_vs_self_mass": 0.09172932330827067
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 78.82295227050781,
+      "tail_min": 0.2556292712688446,
+      "tail_max": 0.9804885983467102,
+      "tail_mean": 0.5046648979187012,
+      "common_min": 0.22512920200824738,
+      "common_mean": 0.5810095071792603
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 52.63185410432083,
+      "hill_alpha_norm_target": 49.674664853645176,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 2,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.26599922478199006
+      }
+    }
+  },
+  "deception_K50": {
+    "task": "deception",
+    "K": 50,
+    "K_actual": 50,
+    "path": "Vector/CHARS/Gemma/deception_K50/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 12,
+    "centroid_norm_cv_l2": 0.01943778060376644,
+    "centroid_norm_cv_tail": 0.24546629190444946,
+    "active_centroids": 50,
+    "tail_hill": {
+      "n_tail": 13,
+      "n_tail_targets": 13,
+      "mass_to_tail": 0.7899374961853027,
+      "mass_self": 0.017153790220618248,
+      "mass_to_common": 0.21006248891353607,
+      "uniform_baseline": 0.26,
+      "enrichment_over_uniform": 3.038221139174241,
+      "spearman_norm_vs_self_mass": -0.054945054945054944,
+      "n_tail_with_inter_tail_partner": 13,
+      "tot_mass_to_tail": 0.27805769443511963,
+      "tot_mass_from_tail": 0.3519996106624603,
+      "flow_matrix": {
+        "tail_to_tail": 0.2780576820049726,
+        "tail_to_normal": 0.07394191292187961,
+        "normal_to_tail": 0.10594231906791095,
+        "normal_to_normal": 0.5420580860052369
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.1438114047050476,
+        "normal_mean_max_frac": 0.12736430764198303,
+        "tail_mean_entropy_norm": 0.7346313652856702,
+        "normal_mean_entropy_norm": 0.8046348100618798
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 13,
+      "mass_to_tail": 0.45087313652038574,
+      "enrichment_over_uniform": 1.7341274481553297,
+      "flow_matrix": {
+        "tail_to_tail": 0.11091471712672485,
+        "tail_to_normal": 0.1350851296595426,
+        "normal_to_tail": 0.14908527661478774,
+        "normal_to_normal": 0.6049148765989448
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.13061341643333435,
+        "normal_mean_max_frac": 0.13200144469738007,
+        "tail_mean_entropy_norm": 0.7752734914113062,
+        "normal_mean_entropy_norm": 0.7903551441258455
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 13,
+      "mass_to_tail": 0.4493829905986786,
+      "enrichment_over_uniform": 1.7283961176872253,
+      "flow_matrix": {
+        "tail_to_tail": 0.06920506959866887,
+        "tail_to_normal": 0.08479511182297271,
+        "normal_to_tail": 0.09679492779362785,
+        "normal_to_normal": 0.7492048907847305
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 13,
+      "mass_to_tail": 0.7374836802482605,
+      "enrichment_over_uniform": 2.8364756932625403,
+      "flow_matrix": {
+        "tail_to_tail": 0.28171844339811963,
+        "tail_to_normal": 0.10028111563180073,
+        "normal_to_tail": 0.08628157102620494,
+        "normal_to_normal": 0.5317188699438747
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 13,
+      "n_l2_tail": 13,
+      "intersection": 4,
+      "iou": 0.18181818181818182
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": 0.382738588303092,
+      "norm_l2_vs_mass_from": -0.07982325684022322,
+      "norm_tail_vs_self_mass": 0.11951980792316927
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 95.7716064453125,
+      "tail_min": 0.3434235155582428,
+      "tail_max": 0.9947221279144287,
+      "tail_mean": 0.6138253211975098,
+      "common_min": 0.30701586604118347,
+      "common_mean": 0.6388327479362488
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 52.63185410432083,
+      "hill_alpha_norm_target": 49.674664853645176,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 5,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.13164056405425073
+      }
+    }
+  },
+  "refusal_K5": {
+    "task": "refusal",
+    "K": 5,
+    "K_actual": 5,
+    "path": "Vector/CHARS/Gemma/refusal_K5/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 7,
+    "centroid_norm_cv_l2": 0.03128602355718613,
+    "centroid_norm_cv_tail": 0.369558721780777,
+    "active_centroids": 5,
+    "tail_hill": {
+      "n_tail": 2,
+      "n_tail_targets": 2,
+      "mass_to_tail": 0.4879688024520874,
+      "mass_self": 0.13884752988815308,
+      "mass_to_common": 0.5120311379432678,
+      "uniform_baseline": 0.4,
+      "enrichment_over_uniform": 1.2199220061302185,
+      "spearman_norm_vs_self_mass": 0.0,
+      "n_tail_with_inter_tail_partner": 2,
+      "tot_mass_to_tail": 0.12677808105945587,
+      "tot_mass_from_tail": 0.2598077654838562,
+      "flow_matrix": {
+        "tail_to_tail": 0.12677808105945587,
+        "tail_to_normal": 0.13302966952323914,
+        "normal_to_tail": 0.21635915338993073,
+        "normal_to_normal": 0.5238330960273743
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.5242149829864502,
+        "normal_mean_max_frac": 0.769639790058136,
+        "tail_mean_entropy_norm": 0.5704964885350894,
+        "normal_mean_entropy_norm": 0.45387125876703643
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 2,
+      "mass_to_tail": 0.2707618474960327,
+      "enrichment_over_uniform": 0.6769046187400818,
+      "flow_matrix": {
+        "tail_to_tail": 0.11148990524575256,
+        "tail_to_normal": 0.3002738311845983,
+        "normal_to_tail": 0.20958852455633098,
+        "normal_to_normal": 0.37864773901331816
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.5795195698738098,
+        "normal_mean_max_frac": 0.7327701449394226,
+        "tail_mean_entropy_norm": 0.5749599357670692,
+        "normal_mean_entropy_norm": 0.45089562727905
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 2,
+      "mass_to_tail": 0.23006409406661987,
+      "enrichment_over_uniform": 0.5751602351665497,
+      "flow_matrix": {
+        "tail_to_tail": 0.09473204612731934,
+        "tail_to_normal": 0.3170316815376282,
+        "normal_to_tail": 0.24840518832206726,
+        "normal_to_normal": 0.33983108401298523
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 2,
+      "mass_to_tail": 0.3742443323135376,
+      "enrichment_over_uniform": 0.935610830783844,
+      "flow_matrix": {
+        "tail_to_tail": 0.1541002369806135,
+        "tail_to_normal": 0.2576634845485764,
+        "normal_to_tail": 0.10815466779239971,
+        "normal_to_normal": 0.4800816106784104
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 2,
+      "n_l2_tail": 2,
+      "intersection": 1,
+      "iou": 0.3333333333333333
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": -0.7999999999999999,
+      "norm_l2_vs_mass_from": 0.3,
+      "norm_tail_vs_self_mass": -0.3
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 74.04971313476562,
+      "tail_min": 0.4391624927520752,
+      "tail_max": 0.8140168786048889,
+      "tail_mean": 0.6267996430397034,
+      "common_min": 0.4599747359752655,
+      "common_mean": 0.6205123662948608
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 57.94014088991122,
+      "hill_alpha_norm_target": 48.88090104518291,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 1,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.671469908952713
+      }
+    }
+  },
+  "refusal_K10": {
+    "task": "refusal",
+    "K": 10,
+    "K_actual": 10,
+    "path": "Vector/CHARS/Gemma/refusal_K10/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 7,
+    "centroid_norm_cv_l2": 0.03246472030878067,
+    "centroid_norm_cv_tail": 0.35550689697265625,
+    "active_centroids": 10,
+    "tail_hill": {
+      "n_tail": 3,
+      "n_tail_targets": 3,
+      "mass_to_tail": 0.5274919271469116,
+      "mass_self": 0.009752712212502956,
+      "mass_to_common": 0.47250810265541077,
+      "uniform_baseline": 0.3,
+      "enrichment_over_uniform": 1.7583064238230388,
+      "spearman_norm_vs_self_mass": -1.0,
+      "n_tail_with_inter_tail_partner": 3,
+      "tot_mass_to_tail": 0.14221686124801636,
+      "tot_mass_from_tail": 0.2696095407009125,
+      "flow_matrix": {
+        "tail_to_tail": 0.14221685065203526,
+        "tail_to_normal": 0.12739268486256264,
+        "normal_to_tail": 0.17150862727249955,
+        "normal_to_normal": 0.5588818372129025
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.3909410536289215,
+        "normal_mean_max_frac": 0.4280944764614105,
+        "tail_mean_entropy_norm": 0.6981649637807871,
+        "normal_mean_entropy_norm": 0.670671543390169
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 3,
+      "mass_to_tail": 0.3766585886478424,
+      "enrichment_over_uniform": 1.2555286288261414,
+      "flow_matrix": {
+        "tail_to_tail": 0.11539791753599417,
+        "tail_to_normal": 0.19097474853807322,
+        "normal_to_tail": 0.08803344124406094,
+        "normal_to_normal": 0.6055938926818717
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.4139615595340729,
+        "normal_mean_max_frac": 0.4182285666465759,
+        "tail_mean_entropy_norm": 0.6426233225998274,
+        "normal_mean_entropy_norm": 0.6944751038962946
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 3,
+      "mass_to_tail": 0.27130547165870667,
+      "enrichment_over_uniform": 0.904351572195689,
+      "flow_matrix": {
+        "tail_to_tail": 0.11703361531121628,
+        "tail_to_normal": 0.3143385139923794,
+        "normal_to_tail": 0.1525742458316072,
+        "normal_to_normal": 0.41605362486479713
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 3,
+      "mass_to_tail": 0.4265436828136444,
+      "enrichment_over_uniform": 1.4218122760454814,
+      "flow_matrix": {
+        "tail_to_tail": 0.11395433441144717,
+        "tail_to_normal": 0.15320313325500987,
+        "normal_to_tail": 0.08947701830588145,
+        "normal_to_normal": 0.6433655140276615
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 3,
+      "n_l2_tail": 3,
+      "intersection": 1,
+      "iou": 0.2
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": 0.07878787878787878,
+      "norm_l2_vs_mass_from": 0.2727272727272727,
+      "norm_tail_vs_self_mass": 0.3939393939393939
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 80.55612182617188,
+      "tail_min": 0.3952415883541107,
+      "tail_max": 0.840191662311554,
+      "tail_mean": 0.6166036128997803,
+      "common_min": 0.41427484154701233,
+      "common_mean": 0.6188519597053528
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 57.94014088991122,
+      "hill_alpha_norm_target": 48.88090104518291,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 1,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.41694846749305725
+      }
+    }
+  },
+  "refusal_K20": {
+    "task": "refusal",
+    "K": 20,
+    "K_actual": 20,
+    "path": "Vector/CHARS/Gemma/refusal_K20/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 7,
+    "centroid_norm_cv_l2": 0.035975001752376556,
+    "centroid_norm_cv_tail": 0.3443329632282257,
+    "active_centroids": 20,
+    "tail_hill": {
+      "n_tail": 5,
+      "n_tail_targets": 5,
+      "mass_to_tail": 0.42457836866378784,
+      "mass_self": 0.04507976025342941,
+      "mass_to_common": 0.5754216313362122,
+      "uniform_baseline": 0.25,
+      "enrichment_over_uniform": 1.6983134746551514,
+      "spearman_norm_vs_self_mass": -0.8999999999999998,
+      "n_tail_with_inter_tail_partner": 5,
+      "tot_mass_to_tail": 0.09781982749700546,
+      "tot_mass_from_tail": 0.23039287328720093,
+      "flow_matrix": {
+        "tail_to_tail": 0.09781981948004652,
+        "tail_to_normal": 0.13257302747440858,
+        "normal_to_tail": 0.14727820739105135,
+        "normal_to_normal": 0.6223289456544936
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.240831658244133,
+        "normal_mean_max_frac": 0.2223646640777588,
+        "tail_mean_entropy_norm": 0.7887650017434277,
+        "normal_mean_entropy_norm": 0.7991438008092937
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 5,
+      "mass_to_tail": 0.4635829031467438,
+      "enrichment_over_uniform": 1.854331612586975,
+      "flow_matrix": {
+        "tail_to_tail": 0.12271308533212288,
+        "tail_to_normal": 0.14199271374962588,
+        "normal_to_tail": 0.1738555379552979,
+        "normal_to_normal": 0.5614386629629533
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.27842122316360474,
+        "normal_mean_max_frac": 0.20983482897281647,
+        "tail_mean_entropy_norm": 0.7407118039567068,
+        "normal_mean_entropy_norm": 0.8151615334048673
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 5,
+      "mass_to_tail": 0.39605942368507385,
+      "enrichment_over_uniform": 1.5842376947402954,
+      "flow_matrix": {
+        "tail_to_tail": 0.10483922262583258,
+        "tail_to_normal": 0.15986656308870062,
+        "normal_to_tail": 0.17212154563627527,
+        "normal_to_normal": 0.5631726686491916
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 5,
+      "mass_to_tail": 0.35914918780326843,
+      "enrichment_over_uniform": 1.4365967512130737,
+      "flow_matrix": {
+        "tail_to_tail": 0.07394254042336627,
+        "tail_to_normal": 0.1319399744583672,
+        "normal_to_tail": 0.12458686997174762,
+        "normal_to_normal": 0.6695306151465189
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 5,
+      "n_l2_tail": 5,
+      "intersection": 2,
+      "iou": 0.25
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": -0.181271167388621,
+      "norm_l2_vs_mass_from": 0.25573525689680976,
+      "norm_tail_vs_self_mass": 0.41052631578947363
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 87.88687133789062,
+      "tail_min": 0.3415997624397278,
+      "tail_max": 0.8652580976486206,
+      "tail_mean": 0.5985986590385437,
+      "common_min": 0.3971579670906067,
+      "common_mean": 0.6202594041824341
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 57.94014088991122,
+      "hill_alpha_norm_target": 48.88090104518291,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 2,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.22698140293359756
+      }
+    }
+  },
+  "refusal_K50": {
+    "task": "refusal",
+    "K": 50,
+    "K_actual": 50,
+    "path": "Vector/CHARS/Gemma/refusal_K50/metadata.pt",
+    "d_model": 2304,
+    "n_tail_dims_total": 7,
+    "centroid_norm_cv_l2": 0.036251191049814224,
+    "centroid_norm_cv_tail": 0.35579395294189453,
+    "active_centroids": 50,
+    "tail_hill": {
+      "n_tail": 13,
+      "n_tail_targets": 13,
+      "mass_to_tail": 0.3554581105709076,
+      "mass_self": 0.024791084229946136,
+      "mass_to_common": 0.6445418000221252,
+      "uniform_baseline": 0.26,
+      "enrichment_over_uniform": 1.3671465791188753,
+      "spearman_norm_vs_self_mass": -0.6483516483516483,
+      "n_tail_with_inter_tail_partner": 13,
+      "tot_mass_to_tail": 0.0862509161233902,
+      "tot_mass_from_tail": 0.2426472008228302,
+      "flow_matrix": {
+        "tail_to_tail": 0.08625091098243529,
+        "tail_to_normal": 0.15639626047633526,
+        "normal_to_tail": 0.1441412333165864,
+        "normal_to_normal": 0.6132115952246431
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.09302346408367157,
+        "normal_mean_max_frac": 0.10157855600118637,
+        "tail_mean_entropy_norm": 0.8601639722362218,
+        "normal_mean_entropy_norm": 0.8722069775843533
+      }
+    },
+    "tail_L2_comparison": {
+      "n_tail": 13,
+      "mass_to_tail": 0.27841898798942566,
+      "enrichment_over_uniform": 1.070842261497791,
+      "flow_matrix": {
+        "tail_to_tail": 0.05800395939506515,
+        "tail_to_normal": 0.15032938402759627,
+        "normal_to_tail": 0.11846663278465407,
+        "normal_to_normal": 0.6732000237926845
+      },
+      "concentration": {
+        "tail_mean_max_frac": 0.11759240925312042,
+        "normal_mean_max_frac": 0.09294621646404266,
+        "tail_mean_entropy_norm": 0.8463263013514085,
+        "normal_mean_entropy_norm": 0.8770688619492877
+      }
+    },
+    "tail_variance_comparison": {
+      "n_tail": 13,
+      "mass_to_tail": 0.329144150018692,
+      "enrichment_over_uniform": 1.2659390385334308,
+      "flow_matrix": {
+        "tail_to_tail": 0.07825242203271539,
+        "tail_to_normal": 0.15949270549837985,
+        "normal_to_tail": 0.1447867952057633,
+        "normal_to_normal": 0.6174680772631415
+      }
+    },
+    "tail_PCA_variance_comparison": {
+      "n_tail": 13,
+      "mass_to_tail": 0.266649454832077,
+      "enrichment_over_uniform": 1.0255748262772193,
+      "flow_matrix": {
+        "tail_to_tail": 0.0581661892483774,
+        "tail_to_normal": 0.15997108340349545,
+        "normal_to_tail": 0.10604948979468674,
+        "normal_to_normal": 0.6758132375534404
+      }
+    },
+    "tail_overlap_hill_vs_l2": {
+      "n_hill_tail": 13,
+      "n_l2_tail": 13,
+      "intersection": 5,
+      "iou": 0.23809523809523808
+    },
+    "spearman": {
+      "norm_tail_vs_mass_from": -0.06243096604698395,
+      "norm_l2_vs_mass_from": -0.1932478518254334,
+      "norm_tail_vs_self_mass": -0.0534453781512605
+    },
+    "dead_centroids": {
+      "exactly_zero": 0,
+      "near_zero": 0,
+      "fraction_zero": 0.0
+    },
+    "rbf": {
+      "tau": 92.96250915527344,
+      "tail_min": 0.35550639033317566,
+      "tail_max": 0.8656332492828369,
+      "tail_mean": 0.5929436087608337,
+      "common_min": 0.2906351685523987,
+      "common_mean": 0.6168663501739502
+    },
+    "tail_sample": {
+      "has_tail_source": false,
+      "has_tail_target": false,
+      "hill_alpha_norm_source": 57.94014088991122,
+      "hill_alpha_norm_target": 48.88090104518291,
+      "norm_percentile_threshold_source": Infinity,
+      "norm_percentile_threshold_target": Infinity,
+      "abs_floor_used": 3,
+      "frac_floor_used": 5,
+      "n_tail_source_samples": 0,
+      "n_tail_target_samples": 0,
+      "per_cluster_tail_count_source": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_cluster_tail_count_target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "n_tail": 0,
+      "n_tail_targets": 0,
+      "selected_cluster_ids_source": [],
+      "selected_cluster_ids_target": [],
+      "mass_to_tail": 0.0,
+      "mass_self": 0.0,
+      "mass_to_common": 0.0,
+      "uniform_baseline": 0.0,
+      "enrichment_over_uniform": 0.0,
+      "tot_mass_to_tail": 0.0,
+      "tot_mass_from_tail": 0.0,
+      "flow_matrix": {
+        "tail_to_tail": 0.0,
+        "tail_to_normal": 0.0,
+        "normal_to_tail": 0.0,
+        "normal_to_normal": 1.0
+      },
+      "concentration": {
+        "tail_mean_max_frac": null,
+        "normal_mean_max_frac": 0.09935422420501709
+      }
+    }
+  }
+}

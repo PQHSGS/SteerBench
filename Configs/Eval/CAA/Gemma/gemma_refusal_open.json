@@ -1,0 +1,31 @@
+{
+  "name": "gemma_refusal_open",
+  "description": "CAA steering trained on refusal, evaluated on refusal_open",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 14,
+    "batch_size": 4,
+    "position": -2,
+    "hook_point": "pre",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 14,
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "hook_point": "pre"
+  },
+  "load_vector": "Vector/CAA/Gemma/ai_risk_refusal",
+  "test_dataset": "refusal_open",
+  "output": "./Results/caa",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42
+}

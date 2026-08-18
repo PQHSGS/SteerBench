@@ -1,0 +1,39 @@
+{
+  "name": "gemma_evil_prefix_pos",
+  "description": "PCAOT evil prefix_pos prefix split",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ACT",
+    "layer": [14],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "mask",
+    "apply_chat_template": true,
+    "act_mode": "pca_ot",
+    "pca_components": 16,
+    "inverse": false
+  },
+  "steer": {
+    "method": "ACT",
+    "layer": [14],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 1.0,
+    "steer_once": false
+  },
+  "train_dataset": "evil_prefix_pos",
+  "n_train": 274,
+  "test_dataset": "evil",
+  "n_test": 100,
+  "save_vector": "Vector/PREFIX_SPLIT/PCA_OT/evil/prefix_pos",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/pcaot",
+  "seed": 42
+}

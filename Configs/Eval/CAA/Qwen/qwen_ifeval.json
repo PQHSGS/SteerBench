@@ -1,0 +1,33 @@
+{
+  "name": "qwen_ifeval",
+  "description": "CAA ifeval steering evaluated on ifeval",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 18,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 18,
+    "coeff": -1,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "steer_once": false
+  },
+  "train_dataset": "ifeval",
+  "test_dataset": "ifeval",
+  "save_vector": "Vector/CAA/Qwen/ifeval",
+  "output": "./Results/caa",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "n_test": 100
+}

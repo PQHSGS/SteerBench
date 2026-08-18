@@ -1,0 +1,41 @@
+{
+  "name": "gemma_refusal_ab",
+  "description": "CAST steering for refusal_ab",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": -2,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_pca": true
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "apply_to_all_tokens": false,
+    "position": -2
+  },
+  "save_vector": "Vector/CAST/Gemma/ai_risk_refusal",
+  "train_dataset": "refusal_caa",
+  "n_train": 1000,
+  "n_test": null,
+  "test_dataset": "refusal_ab",
+  "output": "./Results/cast",
+  "include_baseline": false,
+  "seed": 42
+}

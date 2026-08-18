@@ -1,0 +1,42 @@
+{
+  "name": "gemma_refusal_ab",
+  "description": "SPHERICAL steering for refusal_ab",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "SPHERICAL",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": -2,
+    "hook_point": "pre"
+  },
+  "steer": {
+    "method": "SPHERICAL",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": -2,
+    "apply_chat_template": true,
+    "spherical_kappa": 20.0,
+    "spherical_alpha": 0.7,
+    "spherical_beta": -0.15,
+    "spherical_use_vmf_gate": true
+  },
+  "train_dataset": "refusal_caa",
+  "test_dataset": "refusal_ab",
+  "n_train": 1000,
+  "n_test": null,
+  "seed": 42,
+  "output": "./Results/spherical",
+  "save_vector": "Vector/SPHERICAL/Gemma/ai_risk_refusal",
+  "include_baseline": false
+}

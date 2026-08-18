@@ -1,0 +1,9 @@
+model_task: "text-generation"
+dataset: "truthfulqa_mc2"
+src_subsets: ["non-truthful"]
+dst_subsets: ["truthful"]
+default_evaluation: ['text-generation', 'tqa', 'mmlu'] 
+dataset_params:
+  num_folds: 2
+  trainfold: null # need to change it in sweep so it gets specified there. 
+  prompt: "tqa_qa" # choices: "tqa_qa" "qa", "repe"

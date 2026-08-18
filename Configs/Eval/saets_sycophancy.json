@@ -1,0 +1,30 @@
+{
+  "name": "saets_sycophancy",
+  "description": "SAE-TS targeted steering on sycophancy dataset (gemma-2-2b)",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SAE-TS",
+    "layer": 13,
+    "batch_size": 4,
+    "saets_lr": 0.0001,
+    "saets_epochs": 15,
+    "saets_bias_scale": 1.0,
+    "train_dataset": "sycophancy",
+    "n_train": 100,
+    "save_vector": "Vector/SAE-TS/saets_sycophancy_L13"
+  },
+  "steer": {
+    "method": "SAE-TS",
+    "layer": 13,
+    "coeff": 1.0,
+    "auto_scale": true,
+    "target_loss_increase": 0.5
+  },
+  "test_dataset": "sycophancy_ab",
+  "output": "./Results/saets_sycophancy"
+}

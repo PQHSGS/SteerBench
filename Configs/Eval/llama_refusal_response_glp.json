@@ -1,0 +1,50 @@
+{
+  "name": "llama_refusal_response",
+  "description": "CAA steering trained on refusal_response, evaluated on refusal_open",
+  "model": {
+    "name": "meta-llama/Llama-3.2-1B",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 7,
+    "batch_size": 4,
+    "hook_point": "post",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 7,
+    "coeff": 2,
+    "apply_chat_template": true,
+    "hook_point": "post"
+  },
+  "post_process": {
+    "enabled": false,
+    "source": "generative-latent-prior/glp-llama1b-d6",
+    "checkpoint": "final",
+    "hook_point": "post",
+    "num_timesteps": 20,
+    "noise_rate": 0.5,
+    "layer": 7,
+    "use_classifier": false,
+    "classifier_source": "./GLP/classifier-refusal-response-gemma2-2b-it-l7-post/final",
+    "classifier_checkpoint": "final",
+    "scale": 1.0,
+    "negative": false,
+    "classifier_guidance_start_step": 0,
+    "classifier_guidance_end_step": null,
+    "classifier_grad_clip": 5.0,
+    "classifier_normalize_grad": true
+  },
+  "save_vector": "Vector/CAA/Llama/coord",
+  "train_dataset": "ai_risk_coordinate",
+  "test_dataset": "refusal_open",
+  "n_test": 5,
+  "output": "./Results/caa",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42
+}

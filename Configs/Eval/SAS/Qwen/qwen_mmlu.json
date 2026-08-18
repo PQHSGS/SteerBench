@@ -1,0 +1,29 @@
+{
+  "name": "qwen_mmlu",
+  "description": "SAS steering evaluated on MMLU",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SAS",
+    "layer": 18,
+    "batch_size": 4,
+    "top_k": 15,
+    "act_frac": 0.4,
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "SAS",
+    "layer": 18,
+    "coeff": 1.0,
+    "top_k": 15
+  },
+  "load_vector": "Vector/SAS/Qwen/refusal_response",
+  "test_dataset": "mmlu",
+  "output": "./Results/sas",
+  "include_baseline": false,
+  "seed": 42
+}

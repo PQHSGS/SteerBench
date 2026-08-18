@@ -1,0 +1,37 @@
+{
+  "name": "qwen_deception",
+  "description": "ANGULAR steering for deception",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "inverse": true,
+    "method": "ANGULAR",
+    "layer": 6,
+    "batch_size": 8,
+    "strategy": "max_sim",
+    "hook_point": [
+      "mid",
+      "post"
+    ]
+  },
+  "steer": {
+    "method": "ANGULAR",
+    "layer": 26,
+    "adaptive": true,
+    "target_angle": 0,
+    "coeff": 1,
+    "apply_all_layers": true
+  },
+  "train_dataset": "liarbench",
+  "test_dataset": "liarbench",
+  "save_vector": "Vector/Angular/Qwen/deception",
+  "output": "./Results/angular",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "n_test": 100
+}

@@ -1,0 +1,32 @@
+{
+  "name": "qwen_gms8k",
+  "description": "CAA steering trained on hallucination, evaluated on gms8k",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 300
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 18,
+    "batch_size": 4,
+    "position": "mask",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "batch_size": 4,
+    "method": "CAA",
+    "layer": 18,
+    "coeff": 1.0,
+    "apply_chat_template": true
+  },
+  "load_vector": "Vector/CAA/gms8k",
+  "train_dataset": "srps_roleplay_gms8k",
+  "n_train": 1000,
+  "test_dataset": "gms8k",
+  "n_test": 10,
+  "output": "./Results/caa",
+  "include_baseline": false,
+  "seed": 42
+}

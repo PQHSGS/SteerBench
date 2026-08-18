@@ -1,0 +1,69 @@
+{
+  "name": "cast_sorrybench",
+  "description": "CAST (Conditional Activation Steering) for refusal using Qwen1.5-1.8B - replicating CAST paper results",
+  "model": {
+    "name": "Qwen/Qwen1.5-1.8B-Chat",
+    "device": "cuda",
+    "dtype": "float16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST_HF",
+    "apply_chat_template": true,
+    "layer": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "use_pca": false,
+    "conditional_dataset": "refusal",
+    "apply_conditional_chat_template": true,
+    "conditional_layer": 7,
+    "save_conditional_vector": "Vector/CAST/new_condition_no_pca.pt",
+    "hook_point": "post",
+    "verbose": true
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "use_conditional": true,
+    "conditional_threshold": 0.03,
+    "conditional_threshold_is": "smaller",
+    "condition_pos": "mean",
+    "position": "all",
+    "apply_to_all_tokens": true
+  },
+  "train_dataset": "refusal_cast_responses",
+  "n_train": null,
+  "test_dataset": "sorrybench_perplex",
+  "n_test": null,
+  "save_vector": "Vector/CAST/steering_vector_no_pca",
+  "output": "./Results/cast",
+  "include_baseline": true,
+  "save_samples": false,
+  "seed": 42
+}

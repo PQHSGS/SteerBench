@@ -1,0 +1,36 @@
+{
+  "name": "qwen_mmlu",
+  "description": "CURVEBALL steering evaluated on MMLU",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CURVEBALL",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "curveball_dim": 8,
+    "curveball_degree": 2,
+    "curveball_coef0": 1.0
+  },
+  "steer": {
+    "method": "CURVEBALL",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last"
+  },
+  "load_vector": "Vector/CURVE/Qwen/refusal_response",
+  "test_dataset": "mmlu",
+  "output": "./Results/curve",
+  "include_baseline": false,
+  "seed": 42
+}

@@ -1,0 +1,41 @@
+{
+  "name": "gemma_deception_baseline",
+  "description": "CAA coeff=0 baseline for deception — captures unsteered LSP score",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:4",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "inverse": false,
+    "method": "CAA",
+    "layer": 14,
+    "batch_size": 64,
+    "hook_point": "pre",
+    "position": "mask",
+    "apply_chat_template": true,
+    "ot_steer": false
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 14,
+    "coeff": 0,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "steer_once": false,
+    "batch_size": 16,
+    "ot_steer": false
+  },
+  "save_vector": "Vector/CAA/Gemma/deception",
+  "train_dataset": "sycophancy_fact",
+  "test_dataset": "deception",
+  "output": "./Results/Baseline",
+  "compute_perplexity": true,
+  "compute_lcs": true,
+  "include_baseline": false,
+  "seed": 42,
+  "n_test": 100,
+  "n_train": 500
+}

@@ -1,0 +1,62 @@
+{
+  "toxic": {
+    "task": "toxic",
+    "K": 10,
+    "centroid_norm_cv": 0.27671387791633606,
+    "spearman_norm_vs_mass_sample": NaN,
+    "spearman_p_sample": NaN,
+    "pearson_norm_vs_mass_sample": NaN,
+    "pearson_p_sample": NaN,
+    "spearman_norm_vs_mass_centroid": -0.06666666666666665,
+    "spearman_p_centroid": 0.8548130882487426,
+    "tail_5pct_avg_mass": 0.015999983996152878,
+    "body_95pct_avg_mass": 0.015999985858798027,
+    "tail_body_ratio": 0.9999998807907104,
+    "n_samples": 500
+  },
+  "evil": {
+    "task": "evil",
+    "K": 20,
+    "centroid_norm_cv": 0.03087679296731949,
+    "spearman_norm_vs_mass_sample": -0.19667439345478782,
+    "spearman_p_sample": 9.418638392090693e-06,
+    "pearson_norm_vs_mass_sample": -0.2915601432323456,
+    "pearson_p_sample": 2.968058232599551e-11,
+    "spearman_norm_vs_mass_centroid": 0.019548872180451125,
+    "spearman_p_centroid": 0.9348031235214638,
+    "tail_5pct_avg_mass": 0.042799949645996094,
+    "body_95pct_avg_mass": 0.05123366415500641,
+    "tail_body_ratio": 0.8353872299194336,
+    "n_samples": 500
+  },
+  "deception": {
+    "task": "deception",
+    "K": 3,
+    "centroid_norm_cv": 0.013234367594122887,
+    "spearman_norm_vs_mass_sample": NaN,
+    "spearman_p_sample": NaN,
+    "pearson_norm_vs_mass_sample": NaN,
+    "pearson_p_sample": NaN,
+    "spearman_norm_vs_mass_centroid": 0.5,
+    "spearman_p_centroid": 0.6666666666666667,
+    "tail_5pct_avg_mass": 0.25799787044525146,
+    "body_95pct_avg_mass": 0.25799793004989624,
+    "tail_body_ratio": 0.9999997615814209,
+    "n_samples": 500
+  },
+  "refusal": {
+    "task": "refusal",
+    "K": 30,
+    "centroid_norm_cv": 0.12985213100910187,
+    "spearman_norm_vs_mass_sample": 0.5633374657599205,
+    "spearman_p_sample": 1.5371275069265772e-35,
+    "pearson_norm_vs_mass_sample": 0.4960169494152069,
+    "pearson_p_sample": 1.0028967056431391e-26,
+    "spearman_norm_vs_mass_centroid": -0.6103506788118586,
+    "spearman_p_centroid": 0.00034152877576069707,
+    "tail_5pct_avg_mass": 0.14571426808834076,
+    "body_95pct_avg_mass": 0.12522700428962708,
+    "tail_body_ratio": 1.163601040840149,
+    "n_samples": 408
+  }
+}

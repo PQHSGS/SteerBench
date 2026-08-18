@@ -1,0 +1,57 @@
+{
+  "name": "cast_qwen_coordinate",
+  "description": "CAST (Conditional Activation Steering) for refusal using Qwen1.5-1.8B - replicating CAST paper results",
+  "model": {
+    "name": "meta-llama/Llama-3.1-8B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST",
+    "change_pad_token": false,
+    "apply_chat_template": true,
+    "layer": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "batch_size": 4,
+    "position": -2,
+    "use_pca": false,
+    "apply_conditional_chat_template": true,
+    "conditional_layer": 7,
+    "hook_point": "post"
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      13
+    ],
+    "coeff": 10,
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "conditional_threshold": 0.03,
+    "conditional_threshold_is": "smaller",
+    "conditional_pos": "mean",
+    "apply_conditional_chat_template": true,
+    "apply_to_all_tokens": false
+  },
+  "train_dataset": "ai_risk_coordinate",
+  "n_train": 360,
+  "test_dataset": "coordinate_ab",
+  "n_test": null,
+  "save_vector": "Vector/CAST/llama_coordinate_no_pca",
+  "output": "./Results/cast",
+  "include_baseline": true,
+  "save_samples": false,
+  "seed": 42
+}

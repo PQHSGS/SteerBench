@@ -1,0 +1,94 @@
+{
+  "task": "evil",
+  "K": 3,
+  "K_requested": 3,
+  "n_active_centroids": 3,
+  "centroid_norms": [
+    196.7784423828125,
+    192.3833770751953,
+    198.39596557617188
+  ],
+  "samples_per_centroid": [
+    202,
+    170,
+    128
+  ],
+  "coupling_mass_per_centroid": [
+    0.3020094335079193,
+    0.3459920883178711,
+    0.3519984781742096
+  ],
+  "centroid_norm_cv": 0.012971149757504463,
+  "spearman_norm_vs_mass_sample": 0.14276126587576,
+  "spearman_p_sample": 0.001371142234027736,
+  "pearson_norm_vs_mass_sample": 0.12745246291160583,
+  "pearson_p_sample": 0.004311277212259714,
+  "spearman_norm_vs_mass_centroid": 0.5,
+  "spearman_p_centroid": 0.6666666666666667,
+  "tail_5pct_avg_mass": 0.33415743708610535,
+  "body_95pct_avg_mass": 0.3295293152332306,
+  "tail_body_ratio": 1.0140446437962556,
+  "decile_data": [
+    {
+      "decile": "0-10%",
+      "n": 50,
+      "norm_range": "182-202",
+      "avg_coupling_mass": 0.31908324360847473
+    },
+    {
+      "decile": "10-20%",
+      "n": 50,
+      "norm_range": "202-206",
+      "avg_coupling_mass": 0.32948020100593567
+    },
+    {
+      "decile": "20-30%",
+      "n": 50,
+      "norm_range": "206-210",
+      "avg_coupling_mass": 0.33435899019241333
+    },
+    {
+      "decile": "30-40%",
+      "n": 50,
+      "norm_range": "210-212",
+      "avg_coupling_mass": 0.3244425058364868
+    },
+    {
+      "decile": "40-50%",
+      "n": 50,
+      "norm_range": "212-215",
+      "avg_coupling_mass": 0.3318401277065277
+    },
+    {
+      "decile": "50-60%",
+      "n": 50,
+      "norm_range": "215-218",
+      "avg_coupling_mass": 0.3304412066936493
+    },
+    {
+      "decile": "60-70%",
+      "n": 50,
+      "norm_range": "218-222",
+      "avg_coupling_mass": 0.3293212950229645
+    },
+    {
+      "decile": "70-80%",
+      "n": 50,
+      "norm_range": "222-226",
+      "avg_coupling_mass": 0.33308014273643494
+    },
+    {
+      "decile": "80-90%",
+      "n": 50,
+      "norm_range": "226-232",
+      "avg_coupling_mass": 0.3323206305503845
+    },
+    {
+      "decile": "90-100%",
+      "n": 50,
+      "norm_range": "232-256",
+      "avg_coupling_mass": 0.33323904871940613
+    }
+  ],
+  "n_samples": 500
+}

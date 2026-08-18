@@ -1,0 +1,33 @@
+{
+  "name": "qwen_truthfulqa",
+  "description": "PID steering on truthfulqa",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "PID",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "PID",
+    "layer": [
+      18
+    ],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 1.0
+  },
+  "load_vector": "Vector/PID/Qwen/ai_risk_hallucination",
+  "test_dataset": "truthfulqa",
+  "include_baseline": false,
+  "output": "./Results/pid",
+  "seed": 42
+}

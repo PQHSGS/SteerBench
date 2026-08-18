@@ -1,0 +1,36 @@
+{
+  "name": "gemma_sorrybench_refusal_response",
+  "description": "ANGULAR steering for sorrybench_refusal_response",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ANGULAR",
+    "layer": 2,
+    "batch_size": 8,
+    "strategy": "max_sim",
+    "hook_point": [
+      "mid",
+      "post"
+    ]
+  },
+  "steer": {
+    "method": "ANGULAR",
+    "layer": 22,
+    "adaptive": true,
+    "target_angle": 0,
+    "coeff": 1,
+    "apply_all_layers": true
+  },
+  "test_dataset": "sorrybench",
+  "load_vector": "Vector/Angular/Gemma/refusal_response",
+  "output": "./Results/angular",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "train_dataset": "sorrybench_refusal_response",
+  "n_test": null
+}

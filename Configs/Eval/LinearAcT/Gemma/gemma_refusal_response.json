@@ -1,0 +1,39 @@
+{
+  "name": "gemma_refusal_response",
+  "description": "LINEARACT steering for refusal_response",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:4",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "ACT",
+    "layer": [14],
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "act_mode": "linear"
+  },
+  "steer": {
+    "method": "ACT",
+    "layer": [14],
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 0.7,
+    "batch_size": 4,
+    "apply_all_layers": false,
+    "apply_chat_template": true,
+    "act_support": "none"
+  },
+  "train_dataset": "refusal_cast_responses",
+  "test_dataset": "refusal_open",
+  "n_train": null,
+  "n_test": null,
+  "output": "./Results/linearact",
+  "compute_perplexity": true,
+  "load_vector": "Vector/LinearAcT/Gemma/refusal_response",
+  "include_baseline": false,
+  "seed": 42
+}

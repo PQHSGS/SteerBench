@@ -1,0 +1,39 @@
+{
+  "name": "llama2_chat_cold_fd_truthfulqa",
+  "description": "Paper-style COLD-FD setup (eta=1, epsilon=1e-6) with 50-shot extraction.",
+  "model": {
+    "name": "meta-llama/Llama-2-7b-chat-hf",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "COLD",
+    "layer": [
+      30
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "cold_variant": "fd",
+    "cold_eta": 1.0,
+    "cold_epsilon": 1e-6,
+    "cold_pair_margin": 0.0
+  },
+  "steer": {
+    "method": "COLD",
+    "layer": [
+      30
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "all",
+    "apply_chat_template": true
+  },
+  "train_dataset": "hallucination",
+  "n_train": 50,
+  "test_dataset": "truthfulqa",
+  "output": "./Results/cold",
+  "include_baseline": false,
+  "seed": 42
+}

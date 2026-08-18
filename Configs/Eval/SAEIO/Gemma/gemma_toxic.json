@@ -1,0 +1,40 @@
+{
+  "name": "gemma_toxic",
+  "description": "SAEIO toxic steering evaluated on toxic",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "inverse": false,
+    "method": "SAEIO",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "top_k": 15,
+    "apply_chat_template": true,
+    "act_threshold": 20,
+    "amp_factor": 10,
+    "hook_point": "pre"
+  },
+  "steer": {
+    "method": "SAEIO",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "top_k": 5
+  },
+  "save_vector": "Vector/SAEIO/Gemma/toxic",
+  "train_dataset": "toxic_jigsaw" ,
+  "test_dataset": "toxic",
+  "n_test": 100,
+"n_train": 500,
+  "output": "./Results/saeio",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42
+}

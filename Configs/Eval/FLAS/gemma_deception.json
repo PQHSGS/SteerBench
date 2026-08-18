@@ -1,0 +1,80 @@
+{
+  "name": "flas_deception",
+  "description": "FLAS steering for deception",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:4",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "FLAS",
+    "layer": [
+      14
+    ],
+    "batch_size": 16,
+    "position": "all",
+    "apply_chat_template": false,
+    "hook_point": "pre",
+    "change_pad_token": false,
+    "flas_checkpoint_path": null,
+    "flas_num_blocks": 1,
+    "flas_time_conditioned": true,
+    "flas_disable_cross_attn": false,
+    "flas_disable_self_attn": false,
+    "flas_disable_mlp": false,
+    "flas_strict_load": true,
+    "flas_concept_encoder_layers": 2,
+    "flas_train_lr": 5e-05,
+    "flas_train_enc_lr": 5e-05,
+    "flas_train_div_weight": 0.2,
+    "flas_train_epochs": 10,
+    "flas_train_batch_size": 4,
+    "flas_train_grad_accum": 8,
+    "flas_train_max_len": 512,
+    "flas_train_concept_max_len": 64,
+    "flas_train_T_min": 0.5,
+    "flas_train_T_max": 2.0,
+    "flas_train_n_steps": 10,
+    "flas_train_seed": 42,
+    "flas_train_max_steps": 2000,
+    "flas_unfreeze_concept_enc": true,
+    "flas_no_gemma_init": false,
+    "flas_steer_once": true,
+    "flas_train_concept_text": [
+      "telling lies, incorrect information to the question"
+    ],
+    "flas_binary_class": false,
+    "inverse": true
+  },
+  "steer": {
+    "method": "FLAS",
+    "layer": [
+      14
+    ],
+    "coeff": 0.5,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "all",
+    "batch_size": 4,
+    "norm": false,
+    "apply_all_layers": false,
+    "flas_concept_max_len": 64,
+    "flas_n_steps": 10,
+    "flas_max_prompt_len": 256,
+    "steer_once": true,
+    "flas_concept_text": "telling lies, incorrect information to the question"
+  },
+  "train_dataset": "liarbench",
+  "n_train": 500,
+  "test_dataset": "liarbench",
+  "n_test": 100,
+  "output": "./Results/flas",
+  "save_vector": "Vector/FLOW/Gemma/deception",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "post_process": {},
+  "save_samples": false
+}

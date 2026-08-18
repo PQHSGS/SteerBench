@@ -1,0 +1,31 @@
+{
+  "name": "cast_refusal",
+  "description": "CAST (Conditional Activation Steering) for refusal - uses composite dataset combining responses with questions",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16"
+  },
+  "extractor": {
+    "method": "CAST",
+    "layer": 14,
+    "batch_size": 4,
+    "position": "last",
+    "use_pca": true,
+    "conditional_dataset": "refusal",
+    "conditional_layer": 7,
+    "train_dataset": "refusal_cast_responses",
+    "n_train": 100
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": 14,
+    "coeff": 1.00,
+    "apply_chat_template": true,
+    "use_conditional": true,
+    "conditional_threshold": 0.1,
+    "n_test": 50
+  },
+  "test_dataset": "refusal",
+  "output": "./Results/cast"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "gemma_deception",
+  "description": "INN steering on deception",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "INNSTEER",
+    "layer": [14],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "inverse": true
+  },
+  "steer": {
+    "method": "INNSTEER",
+    "layer": [14],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 2.0,
+    "steer_once": false
+  },
+  "train_dataset": "liarbench",
+  "test_dataset": "liarbench",
+  "save_vector": "Vector/INN/Gemma/deception",
+  "n_train": 500,
+  "n_test": 100,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/inn",
+  "seed": 42
+}

@@ -1,0 +1,19 @@
+model_path: tianweiy/DMD2
+default_batch_size: 16
+dtype: ${dtype:torch.float16}
+guidance_scale: 0
+training_kwargs:
+  inference_steps: 1
+  timesteps: [399]
+  guidance_scale: 0
+generation_kwargs:
+  inference_steps: 1
+  timesteps: [399]
+  guidance_scale: 0
+unet_with_grads: false
+use_lora: false
+target_module_names: ${.default_modules.default}
+default_modules:
+  default: ${.layernorm}
+  layernorm: ['unet.*norm.*']
+  fast: ['text_encoder.text_model.encoder.layers.0.mlp:0']

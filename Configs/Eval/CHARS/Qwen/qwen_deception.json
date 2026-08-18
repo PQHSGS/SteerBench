@@ -1,0 +1,37 @@
+{
+  "name": "qwen_deception",
+  "description": "CHARS steering on deception",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CHARS",
+    "layer": 18,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "inverse": true,
+    "chars_k": 3,
+    "chars_lambda": 0.1
+  },
+  "steer": {
+    "method": "CHARS",
+    "layer": 18,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 8,
+    "steer_once": false
+  },
+  "train_dataset": "liarbench",
+  "n_train": 500,
+  "test_dataset": "liarbench",
+  "save_vector": "Vector/CHARS/Qwen/deception",
+  "n_test": 100,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/chars",
+  "seed": 42
+}

@@ -1,0 +1,39 @@
+{
+  "name": "gemma_toxic",
+  "description": "SRPS toxic steering evaluated on toxic",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "inverse": false,
+    "method": "SRPS",
+    "layer": 14,
+    "batch_size": 4,
+    "top_k": 15,
+    "act_threshold": 10,
+    "beta": 5,
+    "apply_chat_template": true,
+    "position": "mask",
+    "ot_steer": true
+  },
+  "steer": {
+    "method": "SRPS",
+    "layer": 14,
+    "coeff": 3,
+    "apply_chat_template": true,
+    "top_k": 5,
+    "ot_steer": true
+  },
+  "save_vector": "Vector/SRPS/Gemma/toxic",
+  "train_dataset": "toxic_jigsaw",
+  "n_train": 500,
+  "n_test": 100,
+  "test_dataset": "toxic",
+  "output": "./Results/srps",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

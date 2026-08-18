@@ -1,0 +1,10 @@
+{
+  "method": "all-layer r\u0302-subtract",
+  "train_dataset": "evil",
+  "test_dataset": "evil",
+  "layer": 25,
+  "coeff": 5.0,
+  "accuracy": 0.0,
+  "perplexity": 1.785,
+  "repetition_rate": 0.0088404180056796
+}

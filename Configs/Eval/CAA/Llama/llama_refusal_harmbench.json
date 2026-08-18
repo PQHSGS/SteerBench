@@ -1,0 +1,34 @@
+{
+  "name": "llama_refusal_harmbench",
+  "description": "CAA steering trained on refusal, evaluated on HarmBench",
+  "model": {
+    "name": "meta-llama/Llama-3.1-8B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 14,
+    "batch_size": 4,
+    "position": -2,
+    "hook_point": "post",
+    "apply_chat_template": false,
+    "save_vector": "Vector/CAA/refusal",
+    "train_dataset": "refusal_caa",
+    "n_train": 1000
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 14,
+    "coeff": 1.0,
+    "apply_chat_template": false,
+    "hook_point": "post",
+    "load_vector": "Vector/CAA/refusal",
+    "n_test": 500
+  },
+  "test_dataset": "harmbench",
+  "output": "./Results/caa",
+  "include_baseline": false,
+  "seed": 42
+}

@@ -1,0 +1,37 @@
+{
+  "name": "qwen_ifeval",
+  "description": "ANGULAR steering for ifeval",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ANGULAR",
+    "layer": 6,
+    "batch_size": 8,
+    "strategy": "max_sim",
+    "hook_point": [
+      "mid",
+      "post"
+    ]
+  },
+  "steer": {
+    "method": "ANGULAR",
+    "layer": 26,
+    "adaptive": true,
+    "target_angle": 0,
+    "coeff": 1,
+    "apply_all_layers": true,
+    "n_test": null
+  },
+  "train_dataset": "ifeval",
+  "test_dataset": "ifeval",
+  "save_vector": "Vector/Angular/Qwen/ifeval",
+  "output": "./Results/angular",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "n_test": null
+}

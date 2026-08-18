@@ -1,0 +1,44 @@
+{
+  "name": "qwen_deception",
+  "description": "PCAOT steering on deception",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ACT",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "act_mode": "linear",
+    "pca_components": 16,
+    "inverse": true
+  },
+  "steer": {
+    "method": "ACT",
+    "layer": [
+      18
+    ],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "coeff": 5.0,
+    "steer_once": false,
+    "act_support": "q_all"
+  },
+  "train_dataset": "liarbench",
+  "test_dataset": "liarbench",
+  "load_vector": "Vector/PCAOT/Qwen/deception",
+  "n_train": 5000,
+  "n_test": 100,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/pcaot",
+  "seed": 42
+}

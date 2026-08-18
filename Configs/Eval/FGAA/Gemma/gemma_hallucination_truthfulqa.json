@@ -1,0 +1,41 @@
+{
+  "name": "gemma_truthfulqa",
+  "description": "Paper-style FGAA setup (theta=0.01, layer=12, n2=0) for Gemma-2-2B.",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "FGAA",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": "mean",
+    "hook_point": "pre",
+    "fgaa_density_threshold": 0.01,
+    "fgaa_n1": 8,
+    "fgaa_n2": 0,
+    "fgaa_remove_bos": true,
+    "fgaa_l1_normalize_target": true
+  },
+  "steer": {
+    "method": "FGAA",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true
+  },
+  "train_dataset": "hallucination",
+  "n_train": 100,
+  "test_dataset": "truthfulqa",
+  "output": "./Results/fgaa",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42
+}

@@ -1,0 +1,40 @@
+{
+  "name": "qwen_evil",
+  "description": "SAE-COT evil steering evaluated on evil",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SAE-COT",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "apply_chat_template": true,
+    "saecot_value_mode": "target_mean",
+    "top_k": 15,
+    "inverse": false
+  },
+  "steer": {
+    "method": "SAE-COT",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "top_k": 5
+  },
+  "save_vector": "Vector/SAECOT/Qwen/evil",
+  "train_dataset": "evil",
+  "n_train": 500,
+  "n_test": 100,
+  "test_dataset": "evil",
+  "output": "./Results/saecot",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

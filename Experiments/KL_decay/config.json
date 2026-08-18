@@ -1,0 +1,26 @@
+{
+    "description": "KL Decay + Per-Token config — multi-method, multi-task",
+    "inject_layer": 14,
+    "track_layers_start": 15,
+    "track_layers_end": 26,
+    "coeff": 2.0,
+    "n_prompts": 50,
+    "max_tokens": 20,
+    "topk_values": [10, 100, 500],
+    "methods": ["CAA", "CHARS", "LinearAcT", "PID", "CURVE", "REPS", "MANIFOLD", "SRPS", "WEIGHTSTEER"],
+    "method_config_map": {
+        "CAA":       {"cfg_dir": "Configs/Eval/CAA/Gemma"},
+        "CHARS":     {"cfg_dir": "Configs/Eval/CHARS/Gemma"},
+        "LinearAcT": {"cfg_dir": "Configs/Eval/LinearAcT/Gemma"},
+        "PID":       {"cfg_dir": "Configs/Eval/PID/Gemma"},
+        "CURVE":     {"cfg_dir": "Configs/Eval/CURVE/Gemma"},
+        "REPS":      {"cfg_dir": "Configs/Eval/REFT"},
+        "MANIFOLD":  {"cfg_dir": "Configs/Eval/MANIFOLD/Gemma"},
+        "SRPS":      {"cfg_dir": "Configs/Eval/SRPS/Gemma"},
+        "WEIGHTSTEER": {"cfg_dir": "Configs/Eval/WEIGHTSTEER"}
+    },
+    "tasks": ["toxic", "evil", "deception", "refusal"],
+    "task_config_suffix": {
+        "refusal": "refusal_response"
+    }
+}

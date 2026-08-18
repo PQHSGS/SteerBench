@@ -1,0 +1,35 @@
+{
+  "name": "qwen_refusal_response",
+  "description": "SRPS steering for refusal_response",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SRPS",
+    "layer": 18,
+    "batch_size": 4,
+    "top_k": 15,
+    "act_threshold": 0.3,
+    "beta": 5,
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "SRPS",
+    "layer": 18,
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "top_k": 5
+  },
+  "save_vector": "Vector/SRPS/Qwen/refusal_response",
+  "train_dataset": "refusal_cast_responses",
+  "n_train": 1000,
+  "n_test": null,
+  "test_dataset": "refusal_open",
+  "output": "./Results/srps",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

@@ -1,0 +1,38 @@
+{
+  "name": "llama_refusal_ab",
+  "description": "CAA steering trained on refusal, evaluated on refusal_open",
+  "model": {
+    "name": "meta-llama/Llama-3.1-8B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "ANGULAR",
+    "layer": 2,
+    "batch_size": 8,
+    "position": -2,
+    "strategy": "max_sim",
+    "hook_point": [
+      "mid",
+      "post"
+    ]
+  },
+  "steer": {
+    "method": "ANGULAR",
+    "layer": 22,
+    "adaptive": true,
+    "target_angle": 0,
+    "coeff": 1,
+    "apply_all_layers": true,
+    "n_test": null
+  },
+  "train_dataset": "refusal_caa",
+  "test_dataset": "refusal_ab",
+  "n_train": 1000,
+  "save_vector": "Vector/Angular/Llama/ai_risk_refusal",
+  "output": "./Results/angular",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

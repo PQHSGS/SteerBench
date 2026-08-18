@@ -1,0 +1,39 @@
+{
+  "name": "qwen_truthfulqa",
+  "description": "MANIFOLD steering for truthfulqa",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "MANIFOLD",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "manifold_dim": 10
+  },
+  "steer": {
+    "method": "MANIFOLD",
+    "layer": [
+      18
+    ],
+    "coeff": 0.3,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "apply_all_layers": false
+  },
+  "save_vector": "Vector/MANIFOLD/Qwen/ai_risk_hallucination",
+  "n_test": null,
+  "test_dataset": "truthfulqa",
+  "train_dataset": "hallucination",
+  "output": "./Results/manifold",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

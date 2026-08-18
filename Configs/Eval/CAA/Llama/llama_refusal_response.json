@@ -1,0 +1,32 @@
+{
+  "name": "llama_refusal_response",
+  "description": "CAA steering trained on refusal, evaluated on refusal_response",
+  "model": {
+    "name": "meta-llama/Llama-3.1-8B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAA",
+    "layer": 17,
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "CAA",
+    "layer": 17,
+    "coeff": 1.0,
+    "apply_chat_template": true,
+    "hook_point": "pre"
+  },
+  "save_vector": "Vector/CAA/Llama/refusal_response",
+  "train_dataset": "refusal_cast_responses",
+  "test_dataset": "refusal_open",
+  "n_train": 1000,
+  "output": "./Results/caa",
+  "seed": 42,
+  "compute_perplexity": true
+}

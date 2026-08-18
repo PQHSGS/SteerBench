@@ -1,0 +1,39 @@
+{
+  "name": "gemma_gms8k",
+  "description": "ANGULAR steering trained on srps_roleplay_gms8k, evaluated on gms8k",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 300
+  },
+  "extractor": {
+    "method": "ANGULAR",
+    "layer": 2,
+    "batch_size": 8,
+    "position": "mask",
+    "strategy": "max_sim",
+    "hook_point": [
+      "mid",
+      "post"
+    ]
+  },
+  "steer": {
+    "method": "ANGULAR",
+    "layer": 22,
+    "adaptive": true,
+    "target_angle": 0,
+    "coeff": 1,
+    "apply_all_layers": true,
+    "n_test": null
+  },
+  "train_dataset": "srps_roleplay_gms8k",
+  "n_train": 1000,
+  "test_dataset": "gms8k",
+  "n_test": 3,
+  "load_vector": "Vector/Angular/Gemma/gms8k",
+  "output": "./Results/angular",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

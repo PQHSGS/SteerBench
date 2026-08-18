@@ -1,0 +1,44 @@
+{
+  "name": "qwen_evil",
+  "description": "ACT evil steering evaluated on evil",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "ACT",
+    "layer": [
+      18
+    ],
+    "hook_point": "pre",
+    "position": "mask",
+    "batch_size": 4,
+    "act_mode": "linear",
+    "inverse": false
+  },
+  "steer": {
+    "method": "ACT",
+    "layer": [
+      18
+    ],
+    "hook_point": "pre",
+    "position": "last",
+    "act_support": "none",
+    "coeff": 3.0,
+    "batch_size": 4,
+    "apply_chat_template": false,
+    "apply_all_layers": false
+  },
+  "train_dataset": "evil",
+  "test_dataset": "evil",
+  "n_train": 500,
+  "n_test": 100,
+  "output": "./Results/linearact",
+  "compute_perplexity": true,
+  "save_vector": "Vector/LinearAcT/Qwen/evil",
+  "include_baseline": false,
+  "seed": 42
+}

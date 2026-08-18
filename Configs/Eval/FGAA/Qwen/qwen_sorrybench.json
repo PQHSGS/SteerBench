@@ -1,0 +1,43 @@
+{
+  "name": "qwen_sorrybench",
+  "description": "FGAA steering for sorrybench",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "FGAA",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "fgaa_density_threshold": 0.01,
+    "fgaa_n1": 8,
+    "fgaa_n2": 0,
+    "fgaa_remove_bos": true,
+    "fgaa_l1_normalize_target": true
+  },
+  "steer": {
+    "method": "FGAA",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true
+  },
+  "train_dataset": "sorrybench_refusal_response",
+  "n_train": 1000,
+  "test_dataset": "sorrybench",
+  "n_test": null,
+  "output": "./Results/fgaa",
+  "load_vector": "Vector/FGAA/Qwen/ai_risk_refusal",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

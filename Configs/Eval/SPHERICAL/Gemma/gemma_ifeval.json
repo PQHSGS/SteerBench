@@ -1,0 +1,43 @@
+{
+  "name": "gemma_ifeval",
+  "description": "SPHERICAL steering for ifeval",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "SPHERICAL",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre"
+  },
+  "steer": {
+    "method": "SPHERICAL",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "spherical_kappa": 20.0,
+    "spherical_alpha": 0.7,
+    "spherical_beta": -0.15,
+    "spherical_use_vmf_gate": true
+  },
+  "train_dataset": "ifeval",
+  "test_dataset": "ifeval",
+  "n_train": null,
+  "n_test": 100,
+  "seed": 42,
+  "output": "./Results/spherical",
+  "compute_perplexity": true,
+  "save_vector": "Vector/SPHERICAL/Gemma/ifeval",
+  "include_baseline": true
+}

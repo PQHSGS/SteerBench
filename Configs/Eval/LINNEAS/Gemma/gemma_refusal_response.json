@@ -1,0 +1,45 @@
+{
+  "name": "gemma_refusal_response",
+  "description": "LinNEAS response-only refusal steering evaluated on refusal_open",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:5",
+    "dtype": "bfloat16",
+    "max_new_tokens": 30,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "LinNEAS",
+    "layer": [
+      14
+    ],
+    "hook_point": "ln2",
+    "position": "last",
+    "batch_size": 32,
+    "linneas_steps": 2000,
+    "linneas_lr": 0.001,
+    "linneas_reg_l1": 0.01,
+    "linneas_reg_l2": 0.001,
+    "linneas_optimizer": "adam",
+    "linneas_proximal": "l1",
+    "linneas_init_identity": true
+  },
+  "steer": {
+    "method": "LinNEAS",
+    "layer": [14],
+    "hook_point": "ln2",
+    "position": "last",
+    "coeff": 1,
+    "batch_size": 4,
+    "apply_all_layers": false
+  },
+  "train_dataset": "refusal_cast_responses",
+  "test_dataset": "refusal_open",
+  "n_train": null,
+  "n_test": 50,
+  "output": "./Results/linneas",
+  "save_vector": "Vector/LinNEAS/Gemma/refusal_response",
+  "compute_perplexity": true,
+  "include_baseline": false,
+  "seed": 42
+}

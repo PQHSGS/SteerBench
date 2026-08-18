@@ -1,0 +1,41 @@
+{
+  "name": "qwen_evil",
+  "description": "CAST evil steering evaluated on evil",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST",
+    "layer": [
+      18
+    ],
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_pca": true,
+    "inverse": false
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "apply_to_all_tokens": false
+  },
+  "save_vector": "Vector/CAST/Qwen/evil",
+  "train_dataset": "evil",
+  "n_train": 500,
+  "n_test": 100,
+  "test_dataset": "evil",
+  "output": "./Results/cast",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

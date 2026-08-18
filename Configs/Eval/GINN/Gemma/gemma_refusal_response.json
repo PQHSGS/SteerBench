@@ -1,0 +1,44 @@
+{
+  "name": "gemma_refusal_response",
+  "description": "GINN steering on refusal task",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "GINN",
+    "layer": 14,
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "ginn_n_coupling": 4,
+    "ginn_hidden_dim": 512,
+    "ginn_lr": 0.001,
+    "ginn_weight_decay": 0.0001,
+    "ginn_epochs": 100,
+    "ginn_batch_size": 64,
+    "ginn_lambda_sep": 0.0,
+    "ginn_grad_clip": 1.0
+  },
+  "steer": {
+    "method": "GINN",
+    "layer": 14,
+    "hook_point": "pre",
+    "position": "all",
+    "apply_chat_template": true,
+    "coeff": 2,
+    "steer_once": true
+  },
+  "train_dataset": "refusal_cast_responses",
+  "n_train": 500,
+  "test_dataset": "refusal_response",
+  "n_test": 100,
+  "output": "./Results/ginn",
+  "load_vector": "Vector/GINN/Gemma/refusal_response",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

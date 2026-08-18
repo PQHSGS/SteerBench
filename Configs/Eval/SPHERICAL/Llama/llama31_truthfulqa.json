@@ -1,0 +1,40 @@
+{
+  "name": "llama31_spherical_truthfulqa",
+  "description": "Spherical Steering paper-default Llama setup (layer=14, kappa=20, alpha=0.7, beta=-0.15).",
+  "model": {
+    "name": "meta-llama/Llama-3.1-8B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "SPHERICAL",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "SPHERICAL",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "spherical_kappa": 20.0,
+    "spherical_alpha": 0.7,
+    "spherical_beta": -0.15,
+    "spherical_use_vmf_gate": true,
+    "apply_chat_template": true
+  },
+  "train_dataset": "hallucination",
+  "n_train": 200,
+  "test_dataset": "truthfulqa",
+  "output": "./Results/spherical",
+  "include_baseline": false,
+  "seed": 42
+}

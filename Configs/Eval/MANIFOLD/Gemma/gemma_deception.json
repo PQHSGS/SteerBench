@@ -1,0 +1,40 @@
+{
+  "name": "gemma_deception",
+  "description": "MANIFOLD steering for deception",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "inverse": true,
+    "method": "MANIFOLD",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "manifold_dim": 32
+  },
+  "steer": {
+    "method": "MANIFOLD",
+    "layer": [
+      14
+    ],
+    "coeff": 0.3,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "apply_all_layers": false
+  },
+  "save_vector": "Vector/MANIFOLD/Gemma/deception",
+  "n_test": 100,
+  "test_dataset": "liarbench",
+  "train_dataset": "liarbench",
+  "output": "./Results/manifold",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42
+}

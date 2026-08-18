@@ -1,0 +1,22 @@
+Method,Extraction FLOPs,Inference FLOPs,Accuracy,Baseline Accuracy,Delta,File
+REPS,311370915008013056,109202129481984,1.0,0.0,1.0,reps/eval_gemma_reps_refusal_response_coeff_3_20260605_172115.json
+FLAS,37676095833544704,236852753051392,1.0,0.0,1.0,flas/eval_flas_refusal_response_coeff_0p75_20260605_142358.json
+WEIGHTSTEER_IMPROVED,16362928078079744,84103148904192,1.0,0.0,1.0,weightsteer_improved/eval_gemma_refusal_response_improved_coeff_3_20260605_152113.json
+FINETUNE,10714656871140352,40557336788480,1.0,0.0,1.0,finetune/gemma_refusal_response_20260605_135119.json
+ANGULAR,1855681992466432,109122247567872,0.88,0.0,0.88,angular/eval_gemma_refusal_response_coeff_1_20260605_140155.json
+WEIGHTSTEER,960164551988480,85616395484160,1.0,0.0,1.0,weightsteer/eval_gemma_refusal_response_coeff_3_20260605_151432.json
+ODE,847359705088000,112271604838656,0.86,0.0,0.86,ODE/eval_gemma_ode_refusal_response_coeff_1p0_20260605_165208.json
+CAST,715593904816128,93415651982592,0.84,0.0,0.84,cast/eval_gemma_refusal_response_coeff_1p0_20260605_155017.json
+FGAA,701884086878208,93130603908096,0.9,0.0,0.9,fgaa/eval_gemma_refusal_response_coeff_1p0_20260605_175247.json
+SAE-COT,698738258214912,99540903201600,0.84,0.0,0.84,saecot/eval_gemma_refusal_response_coeff_1p0_20260605_182432.json
+SAS,698738258214912,99523239172800,0.86,0.0,0.86,sas/eval_gemma_refusal_response_coeff_2_20260605_191442.json
+SPARE,698738258214912,98622441168000,0.86,0.0,0.86,spare/eval_gemma_refusal_response_coeff_3p0_20260605_192628.json
+SRPS,698738258214912,98777113363200,0.84,0.0,0.84,srps/eval_gemma_refusal_response_coeff_1p0_20260605_194902.json
+ACT,698632486256640,84296912237568,0.86,0.0,0.86,linearact/eval_gemma_refusal_response_coeff_1p0_20260605_153604.json
+CAA,698632486256640,91496775674880,0.14,0.0,0.14,caa/eval_gemma_refusal_response_coeff_2_20260605_152039.json
+CURVEBALL,698632486256640,88922331177216,1.0,0.0,1.0,curve/eval_gemma_refusal_response_coeff_1p0_20260605_172042.json
+MANIFOLD,698632486256640,92216892834048,0.84,0.0,0.84,manifold/eval_gemma_refusal_response_coeff_0p3_20260605_160419.json
+SAE-FREE,698632486256640,97258315012800,0.84,0.0,0.84,saefree/eval_gemma_refusal_response_coeff_1p0_20260605_183453.json
+SPHERICAL,698632486256640,97276012833600,0.94,0.0,0.94,spherical/eval_gemma_refusal_response_coeff_1p0_20260605_193702.json
+SAEIO,658479005777920,99558622142400,0.9,0.0,0.9,saeio/eval_gemma_refusal_response_coeff_1p0_20260605_190256.json
+CORRSTEER,530435994173952,96171406636032,0.94,0.0,0.94,corrsteer/eval_gemma_refusal_response_coeff_5p0_20260605_165242.json

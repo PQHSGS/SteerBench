@@ -1,0 +1,41 @@
+{
+  "name": "gemma_refusal_ab",
+  "description": "CURVE steering for refusal_ab",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "CURVEBALL",
+    "layer": [
+      14
+    ],
+    "hook_point": "pre",
+    "position": -2,
+    "batch_size": 4,
+    "curveball_dim": 8,
+    "curveball_degree": 2,
+    "curveball_coef0": 1.0
+  },
+  "steer": {
+    "method": "CURVEBALL",
+    "layer": [
+      14
+    ],
+    "hook_point": "pre",
+    "position": -2,
+    "coeff": 1.0,
+    "batch_size": 4
+  },
+  "train_dataset": "refusal_caa",
+  "test_dataset": "refusal_ab",
+  "n_train": 1000,
+  "n_test": null,
+  "output": "./Results/curve",
+  "save_vector": "Vector/CURVE/Gemma/ai_risk_refusal",
+  "include_baseline": false,
+  "seed": 42
+}

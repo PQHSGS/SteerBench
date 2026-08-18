@@ -1,0 +1,37 @@
+{
+  "name": "corrsteer_harmbench",
+  "description": "CorrSteer logic on HarmBench dataset (gemma-2-2b) replicating gemma2b_harmbench_global_corr_raw.json",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CORRSTEER",
+    "apply_chat_template": true,
+    "layer": [
+      14
+    ],
+    "batch_size": 8,
+    "top_k": 15,
+    "corrsteer_max_new_tokens": 50,
+    "corrsteer_pool": "max",
+    "corrsteer_pos_only": true,
+    "corrsteer_reward_evaluator": "cast_refusal"
+  },
+  "steer": {
+    "method": "CORRSTEER",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "corrsteer_lastk": 1
+  },
+  "save_vector": "Vector/CORRSTEER/corrsteer_harmbench_foreach",
+  "train_dataset": "refusal",
+  "n_train": 1000,
+  "test_dataset": "harmbench",
+  "n_test": 100,
+  "output": "./Results/corrsteer_harmbench"
+}

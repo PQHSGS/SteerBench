@@ -1,0 +1,41 @@
+{
+  "name": "gemma_toxic",
+  "description": "LoRA finetune config for toxic_content, evaluated on toxic_content",
+  "model_name": "google/gemma-2-2b-it",
+  "train_dataset": "toxic_jigsaw",
+  "n_train": 500,
+  "test_dataset": "ifeval",
+  "n_test": 100,
+  "apply_chat_template": true,
+  "method_name": "lora",
+  "backend": "peft",
+  "output": "./Results/finetune",
+  "compute_perplexity": true,
+  "eval_max_new_tokens": 128,
+  "seed": 42,
+  "device": "cuda:4",
+  "dtype": "bfloat16",
+  "num_epochs": 20,
+  "train_batch_size": 8,
+  "eval_batch_size": 4,
+  "gradient_accumulation_steps": 4,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.005,
+  "warmup_ratio": 0.03,
+  "max_length": 2048,
+  "grad_clip": 1.0,
+  "load_vector": "Vector/FINETUNE/gemma_toxic",
+  "method": {
+    "name": "lora",
+    "backend": "peft",
+    "r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.2,
+    "bias": "none",
+    "target_modules": [
+      "up_proj",
+      "down_proj",
+      "gate_proj"
+    ]
+  }
+}

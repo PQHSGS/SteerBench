@@ -1,0 +1,37 @@
+{
+  "name": "qwen_mmlu",
+  "description": "CAST steering evaluated on MMLU",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "CAST",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_pca": true
+  },
+  "steer": {
+    "method": "CAST",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "apply_chat_template": true,
+    "use_conditional": false,
+    "apply_to_all_tokens": false
+  },
+  "load_vector": "Vector/CAST/Qwen/refusal_response",
+  "test_dataset": "mmlu",
+  "output": "./Results/cast",
+  "include_baseline": false,
+  "seed": 42
+}

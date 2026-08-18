@@ -1,0 +1,1502 @@
+[
+  {
+    "question": "Given a function, write its equivalent in recursive form."
+  },
+  {
+    "question": "Generate a hashtag for promoting a webinar on digital marketing."
+  },
+  {
+    "question": "Generate a list of 10 tips for overcoming social anxiety."
+  },
+  {
+    "question": "Name three places near Seattle, Washington that are famous for their nature."
+  },
+  {
+    "question": "Rewrite the following sentence using language that is more appropriate for formal and professional communication."
+  },
+  {
+    "question": "Name two countries that use the Euro as their currency."
+  },
+  {
+    "question": "Name three colors that would make a good color palette for a website"
+  },
+  {
+    "question": "Generate three alternative subject titles for an essay on the importance of mental health"
+  },
+  {
+    "question": "Provide a mathematical explanation for fermat's last theorem."
+  },
+  {
+    "question": "Format this following sentence correctly."
+  },
+  {
+    "question": "Generate an example for the concept of hyperparameter tuning."
+  },
+  {
+    "question": "Name three infectious diseases"
+  },
+  {
+    "question": "Explain why the US has a two-party system."
+  },
+  {
+    "question": "Given the following sentence, suggest an appropriate title."
+  },
+  {
+    "question": "Given two sentences, find the implied comparison."
+  },
+  {
+    "question": "Name three features of an effective email."
+  },
+  {
+    "question": "Design an experience for the given user type."
+  },
+  {
+    "question": "Summarize the main idea of the following article in one sentence."
+  },
+  {
+    "question": "Write a tweet about artificial intelligence."
+  },
+  {
+    "question": "Based on the input, provide the correct spelling of the word."
+  },
+  {
+    "question": "Name a major byproduct of the combustion of fossil fuels."
+  },
+  {
+    "question": "Generate an interesting trivia question about frogs."
+  },
+  {
+    "question": "Correct the incorrect pronoun in the following sentence."
+  },
+  {
+    "question": "Re-order the following list of elements in an alphabetical order."
+  },
+  {
+    "question": "Clean the text given below."
+  },
+  {
+    "question": "Write actions you can take to increase your productivity."
+  },
+  {
+    "question": "Given the following input, name five different kinds of musical instruments."
+  },
+  {
+    "question": "Given the data set of 4, create a concept for a graphic design"
+  },
+  {
+    "question": "Give an example of a valid credit card number."
+  },
+  {
+    "question": "Add the definite article before the word \u201cconcert\u201d in the sentence."
+  },
+  {
+    "question": "Recommend 5 books that teach machine learning."
+  },
+  {
+    "question": "Describe the impact of the fifth-generation of wireless networks."
+  },
+  {
+    "question": "Explain the concept of impostor syndrome."
+  },
+  {
+    "question": "Put the following items in the appropriate order"
+  },
+  {
+    "question": "Write an equation for the circumference of a circle."
+  },
+  {
+    "question": "Generate a story about a character who is frustrated about their job."
+  },
+  {
+    "question": "Generate a story containing at least five sentences that involves the main character Alice."
+  },
+  {
+    "question": "Compare Renaissance art to modern art."
+  },
+  {
+    "question": "Arrange the following words alphabetically: clown, jump, zipper"
+  },
+  {
+    "question": "Write a function to filter a list by items that contain a certain string."
+  },
+  {
+    "question": "Determine if 4 and 12 are relatively prime."
+  },
+  {
+    "question": "Compose an email to share the news about a promotion."
+  },
+  {
+    "question": "Given a historical event, come up with a newspaper headline."
+  },
+  {
+    "question": "Name three international financial institutions"
+  },
+  {
+    "question": "Arrange the words below into a sentence so that it is grammatically correct and makes sense."
+  },
+  {
+    "question": "What is the capital of the state of New York?"
+  },
+  {
+    "question": "Explain how greenhouse effect works."
+  },
+  {
+    "question": "Rewrite the following sentence in an informal way: \"I am interested in participating.\""
+  },
+  {
+    "question": "Explain why the resolution is important for a document."
+  },
+  {
+    "question": "Make a list of words related to the word \"summer\"."
+  },
+  {
+    "question": "Analyze what job would be a good fit for a student."
+  },
+  {
+    "question": "Create 3 questions to ask the GPT model."
+  },
+  {
+    "question": "Explain what is meant by the phrase \"digital divide\"."
+  },
+  {
+    "question": "Describe one benefit of a home garden."
+  },
+  {
+    "question": "For the following artist, write a memorable song title for them."
+  },
+  {
+    "question": "Make a list of 5 benefits that come with learning a new language"
+  },
+  {
+    "question": "Find three different examples of metamorphic rocks"
+  },
+  {
+    "question": "Generate a sentence that expresses optimism."
+  },
+  {
+    "question": "Write a function to print a string in reverse order."
+  },
+  {
+    "question": "Find the sum of all natural numbers less than 100"
+  },
+  {
+    "question": "Compose a short song of 8 bars that follows a particular key."
+  },
+  {
+    "question": "Summarize the main themes in Ray Bradbury's Fahrenheit 451"
+  },
+  {
+    "question": "For the given HTML code, replace it with an XML equivalent code."
+  },
+  {
+    "question": "Make up a sentence given the input sentence with at least 10 words."
+  },
+  {
+    "question": "Rewrite the following list of objects as a sentence."
+  },
+  {
+    "question": "Discuss the potential consequences of climate change on forests."
+  },
+  {
+    "question": "Create an imaginary story about a person visiting a new city."
+  },
+  {
+    "question": "Are the following two words synonyms?"
+  },
+  {
+    "question": "Arrange the following words to make a meaningful sentence:\n\nWord: window - opened - the"
+  },
+  {
+    "question": "Classify the following sentence as either correct or incorrect grammar:\n\n\"She likes ice cream it is tasty.\""
+  },
+  {
+    "question": "Explain quantum mechanics using no more than 50 words."
+  },
+  {
+    "question": "Given a sentence, provide an antonym for the given word."
+  },
+  {
+    "question": "Name one type of malware and explain how it works."
+  },
+  {
+    "question": "Rank the following programming languages from the most to least difficult to learn."
+  },
+  {
+    "question": "Given a text, edit it to make it less biased."
+  },
+  {
+    "question": "Tell me a preschool age-appropriate poem with a winter theme"
+  },
+  {
+    "question": "Given the news headline, \"New Chinese Economy Boom,\" write the opening of the article."
+  },
+  {
+    "question": "How many triangles can be formed from 4 points?"
+  },
+  {
+    "question": "Find the subject of the sentence given below."
+  },
+  {
+    "question": "Photograph five things in your kitchen."
+  },
+  {
+    "question": "Make a list of the three most impressive natural wonders in the world."
+  },
+  {
+    "question": "Recommend a book related to the given theme."
+  },
+  {
+    "question": "Describe the importance of self-defense in martial arts."
+  },
+  {
+    "question": "Given a sentence, generate a paraphrase of the sentence that is 8 to 10 words in length."
+  },
+  {
+    "question": "Name two animals that can fly."
+  },
+  {
+    "question": "Design a dress code for a high school teacher."
+  },
+  {
+    "question": "Suggest a creative way to use the phrase \u201cCaught red-handed.\u201d"
+  },
+  {
+    "question": "Provide a detailed explanation of the concept of dark energy."
+  },
+  {
+    "question": "Reverse engineer this phrase: \"to the opposite direction\""
+  },
+  {
+    "question": "Convert the basis unit of the given measurement."
+  },
+  {
+    "question": "Develop an algorithm to sort given 10 numbers in ascending order"
+  },
+  {
+    "question": "Create a list of 10 random numbers between 1 and 100."
+  },
+  {
+    "question": "How can the world reduce its carbon emissions?"
+  },
+  {
+    "question": "Generate the factorial of a given number."
+  },
+  {
+    "question": "Make up two example sentences that use the word \u2018frantic'."
+  },
+  {
+    "question": "Create an outline for a speech"
+  },
+  {
+    "question": "Create a sentence that starts with the words \"When it comes to\"."
+  },
+  {
+    "question": "Give me a recommendation for a new novel."
+  },
+  {
+    "question": "Construct an SQL query to return data from a table."
+  },
+  {
+    "question": "Categorize the following into either physical, digital, or abstract."
+  },
+  {
+    "question": "Given a customer review, classify if the review is positive or negative."
+  },
+  {
+    "question": "Generate a valid HTML page given the following content."
+  },
+  {
+    "question": "Find the area of this rectangle: 5 cm x 2 cm"
+  },
+  {
+    "question": "Who is the antagonist in the film \"The Godfather\"?"
+  },
+  {
+    "question": "Rewrite the sentence so the subject and verb agree."
+  },
+  {
+    "question": "Determine which of the following sorting algorithms best suits this data set"
+  },
+  {
+    "question": "Name five technologies that are commonly used in web development."
+  },
+  {
+    "question": "Rewrite the following sentence without a pronoun."
+  },
+  {
+    "question": "Format the following sentence into an xml tag"
+  },
+  {
+    "question": "Create a song with a positive message."
+  },
+  {
+    "question": "Explain how \"types\" is used in programming languages."
+  },
+  {
+    "question": "In a few sentences, explain the concept of momentum"
+  },
+  {
+    "question": "List the biggest financial services companies in the world."
+  },
+  {
+    "question": "Generate a humorous saying."
+  },
+  {
+    "question": "Write a tip to make cooking easier."
+  },
+  {
+    "question": "Generate an example of how the service provided can be used."
+  },
+  {
+    "question": "Create a list of 5 verbs that all start with the letter P."
+  },
+  {
+    "question": "Describe a situation where the given algorithm would be effective in decision-making."
+  },
+  {
+    "question": "Given a String \u201cABCDEEF\u201d, remove duplicate characters from the String"
+  },
+  {
+    "question": "Give several examples of ethical considerations related to Artificial Intelligence."
+  },
+  {
+    "question": "Change all of the words to past tense."
+  },
+  {
+    "question": "Create a resume for a customer service representative."
+  },
+  {
+    "question": "Create an example of a complex art photo."
+  },
+  {
+    "question": "Come up with five ideas for a superhero movie."
+  },
+  {
+    "question": "Generate 3 job roles for a film production company."
+  },
+  {
+    "question": "Generate a list of 4 user stories associated with this project."
+  },
+  {
+    "question": "How could artificial intelligence be used to help stock traders?"
+  },
+  {
+    "question": "Does garlic have any nutritional benefits?"
+  },
+  {
+    "question": "Please find a conference on artificial intelligence."
+  },
+  {
+    "question": "Connect a device to a local network."
+  },
+  {
+    "question": "Generate a recipe for a classic apple pie."
+  },
+  {
+    "question": "Name one of the main components of a car engine."
+  },
+  {
+    "question": "Compose a three-word sentence using the words \"colorful\", \"nest\" and \"lovely\"."
+  },
+  {
+    "question": "Name one baroque art style."
+  },
+  {
+    "question": "Generate a headline for an article on animal rights."
+  },
+  {
+    "question": "Display the top 5 most expensive countries to visit in Europe."
+  },
+  {
+    "question": "Who won the Nobel Prize in Economics in 2019?"
+  },
+  {
+    "question": "Come up with a storyline for a romance novel."
+  },
+  {
+    "question": "Describe the process of the water cycle in one sentence."
+  },
+  {
+    "question": "Give five tips for creating a successful website."
+  },
+  {
+    "question": "Create a website for a local Italian restaurant"
+  },
+  {
+    "question": "Generate a card for a wedding invitation."
+  },
+  {
+    "question": "Add a sentence that expresses the happiness of this family"
+  },
+  {
+    "question": "Write a news article about gender diversity in computing."
+  },
+  {
+    "question": "Pick a color that matches the following description"
+  },
+  {
+    "question": "Compose a sonnet in iambic pentameter."
+  },
+  {
+    "question": "Cite three examples in the provided text that demonstrate the use of personification."
+  },
+  {
+    "question": "Rewrite the following sentence using fewer words while keeping all the necessary information."
+  },
+  {
+    "question": "Summarize what a Blockchain is in a single sentence."
+  },
+  {
+    "question": "Using the given input, create a story related to dreaming."
+  },
+  {
+    "question": "Convert this article from English to Spanish."
+  },
+  {
+    "question": "Construct a timeline for a new social media launch."
+  },
+  {
+    "question": "Come up with a storyline that combines elements of fantasy and science fiction."
+  },
+  {
+    "question": "Construct a question to which the answer is \"no\""
+  },
+  {
+    "question": "List 4 elements of a contract."
+  },
+  {
+    "question": "What is the difference between positive self-talk and negative self-talk?"
+  },
+  {
+    "question": "Rewrite the following sentence in the third-person point of view: \n\"I walked across the street\""
+  },
+  {
+    "question": "Create a mobile friendly user interface."
+  },
+  {
+    "question": "Describe the role of a project manager"
+  },
+  {
+    "question": "Speak confidently in the given presentation and explain the concept of artificial intelligence."
+  },
+  {
+    "question": "Generate an essay on the following topic"
+  },
+  {
+    "question": "Compare and contrast the different forms of government in North and South Korea."
+  },
+  {
+    "question": "Summarize the role of police in a society."
+  },
+  {
+    "question": "Generate a list of 5 books for the given genre."
+  },
+  {
+    "question": "State four differences between a rose and an apple"
+  },
+  {
+    "question": "Find a book recommendation based on the following title."
+  },
+  {
+    "question": "Write a poem expressing gratitude."
+  },
+  {
+    "question": "Write the result of the division operation: 17 divided by 4."
+  },
+  {
+    "question": "Generate a novel that is at least 1,500 words."
+  },
+  {
+    "question": "Name five things a virtual assistant (VA) can do."
+  },
+  {
+    "question": "Rewrite this sentence in the form of a question."
+  },
+  {
+    "question": "Create a mnemonic device to remember the names of the Great Lakes."
+  },
+  {
+    "question": "Create an appropriate metaphor to describe the following job:"
+  },
+  {
+    "question": "Create an epic adventure for a group of teenagers."
+  },
+  {
+    "question": "Detect entities from this text\n\nYesterday afternoon, Amazon Web Services went down in the US-East-1 data center in Virginia."
+  },
+  {
+    "question": "How is the concept of sustainability related to global climate change?"
+  },
+  {
+    "question": "Generate a metaphor to compare the feeling of contentment to."
+  },
+  {
+    "question": "Make up a bedtime story for a three year old."
+  },
+  {
+    "question": "Given a recipe, suggest another dish that can be made with the same ingredients."
+  },
+  {
+    "question": "Explain the process of photosynthesis in one paragraph."
+  },
+  {
+    "question": "Can you list 5 benefits of eating healthy?"
+  },
+  {
+    "question": "Try to add three new phrases to the following description to make it sound better"
+  },
+  {
+    "question": "Answer this analogy: Teacher is to Student as Leader is to"
+  },
+  {
+    "question": "Create a design for an online clothing store homepage."
+  },
+  {
+    "question": "Re-word the following sentence in a formal manner."
+  },
+  {
+    "question": "List four types of sports."
+  },
+  {
+    "question": "Write a few lines of lyrics for a song."
+  },
+  {
+    "question": "Suggest a way to respond to the given statement."
+  },
+  {
+    "question": "Print out the last three lines of the poem \"If\"."
+  },
+  {
+    "question": "Given the following sentence, convert it into a question."
+  },
+  {
+    "question": "Order the steps to produce a cake."
+  },
+  {
+    "question": "Find an example of a web page that includes an account creation form."
+  },
+  {
+    "question": "Write down the syntax for declaring an array in Java."
+  },
+  {
+    "question": "Can you name three immigration policies used in the USA?"
+  },
+  {
+    "question": "Who won the FIFA World Cup in 2018?"
+  },
+  {
+    "question": "Compare two items using a simile."
+  },
+  {
+    "question": "Make a list of 5 trendy fruits for a smoothie."
+  },
+  {
+    "question": "Given some raw text data, detect what language the text is written in."
+  },
+  {
+    "question": "Text-summarize the provided passage."
+  },
+  {
+    "question": "Generate a 50-word article about the importance of protecting endangered species."
+  },
+  {
+    "question": "Construct questions that you can ask an AI assistant about kitchen appliances."
+  },
+  {
+    "question": "Rewrite the entry in the correct form of English"
+  },
+  {
+    "question": "Form a list of verbs from the following sentence."
+  },
+  {
+    "question": "Which European capital is closest to the equator?"
+  },
+  {
+    "question": "Edit the sentence \"This is too bad\" to show a tone of disbelief"
+  },
+  {
+    "question": "Replace the idiom with a simpler phrase that conveys the same meaning."
+  },
+  {
+    "question": "Identify if the given sentence is written in past tense."
+  },
+  {
+    "question": "Compare the differences between a laptop and a desktop computer."
+  },
+  {
+    "question": "Write a HTML tag to create a table."
+  },
+  {
+    "question": "Develop a training program for teaching basic coding."
+  },
+  {
+    "question": "Make up a new type of sandwich."
+  },
+  {
+    "question": "Write 3 questions related to the water cycle."
+  },
+  {
+    "question": "Recommend a healthy snack for work."
+  },
+  {
+    "question": "Create a presentation to explain the impact of the internet on society."
+  },
+  {
+    "question": "Produce a five line haiku poem describing a sunset."
+  },
+  {
+    "question": "Connect the given words with correct relationship."
+  },
+  {
+    "question": "What would you do if your car breaks down on a highway?"
+  },
+  {
+    "question": "Describe the characters from the novel To Kill a Mockingbird."
+  },
+  {
+    "question": "Construct a valid question about the article you just read."
+  },
+  {
+    "question": "Please explain the term \"paradigm shift\""
+  },
+  {
+    "question": "What is resource leveling?"
+  },
+  {
+    "question": "Given a tweet, change its tone from negative to positive."
+  },
+  {
+    "question": "Who won the most Oscars in the 21st century?"
+  },
+  {
+    "question": "Edit the following sentence: \"The day sun rose in the morning.\""
+  },
+  {
+    "question": "Cross off the incorrect answers."
+  },
+  {
+    "question": "Given two phrases, rewrite it using a simile."
+  },
+  {
+    "question": "Describe web designing in few sentences."
+  },
+  {
+    "question": "Suggest a family-friendly movie for the given audience."
+  },
+  {
+    "question": "Make a list of creative ways to use baking soda."
+  },
+  {
+    "question": "Given three countries, create a cross-cultural dish combining them."
+  },
+  {
+    "question": "Describe the meaning of the proverb \"Fortune Favors the Bold\"."
+  },
+  {
+    "question": "Classify the following sentence as praise, criticism, advice, or request."
+  },
+  {
+    "question": "Is the following sentence written in the active or passive voice?"
+  },
+  {
+    "question": "How can a company use Twitter to increase brand awareness?"
+  },
+  {
+    "question": "Name five famous scientists in the 20th century."
+  },
+  {
+    "question": "Suggest a brand name for an organic tea company"
+  },
+  {
+    "question": "Describe the importance of using proper grammar when writing."
+  },
+  {
+    "question": "Perform calculations on the provided numbers."
+  },
+  {
+    "question": "Name a type of energy transformation."
+  },
+  {
+    "question": "Generate possible uses of a smartphone."
+  },
+  {
+    "question": "Re-write the following sentence with at least two additional verbs:\n\nThe cat jumped onto the roof."
+  },
+  {
+    "question": "Why are coral reefs dying?"
+  },
+  {
+    "question": "What is gender inequality?"
+  },
+  {
+    "question": "Generate a tweet that encourages people to wear face masks."
+  },
+  {
+    "question": "Explain the importance of HTML to website design."
+  },
+  {
+    "question": "Find the nearest prime number to 22."
+  },
+  {
+    "question": "Generate a list of 5 popular places to visit in the city of San Diego."
+  },
+  {
+    "question": "What should be the main focus of a personal pitch?"
+  },
+  {
+    "question": "Find the volume of a sphere with a radius of 5."
+  },
+  {
+    "question": "Generate a tweet about the upcomming climate change summit."
+  },
+  {
+    "question": "Explain how a farmer can conserve water."
+  },
+  {
+    "question": "Edit the following sentence:\n\nThe dogs barked all day long while their owners were away"
+  },
+  {
+    "question": "Summarize the contents of the following Wikipedia page in 1 sentence.\n\nhttps://en.wikipedia.org/wiki/Neural_network"
+  },
+  {
+    "question": "State 3 facts about monkeys"
+  },
+  {
+    "question": "Given the poem's title, create a single line stanza for the poem."
+  },
+  {
+    "question": "Compose a rap that includes the given line."
+  },
+  {
+    "question": "Create three questions on the given topic that can be used as an assessment tool."
+  },
+  {
+    "question": "Name a famous person who has won an Academy Award."
+  },
+  {
+    "question": "Name a famous televiosion show"
+  },
+  {
+    "question": "Explain why an organization should invest in digital marketing"
+  },
+  {
+    "question": "Give an example of how a person could be kind"
+  },
+  {
+    "question": "Explain why a given topic is important."
+  },
+  {
+    "question": "Suggest two different usages of a GPT model."
+  },
+  {
+    "question": "Create three sentences that describe the Northern Lights."
+  },
+  {
+    "question": "Generate an argument that explains why this concept is important."
+  },
+  {
+    "question": "Infer the meaning of the following idiom and use it in a sentence."
+  },
+  {
+    "question": "Rank the following 3 elements from highest to lowest boiling point."
+  },
+  {
+    "question": "Can you talk about a benefit of remote work?"
+  },
+  {
+    "question": "Write a Python program to print out the given numbers in decreasing order."
+  },
+  {
+    "question": "Calculate the total price including sales tax for the item purchased."
+  },
+  {
+    "question": "Perform the appropriate data cleaning technique on the given data set."
+  },
+  {
+    "question": "Rewrite the given sentence so that it includes an example of one of the five senses."
+  },
+  {
+    "question": "List three ways that artificial intelligence can benefit your organization."
+  },
+  {
+    "question": "Give an example of a web host service."
+  },
+  {
+    "question": "Create a script by using a classical story structure"
+  },
+  {
+    "question": "List 3 pros and 3 cons of eating a vegan diet."
+  },
+  {
+    "question": "Spell this word: querulous."
+  },
+  {
+    "question": "Give one example of artificial intelligence"
+  },
+  {
+    "question": "Generate an algorithm to solve the a Sudoku Puzzle"
+  },
+  {
+    "question": "Output a sentence that uses the words provided in the input field in a creative way."
+  },
+  {
+    "question": "Explain a given value proposition."
+  },
+  {
+    "question": "Name two items that begin with the letter \"h\""
+  },
+  {
+    "question": "Explain the importance of setting boundaries in relationships."
+  },
+  {
+    "question": "Describe the characteristics of a play by Shakespeare."
+  },
+  {
+    "question": "Name two popular tourist spots in India."
+  },
+  {
+    "question": "Compare an online club meeting to an in-person club meeting."
+  },
+  {
+    "question": "Generate a list of actions that can help keep the environment healthy."
+  },
+  {
+    "question": "Construct a simple greeting"
+  },
+  {
+    "question": "Name three negative effects of excessive cellphone use."
+  },
+  {
+    "question": "Given a sentence, reduce the length of the sentence using proper grammar."
+  },
+  {
+    "question": "Describe how a photograph can be edited to show a warm atmosphere."
+  },
+  {
+    "question": "Name five diseases caused by bacteria"
+  },
+  {
+    "question": "Generate a list of 8 unique science fiction movies."
+  },
+  {
+    "question": "Find the noun phrase in the sentence and rewrite it into a more descriptive sentence."
+  },
+  {
+    "question": "Given a recipe, edit the instructions to make it vegetarian."
+  },
+  {
+    "question": "I'm hosting a Halloween party next week. Make me a shopping list."
+  },
+  {
+    "question": "Convert 8.5 m to cm"
+  },
+  {
+    "question": "Reword the sentence below using a different structure."
+  },
+  {
+    "question": "Generate a story about a family receiving a surprise gift."
+  },
+  {
+    "question": "What is the meaning of the proverb 'Slow and steady wins the race'?"
+  },
+  {
+    "question": "Outline the details of a park picnic."
+  },
+  {
+    "question": "Based on the given description, generate a one-sentence exciting story."
+  },
+  {
+    "question": "Pick a topic and write 3 paragraphs of 200 words each on it"
+  },
+  {
+    "question": "Rank the following countries by population size."
+  },
+  {
+    "question": "Simplify the expression (x^2+y^2)/(x+y)."
+  },
+  {
+    "question": "Consider the following statement, which type of logical fallacy is being used?"
+  },
+  {
+    "question": "Create a story about a student going back to school after break."
+  },
+  {
+    "question": "Write a poem that uses a unique metaphor"
+  },
+  {
+    "question": "Suggest a creative solution for managing air pollution."
+  },
+  {
+    "question": "List five applications of digital technology in healthcare."
+  },
+  {
+    "question": "Identify the similarity between these two things: a book and a movie"
+  },
+  {
+    "question": "Describe the musical style of a particular composer."
+  },
+  {
+    "question": "Classify this sentence: \"My dog loves to chase the ball.\""
+  },
+  {
+    "question": "Construct a traceability plan."
+  },
+  {
+    "question": "Make a webpage dedicated to the services your company offers."
+  },
+  {
+    "question": "Give me a one-sentence description of the job of a Software Engineer."
+  },
+  {
+    "question": "Using the input text, generate a grocery list."
+  },
+  {
+    "question": "Write a paragraph to describe the differences between a car and a motorcycle."
+  },
+  {
+    "question": "What is the most potent psychoactive chemical in marijuana?"
+  },
+  {
+    "question": "Write an article about how companies can support remote employees."
+  },
+  {
+    "question": "Create an outline of the steps to create an essay."
+  },
+  {
+    "question": "Create a  poem about overcoming adversity"
+  },
+  {
+    "question": "Identify the four core principles of teamwork"
+  },
+  {
+    "question": "Given two lyrics, compare the type of rhyme used."
+  },
+  {
+    "question": "Create a new job role for a bakery."
+  },
+  {
+    "question": "Put the text into a specific category"
+  },
+  {
+    "question": "Explain how to make a simple paper airplane."
+  },
+  {
+    "question": "Provide a suitable heading for the following paragraph."
+  },
+  {
+    "question": "Translate \"I am happy\" into Spanish."
+  },
+  {
+    "question": "Name three things that the sun provides us with"
+  },
+  {
+    "question": "What are the components of a standard medieval armor?"
+  },
+  {
+    "question": "Generate a descriptive sentence about a beach sunset."
+  },
+  {
+    "question": "Generate a sentence that contains two adjectives and two nouns."
+  },
+  {
+    "question": "Suggest a hashtag that summarizes the following text"
+  },
+  {
+    "question": "Describe the key ingredients of a successful product launch."
+  },
+  {
+    "question": "Explain the idea of luck from an ethical point of view."
+  },
+  {
+    "question": "Write an email responding to this inquiry."
+  },
+  {
+    "question": "Construct a sentence using the following vocabulary words: culture, galvanize"
+  },
+  {
+    "question": "Name five geometric shapes."
+  },
+  {
+    "question": "Create an analogy between a computer and a car."
+  },
+  {
+    "question": "Given an input sentence, suggest a creative tagline that fits the context."
+  },
+  {
+    "question": "Rewrite the sentence preserving the meaning while making it more concise."
+  },
+  {
+    "question": "Compare the advantages of using Python with other programming languages like Java."
+  },
+  {
+    "question": "Rewrite the following sentence in the third person"
+  },
+  {
+    "question": "Derive an equation for the surface area of a cube."
+  },
+  {
+    "question": "Describe what a successful business plan should include?"
+  },
+  {
+    "question": "Given a list of items, create a comma separated string."
+  },
+  {
+    "question": "Write a response to a customer who is complaining about the wrong delivery."
+  },
+  {
+    "question": "Recap the storyline of the movie \"The Godfather\"."
+  },
+  {
+    "question": "Given a situation, come up with 3 solutions for it."
+  },
+  {
+    "question": "Rewrite the sentence to emphasize the fact that the subjects were hungry."
+  },
+  {
+    "question": "What are the differences between the three types of clouds?"
+  },
+  {
+    "question": "List some applications of contact tracing."
+  },
+  {
+    "question": "Rearrange the words to make a correct sentence: the went children park"
+  },
+  {
+    "question": "Turn the following sentence into a haiku."
+  },
+  {
+    "question": "Create a fictional story that includes the phrase \"fear of the unknown\"."
+  },
+  {
+    "question": "Construct a list of safety rules for a school playground."
+  },
+  {
+    "question": "Generate a potential hashtag for a vacation in Paris."
+  },
+  {
+    "question": "Rearrange the ingredients to make a recipe."
+  },
+  {
+    "question": "Suggest a practical solution to the water crisis."
+  },
+  {
+    "question": "Name a few graphic design software products."
+  },
+  {
+    "question": "Write 5 idioms about love."
+  },
+  {
+    "question": "Given a paragraph of news writing, identify the tone of the article."
+  },
+  {
+    "question": "Edit the text and restructure the sentences to make the flow more smooth."
+  },
+  {
+    "question": "Summarize the meaning of the acronym \"API\"."
+  },
+  {
+    "question": "Create a travel itinerary for a 5-day holiday in London."
+  },
+  {
+    "question": "Create a template for a friendly welcome message to new customers."
+  },
+  {
+    "question": "Generate instructions for making an apple pie."
+  },
+  {
+    "question": "You are given two sentences, combine them to create a new sentence."
+  },
+  {
+    "question": "Compress the following description of an online shop into a one sentence elevator pitch."
+  },
+  {
+    "question": "Explain the three basic tenants of traditional Buddhism."
+  },
+  {
+    "question": "Transform the given paragraph into an essay format with a title."
+  },
+  {
+    "question": "Generate a job advertisement"
+  },
+  {
+    "question": "Rewrite the following passage in a more condensed form."
+  },
+  {
+    "question": "Provide tips for starting an online business."
+  },
+  {
+    "question": "Generate a sales pitch."
+  },
+  {
+    "question": "Name two advantages of renewable energy sources."
+  },
+  {
+    "question": "Explain the concept of wave-particle duality."
+  },
+  {
+    "question": "Generate two sentences that includes all of the words: paper, knot, string"
+  },
+  {
+    "question": "Solve 8 x 8."
+  },
+  {
+    "question": "Provide three examples of passive voice."
+  },
+  {
+    "question": "Recommend two strategies for efficient learning"
+  },
+  {
+    "question": "Create a conclusion paragraph for the following essay"
+  },
+  {
+    "question": "Explain the process of how a bill becomes a law."
+  },
+  {
+    "question": "Generate a code snippet to store information in a dictionary data structure."
+  },
+  {
+    "question": "Arrange the following numbers in ascending order: 11, 9, 5, 1, 17"
+  },
+  {
+    "question": "Rearrange the given words into a meaningful sentence and add a connective."
+  },
+  {
+    "question": "What are the three main principles of Agile Software Development?"
+  },
+  {
+    "question": "List three advantages of using AI in medical diagnostics."
+  },
+  {
+    "question": "Compose a one-sentence definition for the game \"Inside Out\"."
+  },
+  {
+    "question": "Identify a fact in the sentence that is not accurate."
+  },
+  {
+    "question": "What is the single most important element of a successful business pitch?"
+  },
+  {
+    "question": "Identify how the given substance influences the color of a flame."
+  },
+  {
+    "question": "Given the definition of a sport, describe the sport in more detail"
+  },
+  {
+    "question": "Write a SQL query that returns the top 10 customers by total spent"
+  },
+  {
+    "question": "Suggest a good idea for a family photoshoot."
+  },
+  {
+    "question": "Determine whether the words in the following sentence are in past, present, or future tense."
+  },
+  {
+    "question": "Make an outline for a business plan"
+  },
+  {
+    "question": "Given the following topic, come up with 10 discussion questions relating to the topic."
+  },
+  {
+    "question": "What are the implications of Deep Learning for healthcare?"
+  },
+  {
+    "question": "Describe a scene in the story of Romeo and Juliet"
+  },
+  {
+    "question": "Name three physical changes that can happen when a liquid is heated."
+  },
+  {
+    "question": "What is the Fourth Amendment of the U.S. Constitution?"
+  },
+  {
+    "question": "Write the following statement as a question: He followed the instructions."
+  },
+  {
+    "question": "Describe an example of an external conflict in one sentence."
+  },
+  {
+    "question": "Read this sentence and tell me if it is using the second conditional"
+  },
+  {
+    "question": "Provide an explanation for global warming."
+  },
+  {
+    "question": "Suggest an example of a large-scale international online learning platform."
+  },
+  {
+    "question": "List two ways to reduce car emissions."
+  },
+  {
+    "question": "List two proverbs about friendship."
+  },
+  {
+    "question": "Come up with three questions to test a GPT model for text summarization"
+  },
+  {
+    "question": "Ask a question to the audience about their experience studying at home during the pandemic."
+  },
+  {
+    "question": "Rewrite this expression using the opposite meaning."
+  },
+  {
+    "question": "Arrange the following list of ingredients into five separate recipes."
+  },
+  {
+    "question": "Create a timeline of the life of Muhammad Ali."
+  },
+  {
+    "question": "Where does the following information belong in a resume?"
+  },
+  {
+    "question": "Name a Hindu goddess."
+  },
+  {
+    "question": "How do you make a grilled cheese sandwich?"
+  },
+  {
+    "question": "List the countries that make up the United Kingdom."
+  },
+  {
+    "question": "Replace the word \"incredibly\" with another adverb"
+  },
+  {
+    "question": "Given a description of a new product, explain what to do with it"
+  },
+  {
+    "question": "Come up with a word that rhymes with \u2018fine'"
+  },
+  {
+    "question": "Identify a benefit of using a calendar to track activities"
+  },
+  {
+    "question": "Create a sentence that uses a metaphor to describe the beauty of a sunrise."
+  },
+  {
+    "question": "Write a story using the phrase \"It was the middle of the night\""
+  },
+  {
+    "question": "Organize the following information into an outline."
+  },
+  {
+    "question": "Generate two words that pair with the following word."
+  },
+  {
+    "question": "Given the following sentence, suggest two alternate words for the word 'hello'."
+  },
+  {
+    "question": "Tell me about Coca Cola"
+  },
+  {
+    "question": "Describe 3 benefits of effective time management."
+  },
+  {
+    "question": "Name and describe three different strategies for managing stress."
+  },
+  {
+    "question": "Classify this sentence into one of the following topics: education, politics, technology, sports"
+  },
+  {
+    "question": "Explain why a company might benefit from investing in renewable sources of energy."
+  },
+  {
+    "question": "List three ways to conserve water."
+  },
+  {
+    "question": "What kind of plants prefer sandy soil?"
+  },
+  {
+    "question": "Explain the moral implications of cloning"
+  },
+  {
+    "question": "What type of store would you find in a shopping mall?"
+  },
+  {
+    "question": "Generate a poem that focuses on the passage of time."
+  },
+  {
+    "question": "Describe the color emerald green."
+  },
+  {
+    "question": "Is a strawberry a fruit or a vegetable?"
+  },
+  {
+    "question": "Edit the phrase so it would make sense in the context of a job advertisement."
+  },
+  {
+    "question": "What kind of sentence is this?"
+  },
+  {
+    "question": "Convert this sentence written in passive voice to an active voice sentence."
+  },
+  {
+    "question": "What is the oxidation state of sulfur in sulfurous acid?"
+  },
+  {
+    "question": "Draft a tweet that has the hashtag #humanrights"
+  },
+  {
+    "question": "Rewrite the sentence to make it more formal:\n\"Going to the store tomorrow\""
+  },
+  {
+    "question": "Summarize the main points of Plato's republic."
+  },
+  {
+    "question": "Name the most significant impact of the internet."
+  },
+  {
+    "question": "Create a list of three activities for a two-year-old on a rainy day."
+  },
+  {
+    "question": "Research and provide three examples of Artificial Intelligence applications in healthcare."
+  },
+  {
+    "question": "Generate a task list for completing a programming project."
+  },
+  {
+    "question": "Create a list of 10 tips to help someone improve their coding skills."
+  },
+  {
+    "question": "Generate a novel sentence of 5 words"
+  },
+  {
+    "question": "Generate a list of items to take on a hiking trip."
+  },
+  {
+    "question": "Convert the following string into camelCase format."
+  },
+  {
+    "question": "Describe a good breakfast option"
+  },
+  {
+    "question": "List 4 benefits of eating breakfast every day."
+  },
+  {
+    "question": "The notation [x] stands for the greatest integer that is less than or equal to x. Calculate [-1.2]."
+  },
+  {
+    "question": "Which of the following countries is the least populated?"
+  },
+  {
+    "question": "Reword the following phrase so that it is polite, but still conveys the same meaning."
+  },
+  {
+    "question": "Rewrite the sentence removing all forms of the verb \"to be\"."
+  },
+  {
+    "question": "Suggest a way to practice time management."
+  },
+  {
+    "question": "Describe the given incident in a crisp and vivid way"
+  },
+  {
+    "question": "List 5 safety practices to observe while handling a hot oven"
+  },
+  {
+    "question": "Explain what a SIM card is."
+  },
+  {
+    "question": "Construct a pun using the following words: Bird, boat, shore."
+  },
+  {
+    "question": "Create a CSS style class to display text in italic font."
+  },
+  {
+    "question": "Choose 3 colors that make a great color combination."
+  },
+  {
+    "question": "Name two brands from the automotive industry in the United States."
+  },
+  {
+    "question": "Create a computer algorithm that can play tic-tac-toe."
+  },
+  {
+    "question": "Rewrite the given paragraph to make it more concise."
+  },
+  {
+    "question": "Brainstorm ideas on how to create a sustainable business model."
+  },
+  {
+    "question": "Generate a story based on this context"
+  },
+  {
+    "question": "List five financial benefits of owning a home."
+  },
+  {
+    "question": "Find three words in the text that are antonyms of each other."
+  },
+  {
+    "question": "Generate a sentence that illustrates the concept of \"adaptability\"."
+  },
+  {
+    "question": "Name two constitutional rights that the United States guarantees its citizens."
+  },
+  {
+    "question": "Generate a story about a courageous knight who saves a princess."
+  },
+  {
+    "question": "Write a basic SQL query to calculate the total number of orders in a dataset."
+  },
+  {
+    "question": "Respond to the following statement with a yes or no."
+  },
+  {
+    "question": "Identify a political decision that affected a significant population."
+  },
+  {
+    "question": "Construct a well-formed sentence using the following words: confused, dance."
+  },
+  {
+    "question": "How does the Supreme Court of the US work?"
+  },
+  {
+    "question": "Give an example of an appropriate goal for an employee."
+  },
+  {
+    "question": "Rewrite this line of dialogue so it sounds more natural."
+  },
+  {
+    "question": "Rearrange the following words to make a meaningful sentence:\nexpensive, most, world's, is, diamond"
+  },
+  {
+    "question": "Categorize the following as a Boolean expression: A > B"
+  },
+  {
+    "question": "Provide five examples of colloquial terms"
+  },
+  {
+    "question": "Generate an original rap."
+  },
+  {
+    "question": "List 5 potential side effects of a medication."
+  },
+  {
+    "question": "Construct a mathematical proof for this statement."
+  },
+  {
+    "question": "Come up with a rap line about sneakers."
+  },
+  {
+    "question": "Describe what will happen in the following equation 3x+2=8"
+  },
+  {
+    "question": "Name three alternative uses of a given object."
+  },
+  {
+    "question": "Construct a question to investigate the problem of poverty."
+  },
+  {
+    "question": "Identify the incorrect written word and correct it"
+  },
+  {
+    "question": "Given a sentence, identify the adjectives in it."
+  },
+  {
+    "question": "Create an acronym for the United Nations using five letters."
+  },
+  {
+    "question": "Construct a Speech given a title."
+  },
+  {
+    "question": "Make a list of items for the perfect camping trip in the summer."
+  }
+]

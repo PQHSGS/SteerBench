@@ -1,0 +1,36 @@
+{
+  "name": "llama_roleplay_gms8k",
+  "description": "SRPS (Semantic-Robust Prompt Steering) - uses beta for activation/active-dimension balance",
+  "model": {
+    "name": "meta-llama/Llama-3.1-8B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 300
+  },
+  "extractor": {
+    "method": "SRPS",
+    "layer": [
+      31
+    ],
+    "batch_size": 4,
+    "top_k": 15,
+    "act_threshold": 0.2,
+    "beta": 5,
+    "apply_chat_template": false
+  },
+  "steer": {
+    "method": "SRPS",
+    "layer": [
+      31
+    ],
+    "coeff": 1.0,
+    "apply_chat_template": false,
+    "top_k": 5
+  },
+  "train_dataset": "srps_roleplay_gms8k",
+  "n_train": 1000,
+  "save_vector": "Vector/SRPS/Llama/gms8k",
+  "n_test": 100,
+  "test_dataset": "gms8k",
+  "output": "./Results/srps"
+}

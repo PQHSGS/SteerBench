@@ -1,0 +1,27 @@
+{
+    "name": "angular_inference_verify",
+    "description": "Level 2 inference verification for Angular Steering",
+    "load_vector": "Verification/Level1/Angular/my_output/vector.pt",
+    "model": {
+        "name": "Qwen/Qwen2.5-3B-Instruct",
+        "device": "cuda",
+        "dtype": "bfloat16"
+    },
+    "extractor": {
+        "method": "ANGULAR",
+        "layer": [
+            16
+        ]
+    },
+    "steer": {
+        "method": "ANGULAR",
+        "layer": [
+            16
+        ],
+        "coeff": 1.0,
+        "angular_target_angle": 90.0,
+        "adaptive_mode": 1
+    },
+    "load_vector": "Verification/Level1/Angular/my_output/vector.pt",
+    "test_dataset": "angular_validation"
+}

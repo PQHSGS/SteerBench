@@ -1,0 +1,54 @@
+{
+  "name": "qwen_evil",
+  "description": "LQR evil steering extraction/eval (gemma-2-2b-it)",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "LQR",
+    "layer": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "position": "mean",
+    "inverse": false,
+    "apply_chat_template": true,
+    "lqr_Q": 1.0,
+    "lqr_R": 1.0,
+    "lqr_Qf": 1.0,
+    "lqr_jac_chunk_size": 64,
+    "lqr_store_jacobians": false
+  },
+  "steer": {
+    "method": "LQR",
+    "layer": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "mean",
+    "coeff": 3,
+    "steer_once": false
+  },
+  "train_dataset": "evil",
+  "n_train": 500,
+  "test_dataset": "evil",
+  "n_test": 100,
+  "save_vector": "Vector/LQR/Qwen/evil",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "output": "./Results/lqr"
+}

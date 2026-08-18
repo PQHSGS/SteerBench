@@ -1,0 +1,136 @@
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading model...
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 44.24it/s]
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+Loaded pretrained model google/gemma-2-2b-it into HookedTransformer
+
+Loading behaviour_refusal.json (response-only)...
+Loaded 100 compliant + 100 non-compliant
+Computing non-compliant (refusal) mean activations per layer...
+Computing compliant mean activations per layer...
+  r̂ layer 14: norm=69.5000
+  r̂ layer 18: norm=81.0000
+  r̂ layer 22: norm=120.5000
+  r̂ layer 25: norm=185.0000
+2026-06-29 11:10:26 | Steering.data.loader                | INFO     | Loaded 50 samples from toxic
+evil: 50 prompts from toxic
+2026-06-29 11:10:26 | Steering.data.loader                | INFO     | Loaded 50 samples from evil
+toxic: 50 prompts from evil
+2026-06-29 11:10:26 | Steering.data.loader                | INFO     | Loaded 50 samples from toxic
+deception: 50 prompts from toxic
+
+============================================================
+STEER AT LAYER 14
+============================================================
+
+=== evil (coeff=5, steer at layer 14) ===
+Layer cos(v,r̂_L)  cos(base) cos(steer)     Δcos
+----------------------------------------------
+  14   +0.1216    -0.0585    +0.0146    +0.0731
+  18   +0.1152    -0.0733    -0.0341    +0.0392
+  22   +0.0913    -0.1100    -0.0972    +0.0128
+  25   +0.0723    -0.1667    -0.1615    +0.0051
+
+=== toxic (coeff=5, steer at layer 14) ===
+Layer cos(v,r̂_L)  cos(base) cos(steer)     Δcos
+----------------------------------------------
+  14   +0.1543    -0.0599    +0.0470    +0.1069
+  18   +0.0574    -0.0742    -0.0323    +0.0419
+  22   +0.0073    -0.1084    -0.1044    +0.0040
+  25   +0.0962    -0.1673    -0.1568    +0.0105
+
+=== deception (coeff=5, steer at layer 14) ===
+Layer cos(v,r̂_L)  cos(base) cos(steer)     Δcos
+----------------------------------------------
+  14   +0.0659    -0.0543    -0.0525    +0.0018
+  18   +0.0525    -0.0696    -0.0693    +0.0003
+  22   +0.0459    -0.1103    -0.1097    +0.0006
+  25   +0.0203    -0.1661    -0.1652    +0.0009
+
+============================================================
+STEER AT LAYER 18
+============================================================
+
+=== evil (coeff=5, steer at layer 18) ===
+Layer cos(v,r̂_L)  cos(base) cos(steer)     Δcos
+----------------------------------------------
+  14   +0.1973    -0.0585    -0.0585    +0.0000
+  18   +0.2002    -0.0733    +0.0835    +0.1568
+  22   +0.1680    -0.1100    -0.0200    +0.0900
+  25   +0.1099    -0.1667    -0.1587    +0.0080
+
+=== toxic (coeff=5, steer at layer 18) ===
+Layer cos(v,r̂_L)  cos(base) cos(steer)     Δcos
+----------------------------------------------
+  14   +0.1963    -0.0599    -0.0599    +0.0000
+  18   +0.1777    -0.0742    +0.0336    +0.1078
+  22   +0.1235    -0.1084    -0.0499    +0.0584
+  25   +0.1074    -0.1673    -0.1441    +0.0232
+
+=== deception (coeff=5, steer at layer 18) ===
+Layer cos(v,r̂_L)  cos(base) cos(steer)     Δcos
+----------------------------------------------
+  14   -0.0315    -0.0543    -0.0543    +0.0000
+  18   -0.0071    -0.0696    -0.0697    -0.0001
+  22   +0.0231    -0.1103    -0.1106    -0.0003
+  25   +0.0132    -0.1661    -0.1661    +0.0000
+
+============================================================
+STEER AT LAYER 22
+============================================================
+
+=== evil (coeff=5, steer at layer 22) ===
+Layer cos(v,r̂_L)  cos(base) cos(steer)     Δcos
+----------------------------------------------
+  14   +0.1680    -0.0585    -0.0585    +0.0000
+  18   +0.1455    -0.0733    -0.0733    +0.0000
+  22   +0.1367    -0.1100    -0.0030    +0.1070
+  25   +0.0942    -0.1667    -0.1437    +0.0229
+
+=== toxic (coeff=5, steer at layer 22) ===
+Layer cos(v,r̂_L)  cos(base) cos(steer)     Δcos
+----------------------------------------------
+  14   +0.1807    -0.0599    -0.0599    +0.0000
+  18   +0.1748    -0.0742    -0.0742    +0.0000
+  22   +0.1709    -0.1084    -0.0177    +0.0907
+  25   +0.1680    -0.1673    -0.0895    +0.0778
+
+=== deception (coeff=5, steer at layer 22) ===
+Layer cos(v,r̂_L)  cos(base) cos(steer)     Δcos
+----------------------------------------------
+  14   -0.0179    -0.0543    -0.0543    +0.0000
+  18   +0.0038    -0.0696    -0.0696    +0.0000
+  22   +0.0381    -0.1103    -0.1095    +0.0008
+  25   +0.0410    -0.1661    -0.1652    +0.0009
+
+============================================================
+STEER AT LAYER 25
+============================================================
+
+=== evil (coeff=5, steer at layer 25) ===
+Layer cos(v,r̂_L)  cos(base) cos(steer)     Δcos
+----------------------------------------------
+  14   +0.1377    -0.0585    -0.0585    +0.0000
+  18   +0.1060    -0.0733    -0.0733    +0.0000
+  22   +0.1221    -0.1100    -0.1100    +0.0000
+  25   +0.0688    -0.1667    -0.0986    +0.0680
+
+=== toxic (coeff=5, steer at layer 25) ===
+Layer cos(v,r̂_L)  cos(base) cos(steer)     Δcos
+----------------------------------------------
+  14   +0.1094    -0.0599    -0.0599    +0.0000
+  18   +0.1260    -0.0742    -0.0742    +0.0000
+  22   +0.1650    -0.1084    -0.1084    +0.0000
+  25   +0.3008    -0.1673    -0.0028    +0.1645
+
+=== deception (coeff=5, steer at layer 25) ===
+Layer cos(v,r̂_L)  cos(base) cos(steer)     Δcos
+----------------------------------------------
+  14   -0.0168    -0.0543    -0.0543    +0.0000
+  18   -0.0061    -0.0696    -0.0696    +0.0000
+  22   +0.0354    -0.1103    -0.1103    +0.0000
+  25   +0.1221    -0.1661    -0.1637    +0.0024
+
+Results saved to Experiments/ExpH/results/activation_analysis_multi_layer.json

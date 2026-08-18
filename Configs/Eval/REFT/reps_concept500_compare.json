@@ -1,0 +1,70 @@
+{
+  "name": "gemma_reps_concept500_compare",
+  "description": "RePS extraction config for quantitative comparison against AxBench PreferenceLoReFT ground truth. Uses same hyperparameters as prod_2b_l10_v1 (layer=10, r=4, 3 epochs). Dataset: refusal_cast_responses (our pipeline equivalent).",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "REPS",
+    "layer": [
+      10
+    ],
+    "batch_size": 8,
+    "position": "last",
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "change_pad_token": false,
+    "reft_type": "Loreft",
+    "low_rank_dimension": 4,
+    "dropout": 0.1,
+    "act_fn": "linear",
+    "add_bias": true,
+    "preference_pairs": [
+      "orig_add",
+      "orig_sub"
+    ],
+    "substraction_type": "normal",
+    "steering_factors": [
+      1.0
+    ],
+    "lr": 0.004,
+    "weight_decay": 0.0,
+    "epochs": 12
+  },
+  "steer": {
+    "method": "REPS",
+    "layer": [
+      10
+    ],
+    "coeff": 1,
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "position": "last",
+    "batch_size": 4,
+    "norm": false,
+    "apply_all_layers": false,
+    "reft_type": "Loreft",
+    "add_bias": true,
+    "preference_pairs": [
+      "orig_add",
+      "orig_sub"
+    ],
+    "substraction_type": "normal",
+    "steer_once": true
+  },
+  "post_process": {},
+  "train_dataset": "refusal_cast_responses",
+  "n_train": 100,
+  "test_dataset": "refusal_open",
+  "n_test": 50,
+  "output": "Results/REPS_compare",
+  "save_samples": false,
+  "include_baseline": false,
+  "compute_perplexity": false,
+  "seed": 42,
+  "save_vector": "Vector/REPS/concept500_compare"
+}

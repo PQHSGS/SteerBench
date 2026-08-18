@@ -1,0 +1,43 @@
+{
+  "name": "qwen_sorrybench",
+  "description": "SPHERICAL steering for sorrybench",
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "SPHERICAL",
+    "layer": [
+      18
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre"
+  },
+  "steer": {
+    "method": "SPHERICAL",
+    "layer": [
+      18
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": true,
+    "spherical_kappa": 20.0,
+    "spherical_alpha": 0.7,
+    "spherical_beta": -0.15,
+    "spherical_use_vmf_gate": true
+  },
+  "train_dataset": "sorrybench_refusal_response",
+  "test_dataset": "sorrybench",
+  "n_train": 1000,
+  "n_test": null,
+  "seed": 42,
+  "output": "./Results/spherical",
+  "load_vector": "Vector/SPHERICAL/Qwen/ai_risk_refusal",
+  "compute_perplexity": true,
+  "include_baseline": false
+}

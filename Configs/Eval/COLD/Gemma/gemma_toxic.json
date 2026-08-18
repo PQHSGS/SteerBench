@@ -1,0 +1,47 @@
+{
+  "name": "gemma_toxic",
+  "description": "COLD toxic steering evaluated on toxic",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100,
+    "do_sample": false
+  },
+  "extractor": {
+    "inverse": false,
+    "method": "COLD",
+    "layer": [
+      14
+    ],
+    "batch_size": 4,
+    "position": "last",
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": false,
+    "cold_variant": "fd",
+    "cold_eta": 1.0,
+    "cold_epsilon": 1e-06,
+    "cold_pair_margin": 0.0
+  },
+  "steer": {
+    "method": "COLD",
+    "layer": [
+      14
+    ],
+    "coeff": 1.0,
+    "hook_point": "pre",
+    "position": "last",
+    "apply_chat_template": false
+  },
+  "train_dataset": "toxic_jigsaw" ,
+  "test_dataset": "toxic",
+  "n_train": null,
+  "n_test": 100,
+"n_train": 500,
+  "seed": 42,
+  "output": "./Results/cold",
+  "compute_perplexity": true,
+  "save_vector": "Vector/COLD/Gemma/toxic",
+  "include_baseline": false
+}

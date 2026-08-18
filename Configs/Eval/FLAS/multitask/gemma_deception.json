@@ -1,0 +1,67 @@
+{
+  "name": "multitask_flas_deception",
+  "description": "Multi-task FLAS evaluated on deception (loads 4-task vector from /data/caotue/FLAS/multitask)",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda:3",
+    "dtype": "bfloat16",
+    "max_new_tokens": 128,
+    "do_sample": false
+  },
+  "extractor": {
+    "method": "FLAS",
+    "layer": [
+      14
+    ],
+    "hook_point": [
+      "pre"
+    ],
+    "position": "last",
+    "batch_size": 16,
+    "apply_chat_template": false,
+    "change_pad_token": false,
+    "flas_num_blocks": 1,
+    "flas_time_conditioned": true,
+    "flas_disable_cross_attn": false,
+    "flas_disable_self_attn": false,
+    "flas_disable_mlp": false,
+    "flas_concept_encoder_layers": 2,
+    "flas_steer_once": true,
+    "inverse": false
+  },
+  "steer": {
+    "method": "FLAS",
+    "layer": [
+      14
+    ],
+    "coeff": {
+      "14": 1
+    },
+    "apply_chat_template": true,
+    "hook_point": [
+      "pre"
+    ],
+    "position": "last",
+    "batch_size": 4,
+    "norm": false,
+    "apply_all_layers": false,
+    "steer_once": true,
+    "flas_concept_text": "deceptive, dishonest, misleading responses that hide the truth",
+    "flas_concept_max_len": 64,
+    "flas_n_steps": 20,
+    "flas_max_prompt_len": 256,
+    "ot_steer": true
+  },
+  "post_process": {},
+  "train_dataset": "cais_mask",
+  "n_train": null,
+  "test_dataset": "deception",
+  "n_test": 100,
+  "output": "./Results/flas/multitask",
+  "save_vector": null,
+  "load_vector": "Vector/FLOW/multitask",
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "seed": 42,
+  "save_samples": false
+}

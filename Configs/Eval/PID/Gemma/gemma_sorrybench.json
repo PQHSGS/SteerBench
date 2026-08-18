@@ -1,0 +1,32 @@
+{
+  "name": "gemma_sorrybench",
+  "description": "PID steering on sorrybench",
+  "model": {
+    "name": "google/gemma-2-2b-it",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_new_tokens": 100
+  },
+  "extractor": {
+    "method": "PID",
+    "layer": [14],
+    "batch_size": 4,
+    "hook_point": "pre",
+    "apply_chat_template": true
+  },
+  "steer": {
+    "method": "PID",
+    "layer": [14],
+    "apply_chat_template": true,
+    "hook_point": "pre",
+    "coeff": 1.0,
+    "batch_size": 4
+  },
+  "load_vector": "Vector/PID/Gemma/ai_risk_refusal",
+  "test_dataset": "sorrybench",
+  "n_test": null,
+  "include_baseline": false,
+  "compute_perplexity": true,
+  "output": "./Results/pid",
+  "seed": 42
+}
